@@ -13,7 +13,6 @@
 		B8FCB4C61B52EEB800061437 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCB4C51B52EEB800061437 /* ModelController.swift */; };
 		B8FCB4C91B52EEB800061437 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8FCB4C71B52EEB800061437 /* Main.storyboard */; };
 		B8FCB4CB1B52EEB800061437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8FCB4CA1B52EEB800061437 /* Assets.xcassets */; };
-		B8FCB4CE1B52EEB800061437 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8FCB4CC1B52EEB800061437 /* LaunchScreen.storyboard */; };
 		B8FCB4D91B52EEB800061437 /* HungryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCB4D81B52EEB800061437 /* HungryTests.swift */; };
 		B8FCB4E41B52EEB800061437 /* HungryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCB4E31B52EEB800061437 /* HungryUITests.swift */; };
 		B8FCB4F31B52EF8F00061437 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8FCB4F11B52EF8F00061437 /* FBSDKCoreKit.framework */; };
@@ -45,7 +44,6 @@
 		B8FCB4C51B52EEB800061437 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		B8FCB4C81B52EEB800061437 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8FCB4CA1B52EEB800061437 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B8FCB4CD1B52EEB800061437 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8FCB4CF1B52EEB800061437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8FCB4D41B52EEB800061437 /* HungryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HungryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8FCB4D81B52EEB800061437 /* HungryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HungryTests.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				B8FCB4C51B52EEB800061437 /* ModelController.swift */,
 				B8FCB4C71B52EEB800061437 /* Main.storyboard */,
 				B8FCB4CA1B52EEB800061437 /* Assets.xcassets */,
-				B8FCB4CC1B52EEB800061437 /* LaunchScreen.storyboard */,
 				B8FCB4CF1B52EEB800061437 /* Info.plist */,
 			);
 			path = Hungry;
@@ -242,7 +239,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8FCB4CE1B52EEB800061437 /* LaunchScreen.storyboard in Resources */,
 				B8FCB4CB1B52EEB800061437 /* Assets.xcassets in Resources */,
 				B8FCB4C91B52EEB800061437 /* Main.storyboard in Resources */,
 			);
@@ -314,14 +310,6 @@
 				B8FCB4C81B52EEB800061437 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B8FCB4CC1B52EEB800061437 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B8FCB4CD1B52EEB800061437 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -413,6 +401,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "\"~/Documents/FacebookSDK\"";
 				INFOPLIST_FILE = Hungry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -426,6 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "\"~/Documents/FacebookSDK\"";
 				INFOPLIST_FILE = Hungry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -501,6 +491,7 @@
 				B8FCB4EA1B52EEB800061437 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8FCB4EB1B52EEB800061437 /* Build configuration list for PBXNativeTarget "HungryTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +500,7 @@
 				B8FCB4ED1B52EEB800061437 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8FCB4EE1B52EEB800061437 /* Build configuration list for PBXNativeTarget "HungryUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +509,7 @@
 				B8FCB4F01B52EEB800061437 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
