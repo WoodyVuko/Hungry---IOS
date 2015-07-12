@@ -12,7 +12,6 @@ import UIKit
 
 class DataViewController: UIViewController, FBSDKLoginButtonDelegate {
 
-    @IBOutlet var name: FBSDKProfile!
     @IBOutlet weak var dataLabel: UILabel!
     
     var dataObject: String = ""
@@ -20,6 +19,9 @@ class DataViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onProfileUpdated:", name:FBSDKAccessTokenDidChangeNotification, object: nil)
         
         if (FBSDKAccessToken.currentAccessToken() == nil)
         {
@@ -29,7 +31,7 @@ class DataViewController: UIViewController, FBSDKLoginButtonDelegate {
         {
             print("Logged in..")
             print("\(FBSDKAccessToken.currentAccessToken().userID)")
-            //print("\(FBSDKProfile.currentProfile().name)")
+            print("\(FBSDKProfile.currentProfile().name)")
 
             //self.performSegueWithIdentifier("LoggedIn", sender: self)
         }
@@ -72,6 +74,15 @@ class DataViewController: UIViewController, FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)
     {
         print("User logged out...")
+    }
+    // in a LoginViewController.swift
+    func onTokenUpdated(notification: NSNotification) {
+        print(FBSDKProfile.currentProfile().name)
+        if ((FBSDKAccessToken.currentAccessToken()) != nil) {
+            print("token is not nil ")
+        } else {
+            print("token is nil")
+        }
     }
     
 }
