@@ -7,72 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B8FCB4C01B52EEB800061437 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCB4BF1B52EEB700061437 /* AppDelegate.swift */; };
-		B8FCB4C21B52EEB800061437 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCB4C11B52EEB800061437 /* RootViewController.swift */; };
-		B8FCB4C41B52EEB800061437 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCB4C31B52EEB800061437 /* DataViewController.swift */; };
-		B8FCB4C61B52EEB800061437 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCB4C51B52EEB800061437 /* ModelController.swift */; };
-		B8FCB4C91B52EEB800061437 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8FCB4C71B52EEB800061437 /* Main.storyboard */; };
-		B8FCB4CB1B52EEB800061437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8FCB4CA1B52EEB800061437 /* Assets.xcassets */; };
-		B8FCB4D91B52EEB800061437 /* HungryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCB4D81B52EEB800061437 /* HungryTests.swift */; };
-		B8FCB4E41B52EEB800061437 /* HungryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCB4E31B52EEB800061437 /* HungryUITests.swift */; };
-		B8FCB4F31B52EF8F00061437 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8FCB4F11B52EF8F00061437 /* FBSDKCoreKit.framework */; };
-		B8FCB4F41B52EF8F00061437 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8FCB4F21B52EF8F00061437 /* FBSDKLoginKit.framework */; };
+		B8AC465C1B53143300A9A1FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AC465B1B53143300A9A1FD /* AppDelegate.swift */; };
+		B8AC465E1B53143300A9A1FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AC465D1B53143300A9A1FD /* ViewController.swift */; };
+		B8AC46611B53143300A9A1FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AC465F1B53143300A9A1FD /* Main.storyboard */; };
+		B8AC46641B53143300A9A1FD /* Hungry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8AC46621B53143300A9A1FD /* Hungry.xcdatamodeld */; };
+		B8AC46661B53143300A9A1FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8AC46651B53143300A9A1FD /* Assets.xcassets */; };
+		B8AC46741B53143300A9A1FD /* HungryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AC46731B53143300A9A1FD /* HungryTests.swift */; };
+		B8AC467F1B53143300A9A1FD /* HungryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AC467E1B53143300A9A1FD /* HungryUITests.swift */; };
+		B8AC468E1B5314BD00A9A1FD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AC468C1B5314BD00A9A1FD /* FBSDKCoreKit.framework */; };
+		B8AC468F1B5314BD00A9A1FD /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AC468D1B5314BD00A9A1FD /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B8FCB4D51B52EEB800061437 /* PBXContainerItemProxy */ = {
+		B8AC46701B53143300A9A1FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B8FCB4B41B52EEB700061437 /* Project object */;
+			containerPortal = B8AC46501B53143300A9A1FD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B8FCB4BB1B52EEB700061437;
+			remoteGlobalIDString = B8AC46571B53143300A9A1FD;
 			remoteInfo = Hungry;
 		};
-		B8FCB4E01B52EEB800061437 /* PBXContainerItemProxy */ = {
+		B8AC467B1B53143300A9A1FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B8FCB4B41B52EEB700061437 /* Project object */;
+			containerPortal = B8AC46501B53143300A9A1FD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B8FCB4BB1B52EEB700061437;
+			remoteGlobalIDString = B8AC46571B53143300A9A1FD;
 			remoteInfo = Hungry;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B8FCB4BC1B52EEB700061437 /* Hungry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hungry.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8FCB4BF1B52EEB700061437 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B8FCB4C11B52EEB800061437 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		B8FCB4C31B52EEB800061437 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
-		B8FCB4C51B52EEB800061437 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
-		B8FCB4C81B52EEB800061437 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B8FCB4CA1B52EEB800061437 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B8FCB4CF1B52EEB800061437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8FCB4D41B52EEB800061437 /* HungryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HungryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8FCB4D81B52EEB800061437 /* HungryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HungryTests.swift; sourceTree = "<group>"; };
-		B8FCB4DA1B52EEB800061437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8FCB4DF1B52EEB800061437 /* HungryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HungryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8FCB4E31B52EEB800061437 /* HungryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HungryUITests.swift; sourceTree = "<group>"; };
-		B8FCB4E51B52EEB800061437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8FCB4F11B52EF8F00061437 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		B8FCB4F21B52EF8F00061437 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B8AC46581B53143300A9A1FD /* Hungry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hungry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8AC465B1B53143300A9A1FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B8AC465D1B53143300A9A1FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B8AC46601B53143300A9A1FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B8AC46631B53143300A9A1FD /* Hungry.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hungry.xcdatamodel; sourceTree = "<group>"; };
+		B8AC46651B53143300A9A1FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B8AC466A1B53143300A9A1FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8AC466F1B53143300A9A1FD /* HungryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HungryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8AC46731B53143300A9A1FD /* HungryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HungryTests.swift; sourceTree = "<group>"; };
+		B8AC46751B53143300A9A1FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8AC467A1B53143300A9A1FD /* HungryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HungryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8AC467E1B53143300A9A1FD /* HungryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HungryUITests.swift; sourceTree = "<group>"; };
+		B8AC46801B53143300A9A1FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8AC468C1B5314BD00A9A1FD /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		B8AC468D1B5314BD00A9A1FD /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B8FCB4B91B52EEB700061437 /* Frameworks */ = {
+		B8AC46551B53143300A9A1FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8FCB4F31B52EF8F00061437 /* FBSDKCoreKit.framework in Frameworks */,
-				B8FCB4F41B52EF8F00061437 /* FBSDKLoginKit.framework in Frameworks */,
+				B8AC468F1B5314BD00A9A1FD /* FBSDKLoginKit.framework in Frameworks */,
+				B8AC468E1B5314BD00A9A1FD /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8FCB4D11B52EEB800061437 /* Frameworks */ = {
+		B8AC466C1B53143300A9A1FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8FCB4DC1B52EEB800061437 /* Frameworks */ = {
+		B8AC46771B53143300A9A1FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -82,56 +80,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B8FCB4B31B52EEB700061437 = {
+		B8AC464F1B53143300A9A1FD = {
 			isa = PBXGroup;
 			children = (
-				B8FCB4F11B52EF8F00061437 /* FBSDKCoreKit.framework */,
-				B8FCB4F21B52EF8F00061437 /* FBSDKLoginKit.framework */,
-				B8FCB4BE1B52EEB700061437 /* Hungry */,
-				B8FCB4D71B52EEB800061437 /* HungryTests */,
-				B8FCB4E21B52EEB800061437 /* HungryUITests */,
-				B8FCB4BD1B52EEB700061437 /* Products */,
+				B8AC468C1B5314BD00A9A1FD /* FBSDKCoreKit.framework */,
+				B8AC468D1B5314BD00A9A1FD /* FBSDKLoginKit.framework */,
+				B8AC465A1B53143300A9A1FD /* Hungry */,
+				B8AC46721B53143300A9A1FD /* HungryTests */,
+				B8AC467D1B53143300A9A1FD /* HungryUITests */,
+				B8AC46591B53143300A9A1FD /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		B8FCB4BD1B52EEB700061437 /* Products */ = {
+		B8AC46591B53143300A9A1FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B8FCB4BC1B52EEB700061437 /* Hungry.app */,
-				B8FCB4D41B52EEB800061437 /* HungryTests.xctest */,
-				B8FCB4DF1B52EEB800061437 /* HungryUITests.xctest */,
+				B8AC46581B53143300A9A1FD /* Hungry.app */,
+				B8AC466F1B53143300A9A1FD /* HungryTests.xctest */,
+				B8AC467A1B53143300A9A1FD /* HungryUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B8FCB4BE1B52EEB700061437 /* Hungry */ = {
+		B8AC465A1B53143300A9A1FD /* Hungry */ = {
 			isa = PBXGroup;
 			children = (
-				B8FCB4BF1B52EEB700061437 /* AppDelegate.swift */,
-				B8FCB4C11B52EEB800061437 /* RootViewController.swift */,
-				B8FCB4C31B52EEB800061437 /* DataViewController.swift */,
-				B8FCB4C51B52EEB800061437 /* ModelController.swift */,
-				B8FCB4C71B52EEB800061437 /* Main.storyboard */,
-				B8FCB4CA1B52EEB800061437 /* Assets.xcassets */,
-				B8FCB4CF1B52EEB800061437 /* Info.plist */,
+				B8AC465B1B53143300A9A1FD /* AppDelegate.swift */,
+				B8AC465D1B53143300A9A1FD /* ViewController.swift */,
+				B8AC465F1B53143300A9A1FD /* Main.storyboard */,
+				B8AC46651B53143300A9A1FD /* Assets.xcassets */,
+				B8AC466A1B53143300A9A1FD /* Info.plist */,
+				B8AC46621B53143300A9A1FD /* Hungry.xcdatamodeld */,
 			);
 			path = Hungry;
 			sourceTree = "<group>";
 		};
-		B8FCB4D71B52EEB800061437 /* HungryTests */ = {
+		B8AC46721B53143300A9A1FD /* HungryTests */ = {
 			isa = PBXGroup;
 			children = (
-				B8FCB4D81B52EEB800061437 /* HungryTests.swift */,
-				B8FCB4DA1B52EEB800061437 /* Info.plist */,
+				B8AC46731B53143300A9A1FD /* HungryTests.swift */,
+				B8AC46751B53143300A9A1FD /* Info.plist */,
 			);
 			path = HungryTests;
 			sourceTree = "<group>";
 		};
-		B8FCB4E21B52EEB800061437 /* HungryUITests */ = {
+		B8AC467D1B53143300A9A1FD /* HungryUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B8FCB4E31B52EEB800061437 /* HungryUITests.swift */,
-				B8FCB4E51B52EEB800061437 /* Info.plist */,
+				B8AC467E1B53143300A9A1FD /* HungryUITests.swift */,
+				B8AC46801B53143300A9A1FD /* Info.plist */,
 			);
 			path = HungryUITests;
 			sourceTree = "<group>";
@@ -139,13 +136,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B8FCB4BB1B52EEB700061437 /* Hungry */ = {
+		B8AC46571B53143300A9A1FD /* Hungry */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B8FCB4E81B52EEB800061437 /* Build configuration list for PBXNativeTarget "Hungry" */;
+			buildConfigurationList = B8AC46831B53143300A9A1FD /* Build configuration list for PBXNativeTarget "Hungry" */;
 			buildPhases = (
-				B8FCB4B81B52EEB700061437 /* Sources */,
-				B8FCB4B91B52EEB700061437 /* Frameworks */,
-				B8FCB4BA1B52EEB700061437 /* Resources */,
+				B8AC46541B53143300A9A1FD /* Sources */,
+				B8AC46551B53143300A9A1FD /* Frameworks */,
+				B8AC46561B53143300A9A1FD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -153,68 +150,68 @@
 			);
 			name = Hungry;
 			productName = Hungry;
-			productReference = B8FCB4BC1B52EEB700061437 /* Hungry.app */;
+			productReference = B8AC46581B53143300A9A1FD /* Hungry.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B8FCB4D31B52EEB800061437 /* HungryTests */ = {
+		B8AC466E1B53143300A9A1FD /* HungryTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B8FCB4EB1B52EEB800061437 /* Build configuration list for PBXNativeTarget "HungryTests" */;
+			buildConfigurationList = B8AC46861B53143300A9A1FD /* Build configuration list for PBXNativeTarget "HungryTests" */;
 			buildPhases = (
-				B8FCB4D01B52EEB800061437 /* Sources */,
-				B8FCB4D11B52EEB800061437 /* Frameworks */,
-				B8FCB4D21B52EEB800061437 /* Resources */,
+				B8AC466B1B53143300A9A1FD /* Sources */,
+				B8AC466C1B53143300A9A1FD /* Frameworks */,
+				B8AC466D1B53143300A9A1FD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B8FCB4D61B52EEB800061437 /* PBXTargetDependency */,
+				B8AC46711B53143300A9A1FD /* PBXTargetDependency */,
 			);
 			name = HungryTests;
 			productName = HungryTests;
-			productReference = B8FCB4D41B52EEB800061437 /* HungryTests.xctest */;
+			productReference = B8AC466F1B53143300A9A1FD /* HungryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B8FCB4DE1B52EEB800061437 /* HungryUITests */ = {
+		B8AC46791B53143300A9A1FD /* HungryUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B8FCB4EE1B52EEB800061437 /* Build configuration list for PBXNativeTarget "HungryUITests" */;
+			buildConfigurationList = B8AC46891B53143300A9A1FD /* Build configuration list for PBXNativeTarget "HungryUITests" */;
 			buildPhases = (
-				B8FCB4DB1B52EEB800061437 /* Sources */,
-				B8FCB4DC1B52EEB800061437 /* Frameworks */,
-				B8FCB4DD1B52EEB800061437 /* Resources */,
+				B8AC46761B53143300A9A1FD /* Sources */,
+				B8AC46771B53143300A9A1FD /* Frameworks */,
+				B8AC46781B53143300A9A1FD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B8FCB4E11B52EEB800061437 /* PBXTargetDependency */,
+				B8AC467C1B53143300A9A1FD /* PBXTargetDependency */,
 			);
 			name = HungryUITests;
 			productName = HungryUITests;
-			productReference = B8FCB4DF1B52EEB800061437 /* HungryUITests.xctest */;
+			productReference = B8AC467A1B53143300A9A1FD /* HungryUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		B8FCB4B41B52EEB700061437 /* Project object */ = {
+		B8AC46501B53143300A9A1FD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Goran Vukovic";
 				TargetAttributes = {
-					B8FCB4BB1B52EEB700061437 = {
+					B8AC46571B53143300A9A1FD = {
 						CreatedOnToolsVersion = 7.0;
 					};
-					B8FCB4D31B52EEB800061437 = {
+					B8AC466E1B53143300A9A1FD = {
 						CreatedOnToolsVersion = 7.0;
-						TestTargetID = B8FCB4BB1B52EEB700061437;
+						TestTargetID = B8AC46571B53143300A9A1FD;
 					};
-					B8FCB4DE1B52EEB800061437 = {
+					B8AC46791B53143300A9A1FD = {
 						CreatedOnToolsVersion = 7.0;
-						TestTargetID = B8FCB4BB1B52EEB700061437;
+						TestTargetID = B8AC46571B53143300A9A1FD;
 					};
 				};
 			};
-			buildConfigurationList = B8FCB4B71B52EEB700061437 /* Build configuration list for PBXProject "Hungry" */;
+			buildConfigurationList = B8AC46531B53143300A9A1FD /* Build configuration list for PBXProject "Hungry" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -222,36 +219,36 @@
 				en,
 				Base,
 			);
-			mainGroup = B8FCB4B31B52EEB700061437;
-			productRefGroup = B8FCB4BD1B52EEB700061437 /* Products */;
+			mainGroup = B8AC464F1B53143300A9A1FD;
+			productRefGroup = B8AC46591B53143300A9A1FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B8FCB4BB1B52EEB700061437 /* Hungry */,
-				B8FCB4D31B52EEB800061437 /* HungryTests */,
-				B8FCB4DE1B52EEB800061437 /* HungryUITests */,
+				B8AC46571B53143300A9A1FD /* Hungry */,
+				B8AC466E1B53143300A9A1FD /* HungryTests */,
+				B8AC46791B53143300A9A1FD /* HungryUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B8FCB4BA1B52EEB700061437 /* Resources */ = {
+		B8AC46561B53143300A9A1FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8FCB4CB1B52EEB800061437 /* Assets.xcassets in Resources */,
-				B8FCB4C91B52EEB800061437 /* Main.storyboard in Resources */,
+				B8AC46661B53143300A9A1FD /* Assets.xcassets in Resources */,
+				B8AC46611B53143300A9A1FD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8FCB4D21B52EEB800061437 /* Resources */ = {
+		B8AC466D1B53143300A9A1FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8FCB4DD1B52EEB800061437 /* Resources */ = {
+		B8AC46781B53143300A9A1FD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -261,53 +258,52 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B8FCB4B81B52EEB700061437 /* Sources */ = {
+		B8AC46541B53143300A9A1FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8FCB4C21B52EEB800061437 /* RootViewController.swift in Sources */,
-				B8FCB4C61B52EEB800061437 /* ModelController.swift in Sources */,
-				B8FCB4C41B52EEB800061437 /* DataViewController.swift in Sources */,
-				B8FCB4C01B52EEB800061437 /* AppDelegate.swift in Sources */,
+				B8AC46641B53143300A9A1FD /* Hungry.xcdatamodeld in Sources */,
+				B8AC465E1B53143300A9A1FD /* ViewController.swift in Sources */,
+				B8AC465C1B53143300A9A1FD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8FCB4D01B52EEB800061437 /* Sources */ = {
+		B8AC466B1B53143300A9A1FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8FCB4D91B52EEB800061437 /* HungryTests.swift in Sources */,
+				B8AC46741B53143300A9A1FD /* HungryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8FCB4DB1B52EEB800061437 /* Sources */ = {
+		B8AC46761B53143300A9A1FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8FCB4E41B52EEB800061437 /* HungryUITests.swift in Sources */,
+				B8AC467F1B53143300A9A1FD /* HungryUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B8FCB4D61B52EEB800061437 /* PBXTargetDependency */ = {
+		B8AC46711B53143300A9A1FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B8FCB4BB1B52EEB700061437 /* Hungry */;
-			targetProxy = B8FCB4D51B52EEB800061437 /* PBXContainerItemProxy */;
+			target = B8AC46571B53143300A9A1FD /* Hungry */;
+			targetProxy = B8AC46701B53143300A9A1FD /* PBXContainerItemProxy */;
 		};
-		B8FCB4E11B52EEB800061437 /* PBXTargetDependency */ = {
+		B8AC467C1B53143300A9A1FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B8FCB4BB1B52EEB700061437 /* Hungry */;
-			targetProxy = B8FCB4E01B52EEB800061437 /* PBXContainerItemProxy */;
+			target = B8AC46571B53143300A9A1FD /* Hungry */;
+			targetProxy = B8AC467B1B53143300A9A1FD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B8FCB4C71B52EEB800061437 /* Main.storyboard */ = {
+		B8AC465F1B53143300A9A1FD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B8FCB4C81B52EEB800061437 /* Base */,
+				B8AC46601B53143300A9A1FD /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -315,7 +311,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		B8FCB4E61B52EEB800061437 /* Debug */ = {
+		B8AC46811B53143300A9A1FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -359,7 +355,7 @@
 			};
 			name = Debug;
 		};
-		B8FCB4E71B52EEB800061437 /* Release */ = {
+		B8AC46821B53143300A9A1FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -396,13 +392,13 @@
 			};
 			name = Release;
 		};
-		B8FCB4E91B52EEB800061437 /* Debug */ = {
+		B8AC46841B53143300A9A1FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "\"~/Documents/FacebookSDK\"";
+				FRAMEWORK_SEARCH_PATHS = "/Users/$(USER)/Documents/FacebookSDK";
 				INFOPLIST_FILE = Hungry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BeBiGo.Hungry;
@@ -410,13 +406,13 @@
 			};
 			name = Debug;
 		};
-		B8FCB4EA1B52EEB800061437 /* Release */ = {
+		B8AC46851B53143300A9A1FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "\"~/Documents/FacebookSDK\"";
+				FRAMEWORK_SEARCH_PATHS = "/Users/$(USER)/Documents/FacebookSDK";
 				INFOPLIST_FILE = Hungry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BeBiGo.Hungry;
@@ -424,7 +420,7 @@
 			};
 			name = Release;
 		};
-		B8FCB4EC1B52EEB800061437 /* Debug */ = {
+		B8AC46871B53143300A9A1FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -436,7 +432,7 @@
 			};
 			name = Debug;
 		};
-		B8FCB4ED1B52EEB800061437 /* Release */ = {
+		B8AC46881B53143300A9A1FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -448,7 +444,7 @@
 			};
 			name = Release;
 		};
-		B8FCB4EF1B52EEB800061437 /* Debug */ = {
+		B8AC468A1B53143300A9A1FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = HungryUITests/Info.plist;
@@ -460,7 +456,7 @@
 			};
 			name = Debug;
 		};
-		B8FCB4F01B52EEB800061437 /* Release */ = {
+		B8AC468B1B53143300A9A1FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = HungryUITests/Info.plist;
@@ -475,43 +471,56 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B8FCB4B71B52EEB700061437 /* Build configuration list for PBXProject "Hungry" */ = {
+		B8AC46531B53143300A9A1FD /* Build configuration list for PBXProject "Hungry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B8FCB4E61B52EEB800061437 /* Debug */,
-				B8FCB4E71B52EEB800061437 /* Release */,
+				B8AC46811B53143300A9A1FD /* Debug */,
+				B8AC46821B53143300A9A1FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B8FCB4E81B52EEB800061437 /* Build configuration list for PBXNativeTarget "Hungry" */ = {
+		B8AC46831B53143300A9A1FD /* Build configuration list for PBXNativeTarget "Hungry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B8FCB4E91B52EEB800061437 /* Debug */,
-				B8FCB4EA1B52EEB800061437 /* Release */,
+				B8AC46841B53143300A9A1FD /* Debug */,
+				B8AC46851B53143300A9A1FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B8FCB4EB1B52EEB800061437 /* Build configuration list for PBXNativeTarget "HungryTests" */ = {
+		B8AC46861B53143300A9A1FD /* Build configuration list for PBXNativeTarget "HungryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B8FCB4EC1B52EEB800061437 /* Debug */,
-				B8FCB4ED1B52EEB800061437 /* Release */,
+				B8AC46871B53143300A9A1FD /* Debug */,
+				B8AC46881B53143300A9A1FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B8FCB4EE1B52EEB800061437 /* Build configuration list for PBXNativeTarget "HungryUITests" */ = {
+		B8AC46891B53143300A9A1FD /* Build configuration list for PBXNativeTarget "HungryUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B8FCB4EF1B52EEB800061437 /* Debug */,
-				B8FCB4F01B52EEB800061437 /* Release */,
+				B8AC468A1B53143300A9A1FD /* Debug */,
+				B8AC468B1B53143300A9A1FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B8AC46621B53143300A9A1FD /* Hungry.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B8AC46631B53143300A9A1FD /* Hungry.xcdatamodel */,
+			);
+			currentVersion = B8AC46631B53143300A9A1FD /* Hungry.xcdatamodel */;
+			path = Hungry.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = B8FCB4B41B52EEB700061437 /* Project object */;
+	rootObject = B8AC46501B53143300A9A1FD /* Project object */;
 }

@@ -1,60 +1,54 @@
 //
-//  DataViewController.swift
+//  ViewController.swift
 //  Hungry
 //
 //  Created by Goran Vukovic on 12.07.15.
 //  Copyright © 2015 Goran Vukovic. All rights reserved.
 //
-import FBSDKLoginKit
-import FBSDKCoreKit
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
-class DataViewController: UIViewController, FBSDKLoginButtonDelegate {
-
-    @IBOutlet weak var dataLabel: UILabel!
+class ViewController: UIViewController, FBSDKLoginButtonDelegate
+{
     
-    var dataObject: String = ""
-    
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         
         FBSDKProfile.enableUpdatesOnAccessTokenChange(true)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onProfileUpdated:", name:FBSDKAccessTokenDidChangeNotification, object: nil)
         
         if (FBSDKAccessToken.currentAccessToken() == nil)
         {
-            print("Not logged in..")
+            print("Not logged in...")
         }
         else
         {
-            print("Logged in..")
+            print("Logged in...")
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "onProfileUpdated:", name:FBSDKAccessTokenDidChangeNotification, object: nil)
             print("\(FBSDKAccessToken.currentAccessToken().userID)")
             print("\(FBSDKProfile.currentProfile().name)")
 
-            //self.performSegueWithIdentifier("LoggedIn", sender: self)
+            //self.performSegueWithIdentifier("test", sender: self)
         }
         
         let loginButton = FBSDKLoginButton()
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
         loginButton.center = self.view.center
+        loginButton.enabled = true
         loginButton.delegate = self
         self.view.addSubview(loginButton)
-    
+        
     }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.dataLabel!.text = dataObject
-    }
-
-
+    
     // MARK: - Facebook Login
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!)
@@ -62,7 +56,9 @@ class DataViewController: UIViewController, FBSDKLoginButtonDelegate {
         if error == nil
         {
             print("Login complete.")
-            self.performSegueWithIdentifier("showFB_Login", sender: self)
+            self.performSegueWithIdentifier("showNew", sender: self)
+            //print("\(FBSDKProfile.currentProfile().name)")
+
         }
         else
         {
@@ -75,7 +71,7 @@ class DataViewController: UIViewController, FBSDKLoginButtonDelegate {
     {
         print("User logged out...")
     }
-    // in a LoginViewController.swift
+    
     func onTokenUpdated(notification: NSNotification) {
         print(FBSDKProfile.currentProfile().name)
         if ((FBSDKAccessToken.currentAccessToken()) != nil) {
@@ -86,3 +82,5 @@ class DataViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
 }
+
+

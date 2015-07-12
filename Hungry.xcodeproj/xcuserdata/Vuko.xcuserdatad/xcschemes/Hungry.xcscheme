@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B8FCB4BB1B52EEB700061437"
+               BlueprintIdentifier = "B8AC46571B53143300A9A1FD"
                BuildableName = "Hungry.app"
                BlueprintName = "Hungry"
                ReferencedContainer = "container:Hungry.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B8FCB4D31B52EEB800061437"
+               BlueprintIdentifier = "B8AC466E1B53143300A9A1FD"
                BuildableName = "HungryTests.xctest"
                BlueprintName = "HungryTests"
                ReferencedContainer = "container:Hungry.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B8FCB4DE1B52EEB800061437"
+               BlueprintIdentifier = "B8AC46791B53143300A9A1FD"
                BuildableName = "HungryUITests.xctest"
                BlueprintName = "HungryUITests"
                ReferencedContainer = "container:Hungry.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B8FCB4BB1B52EEB700061437"
+            BlueprintIdentifier = "B8AC46571B53143300A9A1FD"
             BuildableName = "Hungry.app"
             BlueprintName = "Hungry"
             ReferencedContainer = "container:Hungry.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B8FCB4BB1B52EEB700061437"
+            BlueprintIdentifier = "B8AC46571B53143300A9A1FD"
             BuildableName = "Hungry.app"
             BlueprintName = "Hungry"
             ReferencedContainer = "container:Hungry.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B8FCB4BB1B52EEB700061437"
+            BlueprintIdentifier = "B8AC46571B53143300A9A1FD"
             BuildableName = "Hungry.app"
             BlueprintName = "Hungry"
             ReferencedContainer = "container:Hungry.xcodeproj">
