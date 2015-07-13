@@ -16,6 +16,8 @@
 		B8AC467F1B53143300A9A1FD /* HungryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AC467E1B53143300A9A1FD /* HungryUITests.swift */; };
 		B8AC468E1B5314BD00A9A1FD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AC468C1B5314BD00A9A1FD /* FBSDKCoreKit.framework */; };
 		B8AC468F1B5314BD00A9A1FD /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AC468D1B5314BD00A9A1FD /* FBSDKLoginKit.framework */; };
+		B8C454021B54249600A80437 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C454011B54249600A80437 /* SecondViewController.swift */; };
+		B8C454041B54263B00A80437 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8C454031B54263B00A80437 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		B8AC46801B53143300A9A1FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8AC468C1B5314BD00A9A1FD /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B8AC468D1B5314BD00A9A1FD /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B8C454011B54249600A80437 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		B8C454031B54263B00A80437 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		B8AC464F1B53143300A9A1FD = {
 			isa = PBXGroup;
 			children = (
+				B8C454031B54263B00A80437 /* Default-568h@2x.png */,
 				B8AC468C1B5314BD00A9A1FD /* FBSDKCoreKit.framework */,
 				B8AC468D1B5314BD00A9A1FD /* FBSDKLoginKit.framework */,
 				B8AC465A1B53143300A9A1FD /* Hungry */,
@@ -107,6 +112,7 @@
 			children = (
 				B8AC465B1B53143300A9A1FD /* AppDelegate.swift */,
 				B8AC465D1B53143300A9A1FD /* ViewController.swift */,
+				B8C454011B54249600A80437 /* SecondViewController.swift */,
 				B8AC465F1B53143300A9A1FD /* Main.storyboard */,
 				B8AC46651B53143300A9A1FD /* Assets.xcassets */,
 				B8AC466A1B53143300A9A1FD /* Info.plist */,
@@ -238,6 +244,7 @@
 			files = (
 				B8AC46661B53143300A9A1FD /* Assets.xcassets in Resources */,
 				B8AC46611B53143300A9A1FD /* Main.storyboard in Resources */,
+				B8C454041B54263B00A80437 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8C454021B54249600A80437 /* SecondViewController.swift in Sources */,
 				B8AC46641B53143300A9A1FD /* Hungry.xcdatamodeld in Sources */,
 				B8AC465E1B53143300A9A1FD /* ViewController.swift in Sources */,
 				B8AC465C1B53143300A9A1FD /* AppDelegate.swift in Sources */,

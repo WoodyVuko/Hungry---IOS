@@ -12,6 +12,8 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate
 {
+    @IBOutlet weak var Name: UILabel!
+    @IBOutlet weak var Button: UIButton!
     
     override func viewDidLoad()
     {
@@ -30,8 +32,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "onProfileUpdated:", name:FBSDKAccessTokenDidChangeNotification, object: nil)
             print("\(FBSDKAccessToken.currentAccessToken().userID)")
             print("\(FBSDKProfile.currentProfile().name)")
-
+            self.Name.text = FBSDKProfile.currentProfile().name
             //self.performSegueWithIdentifier("test", sender: self)
+            self.dismissViewControllerAnimated(true, completion: nil)
+
+            self.performSegueWithIdentifier("test", sender: self)
         }
         
         let loginButton = FBSDKLoginButton()
@@ -80,6 +85,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate
             print("token is nil")
         }
     }
+    
+    @IBAction func clickButton(sender : AnyObject) {
+        self.Name.text = "Ja, " + FBSDKProfile.currentProfile().firstName + "?"
+    }
+    
     
 }
 
