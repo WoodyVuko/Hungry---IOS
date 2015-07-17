@@ -31,9 +31,9 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         getCategoriesJSON()
         self.tableView.centerXAnchor
         self.tableView.reloadData()
-        
     }
     
+    // MARK: - GetJSON Categories
     
     func getCategoriesJSON()
     {
@@ -92,11 +92,14 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     */
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //print("You selected cell #\(indexPath.row)!")
         print(textArray.objectAtIndex(indexPath.row))
         
-    
+        let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController
+        next.chosenCategorie = textArray.objectAtIndex(indexPath.row) as! String
+        self.presentViewController(next, animated: true, completion: nil)
     }
+    
+
 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

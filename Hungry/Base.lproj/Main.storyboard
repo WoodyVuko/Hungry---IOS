@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pqQ-lx-HtC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pqQ-lx-HtC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
     </dependencies>
@@ -14,12 +14,12 @@
                     <navigationItem key="navigationItem" id="hnC-oV-2NH"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="txD-82-QOg" kind="presentation" identifier="showNew" modalPresentationStyle="overFullScreen" id="TcU-6b-EZk"/>
+                        <segue destination="txD-82-QOg" kind="modal" identifier="showNew" modalPresentationStyle="overFullScreen" id="TcU-6b-EZk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TS1-kb-MqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2564" y="416"/>
+            <point key="canvasLocation" x="1367.4666666666667" y="393.81333333333333"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ngf-L1-tBe">
@@ -45,7 +45,7 @@
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="clickButton:" destination="txD-82-QOg" eventType="touchUpInside" id="eNV-dT-FoS"/>
-                                    <segue destination="pqQ-lx-HtC" kind="show" identifier="test" id="RlO-zh-qc8"/>
+                                    <segue destination="pqQ-lx-HtC" kind="modal" identifier="test" id="RlO-zh-qc8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -59,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pw7-9a-xJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3254" y="383"/>
+            <point key="canvasLocation" x="1735.4666666666667" y="362.57333333333332"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="Fmo-sN-uyk">
@@ -103,7 +103,55 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpz-Tr-riH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3853" y="296"/>
+            <point key="canvasLocation" x="2054.9333333333334" y="280.21333333333331"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="dYv-As-IKm">
+            <objects>
+                <viewController storyboardIdentifier="ThirdViewController" id="z3Q-kP-KdV" customClass="ThirdViewController" customModule="Hungry" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7O6-vt-Dqr"/>
+                        <viewControllerLayoutGuide type="bottom" id="W6T-w4-zKE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" id="mre-yQ-Nuw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxp-hv-jUP">
+                                <rect key="frame" x="12" y="55" width="296" height="333"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6X-Pc-a7d">
+                                <rect key="frame" x="12" y="396" width="113" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fs-E0-BVk">
+                                <rect key="frame" x="190" y="401" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bildschirmfoto 2015-07-13 um 20.32.08.png" translatesAutoresizingMaskIntoConstraints="NO" id="04V-aI-QAO">
+                                <rect key="frame" x="250" y="389" width="22" height="38"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEv-FV-Olt">
+                                <rect key="frame" x="278" y="401" width="30" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="name" destination="j6X-Pc-a7d" id="QzO-Eu-3yk"/>
+                        <outlet property="pic" destination="dxp-hv-jUP" id="lnf-fe-WRa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ho8-Dv-Ahh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2513" y="296"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jBN-gl-aRg">
@@ -121,8 +169,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIz-Cd-xwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1752" y="416"/>
+            <point key="canvasLocation" x="934.39999999999998" y="393.81333333333333"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Bildschirmfoto 2015-07-13 um 20.32.08.png" width="438" height="173"/>
+    </resources>
     <color key="tintColor" red="0.97826086960000003" green="0.2230766599" blue="0.21070753489999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

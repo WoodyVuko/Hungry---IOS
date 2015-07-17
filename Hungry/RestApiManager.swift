@@ -17,15 +17,16 @@ class RestApiManager: NSObject{
     static let sharedInstance = RestApiManager()
     
     let baseURL = "http://hungry.biancabaier.de/json/category.php"
-    /*let baseURL = "http://hungry.biancabaier.de/json/locations.php?category=abc"
-    for result in json["locations"].arrayValue {
-    let id = result["id"].stringValue
-    let categories = result["categories"].arrayValue
-    print("ID: " + id + "Categories:")
-    print(categories[0]) */
+    let localURL = "http://hungry.biancabaier.de/json/locations.php?category=abc"
     
-    func getCategories(onCompletion: (JSON) ->Void){
+    func getCategories(onCompletion: (JSON) ->Void)
+    {
         makeHTTPGetRequest(baseURL, onCompletion: {json, err -> Void in onCompletion(json)})
+    }
+    
+    func getLocals(onCompletion: (JSON) ->Void)
+    {
+        makeHTTPGetRequest(localURL, onCompletion: {json, err -> Void in onCompletion(json)})
     }
     
     
