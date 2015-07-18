@@ -18,7 +18,9 @@ class ThirdViewController: UIViewController
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var pic: UIImageView!
     
-    @IBOutlet weak var tmp: UIView!
+    @IBOutlet weak var tmpOne: UIView!
+    @IBOutlet weak var tmpTwo: UIView!
+    @IBOutlet weak var tmpThree: UIView!
     
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var hearts: UILabel!
@@ -27,7 +29,10 @@ class ThirdViewController: UIViewController
     static var arrayJSON : [JSONData] = [JSONData]()
     var counter: Int = 0
     var maximum: Int = 3
-
+    
+    var location = CGPoint(x: 0, y: 0)
+    var order : Int = 1;
+    
     var chosenCategorie: String = ""
     
     override func viewDidLoad()
@@ -59,18 +64,26 @@ class ThirdViewController: UIViewController
             
             if data != nil {
                 //pic?.image = UIImage(data:data!)
-                tmp.setValue(UIImage(data:data!), forKeyPath: "image")
+                tmpOne.setValue(UIImage(data:data!), forKeyPath: "image")
+                tmpTwo.setValue(UIImage(data:data!), forKeyPath: "image")
+                tmpThree.setValue(UIImage(data:data!), forKeyPath: "image")
 
             }
             
             // Name
-            tmp.setValue(ThirdViewController.arrayJSON[counter].getTitle() + ",", forKeyPath: "title")
+        tmpOne.setValue(ThirdViewController.arrayJSON[counter].getTitle() + ",", forKeyPath: "title")
+        tmpTwo.setValue(ThirdViewController.arrayJSON[counter+1].getTitle() + ",", forKeyPath: "title")
+        tmpThree.setValue(ThirdViewController.arrayJSON[counter+2].getTitle() + ",", forKeyPath: "title")
+        
+        // Hearts
+        tmpOne.setValue(String(ThirdViewController.arrayJSON[counter].getHearts()), forKeyPath: "heart")
+        tmpTwo.setValue(String(ThirdViewController.arrayJSON[counter+1].getHearts()), forKeyPath: "heart")
+        tmpThree.setValue(String(ThirdViewController.arrayJSON[counter+2].getHearts()), forKeyPath: "heart")
 
-            // Hearts
-            tmp.setValue(String(ThirdViewController.arrayJSON[counter].getHearts()), forKeyPath: "heart")
-
-            // Rating
-            tmp.setValue(String(ThirdViewController.arrayJSON[counter].getRating()), forKeyPath: "rating")
+        // Rating
+        tmpOne.setValue(String(ThirdViewController.arrayJSON[counter].getRating()), forKeyPath: "rating")
+        tmpTwo.setValue(String(ThirdViewController.arrayJSON[counter+1].getRating()), forKeyPath: "rating")
+        tmpThree.setValue(String(ThirdViewController.arrayJSON[counter+2].getRating()), forKeyPath: "rating")
         
             /*
             print(ThirdViewController.arrayJSON[0].getTitle())
@@ -98,25 +111,219 @@ class ThirdViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
+   /*
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
+            
+            location = touch.locationInView(self.view)
+            
+            tmpOne.center.y = location.y - 100
+            tmpOne.center.x = location.x
+
+        }
+        super.touchesBegan(touches, withEvent:event)
+    }
+*/
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
+            
+            location = touch.locationInView(self.view)
+            
+            //tmpOne.center.y = location.y - 100
+            if(order == 1)
+            {
+                tmpOne.center.x = location.x
+            }
+            else if(order == 2)
+            {
+                tmpTwo.center.x = location.x
+            }
+            else if(order == 3)
+            {
+                tmpThree.center.x = location.x
+            }
+            
+            //print(tmpOne.center)
+            if(location.x <= 63)
+            {
+                //print("Decline" + String(tmpOne.alpha))
+                helpDistance(true)
+   
+            }
+            else if(location.x >= 257)
+            {
+                //print("Acceppt" + String(tmpOne.alpha))
+                helpDistance(false)
+
+            }
+            else
+            {
+                //print(" ")
+                //tmpOne.alpha = 1
+            }
+        }
+        super.touchesBegan(touches, withEvent:event)
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
+            
+            location = touch.locationInView(self.view)
+            
+            helpOrder()
+            
+            
+        }
+        super.touchesBegan(touches, withEvent:event)
+
+    }
+    
+    func helpOrder()
+    {
+        switch(order)
+        {
+        case(1):
+            tmpOne.center.x = location.x
+            //print(tmpOne.center)
+            if(location.x <= 63)
+            {
+                print("Decline Nr. " + String(order))
+                self.view.sendSubviewToBack(tmpOne)
+            }
+            else if(location.x >= 257)
+            {
+                print("Acceppt Nr. " + String(order))
+                self.view.sendSubviewToBack(tmpOne)
+            }
+            order++
+            break
+        case(2):
+            tmpTwo.center.x = location.x
+            //print(tmpOne.center)
+            if(location.x <= 63)
+            {
+                print("Decline Nr. " + String(order))
+                self.view.sendSubviewToBack(tmpTwo)
+            }
+            else if(location.x >= 257)
+            {
+                print("Acceppt Nr. " + String(order))
+                self.view.sendSubviewToBack(tmpTwo)
+            }
+            order++
+            break
+        case(3):
+            tmpThree.center.x = location.x
+            //print(tmpOne.center)
+            if(location.x <= 63)
+            {
+                print("Decline Nr. " + String(order))
+                self.view.sendSubviewToBack(tmpThree)
+            }
+            else if(location.x >= 257)
+            {
+                print("Acceppt Nr. " + String(order))
+                self.view.sendSubviewToBack(tmpThree)
+            }
+            order = 1
+            break
+        default:
+
+            break
+            
+        }
+    }
+    
+    func helpDistance(let left: Bool)
+    {
+        /*
+        if(left == true)
+        {
+            if(tmpOne.alpha > 0.3)
+            {
+                tmpOne.alpha -= 0.1
+            }
+            else
+            {
+                tmpOne.alpha = 0.3
+            }
+        }
+        else
+        {
+            if(tmpOne.alpha < 1)
+            {
+                tmpOne.alpha += 0.1
+            }
+            else
+            {
+                tmpOne.alpha = 1.0
+            }
+        }
+        */
+    }
+    
+    
+    func cancelOrder()
+    {
+        switch(order)
+        {
+        case(1):
+                print("Decline Nr. " + String(order))
+                self.view.sendSubviewToBack(tmpOne)
+            order++
+            break
+        case(2):
+                print("Decline Nr. " + String(order))
+                self.view.sendSubviewToBack(tmpTwo)
+            order++
+            break
+        case(3):
+                print("Decline Nr. " + String(order))
+                self.view.sendSubviewToBack(tmpThree)
+            order = 1
+            break
+        default:
+            
+            break
+            
+        }
+    }
+    
+    func acceptOrder()
+    {
+        switch(order)
+        {
+        case(1):
+                print("Acceppt Nr. " + String(order))
+                self.view.sendSubviewToBack(tmpOne)
+            order++
+            break
+        case(2):
+                print("Acceppt Nr. " + String(order))
+                self.view.sendSubviewToBack(tmpTwo)
+            order++
+            break
+        case(3):
+                print("Acceppt Nr. " + String(order))
+                self.view.sendSubviewToBack(tmpThree)
+            order = 1
+            break
+        default:
+            
+            break
+            
+        }
+    }
+    
+    
     @IBAction func Cancel(sender: AnyObject)
     {
-        print("Cancel!!!")
-        
-            
-        
-        UIViewController.reloadInputViews(self)()
+        cancelOrder()
     }
     @IBAction func Confirm(sender: AnyObject)
     {
-        print("Confirm!!!")
-        counter += 1;
-        print(counter)
-        let viewControllers: [UIViewController] = [UIViewController()]
-        if let pageViewController = parentViewController as? UIPageViewController {
-            pageViewController.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
-        }
-        
-        
+        acceptOrder()
     }
     
     // MARK: - GetJSON Categories

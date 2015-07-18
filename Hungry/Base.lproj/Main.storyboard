@@ -122,6 +122,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9np-Vz-dcX" customClass="Widget" customModule="Hungry" customModuleProvider="target">
+                                <rect key="frame" x="10" y="67" width="300" height="398"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="HHs-aT-esS"/>
+                                    <constraint firstAttribute="height" constant="150" id="R7N-mY-QGx"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="Load.png"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="searching.."/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heart" value=""/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="rating" value=""/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DeI-Xn-t8e" customClass="Widget" customModule="Hungry" customModuleProvider="target">
+                                <rect key="frame" x="10" y="67" width="300" height="398"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Av3-W7-OHa"/>
+                                    <constraint firstAttribute="width" constant="300" id="tdg-CL-Wak"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="Load.png"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="searching.."/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heart" value=""/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="rating" value=""/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVi-jp-bbb" customClass="Widget" customModule="Hungry" customModuleProvider="target">
                                 <rect key="frame" x="10" y="67" width="300" height="398"/>
                                 <constraints>
@@ -163,7 +189,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="tmp" destination="DVi-jp-bbb" id="bfJ-9J-HH3"/>
+                        <outlet property="tmpOne" destination="DVi-jp-bbb" id="zEX-h9-TV3"/>
+                        <outlet property="tmpThree" destination="9np-Vz-dcX" id="Q4R-tb-b9X"/>
+                        <outlet property="tmpTwo" destination="DeI-Xn-t8e" id="lKX-x4-MKS"/>
                         <outlet property="view" destination="mre-yQ-Nuw" id="BQA-z3-zZS"/>
                     </connections>
                 </viewController>
