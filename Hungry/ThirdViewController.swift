@@ -18,6 +18,11 @@ class ThirdViewController: UIViewController
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var pic: UIImageView!
     
+    @IBOutlet weak var tmp: UIView!
+    
+    @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var hearts: UILabel!
+    
     var data: NSData?
     static var arrayJSON : [JSONData] = [JSONData]()
     var counter: Int = 0
@@ -45,29 +50,38 @@ class ThirdViewController: UIViewController
     
     override func viewDidAppear(animated: Bool) {
         print(ThirdViewController.arrayJSON.count)
-        if(counter < maximum)
-        {
+        //if(counter < maximum)
+        //{
             // Picture
-            let url = NSURL(string: ThirdViewController.arrayJSON[0].getImages())
+        
+        let url = NSURL(string: ThirdViewController.arrayJSON[counter].getImages())
             data = NSData(contentsOfURL:url!)
             
             if data != nil {
-                pic?.image = UIImage(data:data!)
+                //pic?.image = UIImage(data:data!)
+                tmp.setValue(UIImage(data:data!), forKeyPath: "image")
+
             }
             
             // Name
-            name.text = ThirdViewController.arrayJSON[0].getTitle()
+            tmp.setValue(ThirdViewController.arrayJSON[counter].getTitle() + ",", forKeyPath: "title")
 
+            // Hearts
+            tmp.setValue(String(ThirdViewController.arrayJSON[counter].getHearts()), forKeyPath: "heart")
+
+            // Rating
+            tmp.setValue(String(ThirdViewController.arrayJSON[counter].getRating()), forKeyPath: "rating")
+        
             /*
             print(ThirdViewController.arrayJSON[0].getTitle())
             print(ThirdViewController.arrayJSON[0].getImages())
-            */
+
         }
         else
         {
             counter += 1
             //ThirdViewController.arrayJSON.removeLast()
-        }
+        }*/
         /*
         for(var i : Int = 0; i < ThirdViewController.arrayJSON.count; i++)
         {
@@ -84,6 +98,26 @@ class ThirdViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func Cancel(sender: AnyObject)
+    {
+        print("Cancel!!!")
+        
+            
+        
+        UIViewController.reloadInputViews(self)()
+    }
+    @IBAction func Confirm(sender: AnyObject)
+    {
+        print("Confirm!!!")
+        counter += 1;
+        print(counter)
+        let viewControllers: [UIViewController] = [UIViewController()]
+        if let pageViewController = parentViewController as? UIPageViewController {
+            pageViewController.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
+        }
+        
+        
+    }
     
     // MARK: - GetJSON Categories
     

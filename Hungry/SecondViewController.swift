@@ -59,6 +59,19 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             }
     }
     
+    func getRandomColor() -> UIColor{
+        
+        let randomRed:CGFloat = CGFloat(drand48())
+        
+        let randomGreen:CGFloat = CGFloat(drand48())
+        
+        let randomBlue:CGFloat = CGFloat(drand48())
+        
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+        
+    }
+    
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -114,21 +127,64 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         switch(indexPath.row)
         {
         case(0):
-            cell!.backgroundColor = UIColor.orangeColor()
+            cell!.backgroundColor = getRandomColor()
             break
         case(1):
-            cell!.backgroundColor = UIColor.redColor()
+            cell!.backgroundColor = getRandomColor()
             break
         case(2):
-            cell!.backgroundColor = UIColor.blueColor()
+            cell!.backgroundColor = getRandomColor()
             break
         case(3):
-            cell!.backgroundColor = UIColor.yellowColor()
+            cell!.backgroundColor = getRandomColor()
             break
-            
+        case(4):
+            cell!.backgroundColor = getRandomColor()
+            break
+        case(5):
+            cell!.backgroundColor = getRandomColor()
+            break
+        case(6):
+            cell!.backgroundColor = getRandomColor()
+            break
+        case(7):
+            cell!.backgroundColor = getRandomColor()
+            break
+        case(8):
+            cell!.backgroundColor = getRandomColor()
+            break
+        case(9):
+            cell!.backgroundColor = getRandomColor()
+            break
+        case(10):
+            cell!.backgroundColor = getRandomColor()
+            break
+        case(11):
+            cell!.backgroundColor = getRandomColor()
+            break
+        case(12):
+            cell!.backgroundColor = getRandomColor()
+            break
+        case(13):
+            cell!.backgroundColor = getRandomColor()
+            break
+        case(14):
+            cell!.backgroundColor = getRandomColor()
+            break
+        case(15):
+            cell!.backgroundColor = getRandomColor()
+            break
+        case(16):
+            cell!.backgroundColor = getRandomColor()
+            break
+        case(17):
+            cell!.backgroundColor = getRandomColor()
+            break
+        case(18):
+            cell!.backgroundColor = getRandomColor()
+            break
         default:
-            cell!.backgroundColor = UIColor.whiteColor()
-
+            cell!.backgroundColor = getRandomColor()
             break
             
         }

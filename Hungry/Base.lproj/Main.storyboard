@@ -3,6 +3,11 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="fX0-wr-YN7">
@@ -117,36 +122,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dxp-hv-jUP">
-                                <rect key="frame" x="12" y="55" width="296" height="333"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6X-Pc-a7d">
-                                <rect key="frame" x="12" y="396" width="113" height="31"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVi-jp-bbb" customClass="Widget" customModule="Hungry" customModuleProvider="target">
+                                <rect key="frame" x="10" y="67" width="300" height="398"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="4V2-ec-bZ3"/>
+                                    <constraint firstAttribute="height" constant="150" id="Bmu-JR-OJD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="Load.png"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="searching.."/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heart" value=""/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="rating" value=""/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hungry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYc-P4-8mp">
+                                <rect key="frame" x="106" y="13" width="108" height="34"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="26"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fs-E0-BVk">
-                                <rect key="frame" x="190" y="401" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bildschirmfoto 2015-07-13 um 20.32.08.png" translatesAutoresizingMaskIntoConstraints="NO" id="04V-aI-QAO">
-                                <rect key="frame" x="250" y="389" width="22" height="38"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEv-FV-Olt">
-                                <rect key="frame" x="278" y="401" width="30" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9R5-1B-kDd">
+                                <rect key="frame" x="192" y="473" width="73" height="67"/>
+                                <state key="normal" backgroundImage="Mark.png">
+                                    <color key="titleShadowColor" red="0.97826086960000003" green="0.2230766599" blue="0.21070753489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="Confirm:" destination="z3Q-kP-KdV" eventType="touchUpInside" id="WKH-Kt-ItJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiL-oL-FtA">
+                                <rect key="frame" x="61" y="473" width="73" height="67"/>
+                                <state key="normal" backgroundImage="Cancel.png">
+                                    <color key="titleShadowColor" red="0.97826086960000003" green="0.2230766599" blue="0.21070753489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="Cancel:" destination="z3Q-kP-KdV" eventType="touchUpInside" id="PQj-bh-1Vk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="name" destination="j6X-Pc-a7d" id="QzO-Eu-3yk"/>
-                        <outlet property="pic" destination="dxp-hv-jUP" id="lnf-fe-WRa"/>
+                        <outlet property="tmp" destination="DVi-jp-bbb" id="bfJ-9J-HH3"/>
+                        <outlet property="view" destination="mre-yQ-Nuw" id="BQA-z3-zZS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ho8-Dv-Ahh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -171,9 +189,28 @@
             </objects>
             <point key="canvasLocation" x="934.39999999999998" y="393.81333333333333"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="LvO-Z2-tga">
+            <objects>
+                <viewController id="7Al-bf-4m6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YEf-6Q-RKe"/>
+                        <viewControllerLayoutGuide type="bottom" id="23b-8i-CPK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IQs-dr-Ivd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vfb-1T-z03" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
-        <image name="Bildschirmfoto 2015-07-13 um 20.32.08.png" width="438" height="173"/>
+        <image name="Cancel.png" width="42" height="38"/>
+        <image name="Load.png" width="640" height="1096"/>
+        <image name="Mark.png" width="42" height="38"/>
     </resources>
     <color key="tintColor" red="0.97826086960000003" green="0.2230766599" blue="0.21070753489999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>
