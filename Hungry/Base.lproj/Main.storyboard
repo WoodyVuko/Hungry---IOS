@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pqQ-lx-HtC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="pqQ-lx-HtC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
     </dependencies>
@@ -32,22 +32,20 @@
         <scene sceneID="ngf-L1-tBe">
             <objects>
                 <viewController id="txD-82-QOg" customClass="ViewController" customModule="Hungry" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ky0-xG-dQu"/>
-                        <viewControllerLayoutGuide type="bottom" id="THu-2v-3dT"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ghX-Ia-guF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdG-Za-Ndi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jdG-Za-Ndi">
                                 <rect key="frame" x="67" y="20" width="255" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfc-bF-0LW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Dfc-bF-0LW">
                                 <rect key="frame" x="6" y="20" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.90806912956191888" blue="0.0039412848687485624" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -116,20 +114,13 @@
         <scene sceneID="dYv-As-IKm">
             <objects>
                 <viewController storyboardIdentifier="ThirdViewController" id="z3Q-kP-KdV" customClass="ThirdViewController" customModule="Hungry" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7O6-vt-Dqr"/>
-                        <viewControllerLayoutGuide type="bottom" id="W6T-w4-zKE"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleAspectFit" id="mre-yQ-Nuw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9np-Vz-dcX" customClass="Widget" customModule="Hungry" customModuleProvider="target">
-                                <rect key="frame" x="10" y="67" width="300" height="398"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="HHs-aT-esS"/>
-                                    <constraint firstAttribute="height" constant="150" id="R7N-mY-QGx"/>
-                                </constraints>
+                            <view contentMode="scaleToFill" id="DeI-Xn-t8e" customClass="Widget" customModule="Hungry" customModuleProvider="target">
+                                <rect key="frame" x="10" y="67" width="300" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="Load.png"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="searching.."/>
@@ -137,12 +128,9 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="rating" value=""/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DeI-Xn-t8e" customClass="Widget" customModule="Hungry" customModuleProvider="target">
-                                <rect key="frame" x="10" y="67" width="300" height="398"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="Av3-W7-OHa"/>
-                                    <constraint firstAttribute="width" constant="300" id="tdg-CL-Wak"/>
-                                </constraints>
+                            <view contentMode="scaleToFill" id="DVi-jp-bbb" customClass="Widget" customModule="Hungry" customModuleProvider="target">
+                                <rect key="frame" x="10" y="67" width="300" height="339"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="Load.png"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="searching.."/>
@@ -150,36 +138,16 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="rating" value=""/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVi-jp-bbb" customClass="Widget" customModule="Hungry" customModuleProvider="target">
-                                <rect key="frame" x="10" y="67" width="300" height="398"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="4V2-ec-bZ3"/>
-                                    <constraint firstAttribute="height" constant="150" id="Bmu-JR-OJD"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="Load.png"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="searching.."/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heart" value=""/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="rating" value=""/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hungry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYc-P4-8mp">
-                                <rect key="frame" x="106" y="13" width="108" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hungry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AYc-P4-8mp">
+                                <rect key="frame" x="121" y="16" width="78" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="26"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9R5-1B-kDd">
-                                <rect key="frame" x="192" y="473" width="73" height="67"/>
-                                <state key="normal" backgroundImage="Mark.png">
-                                    <color key="titleShadowColor" red="0.97826086960000003" green="0.2230766599" blue="0.21070753489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="Confirm:" destination="z3Q-kP-KdV" eventType="touchUpInside" id="WKH-Kt-ItJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiL-oL-FtA">
-                                <rect key="frame" x="61" y="473" width="73" height="67"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IiL-oL-FtA">
+                                <rect key="frame" x="14" y="431" width="120" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Cancel.png">
                                     <color key="titleShadowColor" red="0.97826086960000003" green="0.2230766599" blue="0.21070753489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -187,8 +155,9 @@
                                     <action selector="Cancel:" destination="z3Q-kP-KdV" eventType="touchUpInside" id="PQj-bh-1Vk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wh5-4O-vlb">
-                                <rect key="frame" x="149" y="496" width="22" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="wh5-4O-vlb">
+                                <rect key="frame" x="149" y="475" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.90644728539999997" blue="0.67677758359999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -197,12 +166,21 @@
                                     <action selector="Information:" destination="z3Q-kP-KdV" eventType="touchUpInside" id="0VW-SR-uET"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9R5-1B-kDd">
+                                <rect key="frame" x="202" y="431" width="98" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Mark.png">
+                                    <color key="titleShadowColor" red="0.97826086960000003" green="0.2230766599" blue="0.21070753489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="Confirm:" destination="z3Q-kP-KdV" eventType="touchUpInside" id="WKH-Kt-ItJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="tmpOne" destination="DVi-jp-bbb" id="zEX-h9-TV3"/>
-                        <outlet property="tmpThree" destination="9np-Vz-dcX" id="Q4R-tb-b9X"/>
                         <outlet property="tmpTwo" destination="DeI-Xn-t8e" id="lKX-x4-MKS"/>
                         <outlet property="view" destination="mre-yQ-Nuw" id="BQA-z3-zZS"/>
                     </connections>
@@ -233,10 +211,6 @@
         <scene sceneID="LvO-Z2-tga">
             <objects>
                 <viewController id="7Al-bf-4m6" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YEf-6Q-RKe"/>
-                        <viewControllerLayoutGuide type="bottom" id="23b-8i-CPK"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IQs-dr-Ivd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,20 +224,13 @@
         <scene sceneID="x0q-Wd-LdA">
             <objects>
                 <viewController storyboardIdentifier="ThirdViewControllerDetail" id="GmQ-Bj-jZq" customClass="ThirdViewControllerDetail" customModule="Hungry" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zgI-IX-0EX"/>
-                        <viewControllerLayoutGuide type="bottom" id="quX-RL-oOr"/>
-                    </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFit" id="YwW-1e-eBm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view tag="3" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SbQ-dE-wGA" customClass="Widget" customModule="Hungry" customModuleProvider="target">
+                            <view tag="3" contentMode="scaleToFill" id="SbQ-dE-wGA" customClass="Widget" customModule="Hungry" customModuleProvider="target">
                                 <rect key="frame" x="10" y="67" width="300" height="0.0"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="332" id="WWV-Ld-Ik8"/>
-                                    <constraint firstAttribute="width" constant="300" id="wdq-It-uaC"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="Load.png"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="searching.."/>
@@ -271,17 +238,20 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="rating" value=""/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hungry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eif-r7-vPu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hungry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eif-r7-vPu">
                                 <rect key="frame" x="106" y="13" width="108" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="26"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="map" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HHR-yr-OHw">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" restorationIdentifier="map" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" id="HHR-yr-OHw">
                                 <rect key="frame" x="0.0" y="444" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DM0-6v-UHi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DM0-6v-UHi">
                                 <rect key="frame" x="274" y="444" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Stars.png" backgroundImage="Default.png"/>
                                 <connections>
                                     <action selector="makeMap:" destination="GmQ-Bj-jZq" eventType="touchUpInside" id="ckf-dQ-5vc"/>
@@ -304,35 +274,35 @@
         <scene sceneID="jdG-MM-7ZN">
             <objects>
                 <viewController storyboardIdentifier="MapDetailController" id="jU7-f8-FRp" customClass="MapDetailController" customModule="Hungry" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="J7P-k7-KLQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="6y9-7I-oGs"/>
-                    </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFit" id="EcQ-sT-G7i">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hungry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCo-PS-mqw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hungry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pCo-PS-mqw">
                                 <rect key="frame" x="106" y="13" width="108" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="26"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="map" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmK-dW-VdS">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" restorationIdentifier="map" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" id="hmK-dW-VdS">
                                 <rect key="frame" x="0.0" y="55" width="320" height="513"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="EcQ-sT-G7i" id="Qh5-Ee-6pG"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9X-aV-5qb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="m9X-aV-5qb">
                                 <rect key="frame" x="270" y="55" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Stars.png" backgroundImage="Default.png"/>
                                 <connections>
                                     <action selector="closeMap:" destination="jU7-f8-FRp" eventType="touchUpInside" id="cWf-9W-EXb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IcK-LC-WjU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IcK-LC-WjU">
                                 <rect key="frame" x="201" y="69" width="61" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go To"/>
                                 <connections>
                                     <action selector="mapButtonTapped:" destination="jU7-f8-FRp" eventType="touchUpInside" id="mt8-qx-aFN"/>

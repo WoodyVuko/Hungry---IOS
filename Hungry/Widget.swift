@@ -20,36 +20,36 @@ import UIKit
 
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBInspectable var image: UIImage? {
+    @IBInspectable var image: UIImage {
         get {
-            return imageView.image
+            return imageView.image!
         }
         set(image) {
             imageView.image = image
         }
     }
     
-    @IBInspectable var title: String? {
+    @IBInspectable var title: String {
         get {
-            return titleLabel.text
+            return titleLabel.text!
         }
         set(title) {
             titleLabel.text = title
         }
     }
     
-    @IBInspectable var heart: String? {
+    @IBInspectable var heart: String {
         get {
-            return heartLabel.text
+            return heartLabel.text!
         }
         set(heart) {
             heartLabel.text = heart
         }
     }
    
-    @IBInspectable var rating: String? {
+    @IBInspectable var rating: String {
         get {
-            return ratingLabel.text
+            return ratingLabel.text!
         }
         set(rating) {
             ratingLabel.text = rating

@@ -18,10 +18,6 @@ class ThirdViewController: UIViewController
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var pic: UIImageView!
     
-    @IBOutlet weak var tmpOne: UIView!
-    @IBOutlet weak var tmpTwo: UIView!
-    @IBOutlet weak var tmpThree: UIView!
-    
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var hearts: UILabel!
     
@@ -34,7 +30,9 @@ class ThirdViewController: UIViewController
     var order : Int = 1;
     
     var chosenCategorie: String = ""
-    
+
+    var tmpOne: Widget = Widget(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 300, height: 369)))
+    var tmpTwo: Widget = Widget(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 300, height: 369)))
 
     override func viewDidLoad()
     {
@@ -46,67 +44,46 @@ class ThirdViewController: UIViewController
         getDataJSON()
 
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
+        tmpOne.tag = 1
+        tmpTwo.tag = 2
+        self.view.addSubview(tmpOne)
+        self.view.addSubview(tmpTwo)
 
-        /*
-        for(var i : Int = 0; i < ThirdViewController.arrayJSON.count; i++)
-        {
-            print(ThirdViewController.arrayJSON[i].getTitle())
-            print(ThirdViewController.arrayJSON[i].getImages())
-        }
-        */
     }
-    
+
     override func viewDidAppear(animated: Bool) {
         print(ThirdViewController.arrayJSON.count)
-        //if(counter < maximum)
-        //{
-            // Picture
-        
-        let url = NSURL(string: ThirdViewController.arrayJSON[counter].getImages())
-            data = NSData(contentsOfURL:url!)
-            
-            if data != nil {
-                //pic?.image = UIImage(data:data!)
-                tmpOne.setValue(UIImage(data:data!), forKeyPath: "image")
-                tmpTwo.setValue(UIImage(data:data!), forKeyPath: "image")
-                tmpThree.setValue(UIImage(data:data!), forKeyPath: "image")
 
-            }
-            
-            // Name
-        tmpOne.setValue(ThirdViewController.arrayJSON[counter].getTitle() + ",", forKeyPath: "title")
-        tmpTwo.setValue(ThirdViewController.arrayJSON[counter+1].getTitle() + ",", forKeyPath: "title")
-        tmpThree.setValue(ThirdViewController.arrayJSON[counter+2].getTitle() + ",", forKeyPath: "title")
+        // Fill Data
+        fillData(tmpOne, count: counter)
+        fillData(tmpTwo, count: counter+1)
         
-        // Hearts
-        tmpOne.setValue(String(ThirdViewController.arrayJSON[counter].getHearts()), forKeyPath: "heart")
-        tmpTwo.setValue(String(ThirdViewController.arrayJSON[counter+1].getHearts()), forKeyPath: "heart")
-        tmpThree.setValue(String(ThirdViewController.arrayJSON[counter+2].getHearts()), forKeyPath: "heart")
-
-        // Rating
-        tmpOne.setValue(String(ThirdViewController.arrayJSON[counter].getRating()), forKeyPath: "rating")
-        tmpTwo.setValue(String(ThirdViewController.arrayJSON[counter+1].getRating()), forKeyPath: "rating")
-        tmpThree.setValue(String(ThirdViewController.arrayJSON[counter+2].getRating()), forKeyPath: "rating")
-        
-            /*
-            print(ThirdViewController.arrayJSON[0].getTitle())
-            print(ThirdViewController.arrayJSON[0].getImages())
-
-        }
-        else
-        {
-            counter += 1
-            //ThirdViewController.arrayJSON.removeLast()
-        }*/
-        /*
-        for(var i : Int = 0; i < ThirdViewController.arrayJSON.count; i++)
-        {
-            print(ThirdViewController.arrayJSON[i].getTitle())
-            print(ThirdViewController.arrayJSON[i].getImages())
-        }
-        */
     }
     
+    func fillData(tmp: Widget, count: Int) -> Widget
+    {
+        // Picture
+        
+        let url = NSURL(string: ThirdViewController.arrayJSON[count].getImages())
+        data = NSData(contentsOfURL:url!)
+        
+        if data != nil {
+            //pic?.image = UIImage(data:data!)
+            tmp.image = UIImage(data:data!)!
+            
+        }
+        
+        // Name
+        tmp.title = ThirdViewController.arrayJSON[count].getTitle()
+        
+        // Hearts
+        tmp.heart = String(ThirdViewController.arrayJSON[count].getHearts())
+        
+        // Rating
+        tmp.rating = String(ThirdViewController.arrayJSON[count].getRating())
+        
+        return tmp
+    }
     
     override func didReceiveMemoryWarning()
     {
@@ -145,7 +122,7 @@ class ThirdViewController: UIViewController
         }
         super.touchesBegan(touches, withEvent:event)
     }
-*/
+
 
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let touch = touches.first {
@@ -368,7 +345,7 @@ class ThirdViewController: UIViewController
             
         }
     }
-    
+    */
     // MARK: Buttons
     
     @IBAction func Information(sender: AnyObject)
@@ -390,11 +367,6 @@ class ThirdViewController: UIViewController
         case(2):
                 print("Decline Nr. " + String(order))
                 self.view.sendSubviewToBack(tmpTwo)
-            order++
-            break
-        case(3):
-                print("Decline Nr. " + String(order))
-                self.view.sendSubviewToBack(tmpThree)
             order = 1
             break
         default:
@@ -416,11 +388,6 @@ class ThirdViewController: UIViewController
         case(2):
                 print("Acceppt Nr. " + String(order))
                 self.view.sendSubviewToBack(tmpTwo)
-            order++
-            break
-        case(3):
-                print("Acceppt Nr. " + String(order))
-                self.view.sendSubviewToBack(tmpThree)
             order = 1
             break
         default:
