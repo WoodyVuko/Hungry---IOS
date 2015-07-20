@@ -15,8 +15,8 @@ class JSONData
     private var address : String = ""
     private var zip : Int = 0
     private var city : String = ""
-    private var lat : Float = 0.0
-    private var lon : Float = 0.0
+    private var lat : Double = 0.0
+    private var lon : Double = 0.0
     private var categorie : String = ""
     private var rating : Float = 0.0
     private var open : Bool = false
@@ -26,7 +26,7 @@ class JSONData
     private var distance : Float = 0.0
     private var description : String = ""
     
-    func loadIn(id : Int, google_id : String, yelp_id : Int, title : String, address : String, zip : Int, city : String, lat : Float, lon : Float, categorie : String, rating : Float, open : Bool, opening_hours : String, images : String, hearts : Int, distance : Float, description : String)
+    func loadIn(id : Int, google_id : String, yelp_id : Int, title : String, address : String, zip : Int, city : String, lat : Double, lon : Double, categorie : String, rating : Float, open : Bool, opening_hours : String, images : String, hearts : Int, distance : Float, description : String)
     {
         self.id = id;
         self.google_id = google_id
@@ -87,12 +87,12 @@ class JSONData
         return self.city
     }
     
-    func getLat() -> Float
+    func getLat() -> Double
     {
         return self.lat
     }
     
-    func getLon() -> Float
+    func getLon() -> Double
     {
         return self.lon
     }

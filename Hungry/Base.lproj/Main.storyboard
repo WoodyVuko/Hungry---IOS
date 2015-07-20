@@ -6,6 +6,8 @@
     <customFonts key="customFonts">
         <mutableArray key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Thin</string>
+            <string>HelveticaNeue-Thin</string>
+            <string>HelveticaNeue-Thin</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -185,6 +187,16 @@
                                     <action selector="Cancel:" destination="z3Q-kP-KdV" eventType="touchUpInside" id="PQj-bh-1Vk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wh5-4O-vlb">
+                                <rect key="frame" x="149" y="496" width="22" height="22"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.90644728539999997" blue="0.67677758359999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="Information:" destination="z3Q-kP-KdV" eventType="touchUpInside" id="0VW-SR-uET"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -234,11 +246,117 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfb-1T-z03" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Third View Controller Detail-->
+        <scene sceneID="x0q-Wd-LdA">
+            <objects>
+                <viewController storyboardIdentifier="ThirdViewControllerDetail" id="GmQ-Bj-jZq" customClass="ThirdViewControllerDetail" customModule="Hungry" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zgI-IX-0EX"/>
+                        <viewControllerLayoutGuide type="bottom" id="quX-RL-oOr"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFit" id="YwW-1e-eBm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="3" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SbQ-dE-wGA" customClass="Widget" customModule="Hungry" customModuleProvider="target">
+                                <rect key="frame" x="10" y="67" width="300" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="332" id="WWV-Ld-Ik8"/>
+                                    <constraint firstAttribute="width" constant="300" id="wdq-It-uaC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="Load.png"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="searching.."/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heart" value=""/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="rating" value=""/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hungry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eif-r7-vPu">
+                                <rect key="frame" x="106" y="13" width="108" height="34"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="26"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="map" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HHR-yr-OHw">
+                                <rect key="frame" x="0.0" y="444" width="320" height="70"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DM0-6v-UHi">
+                                <rect key="frame" x="274" y="444" width="50" height="50"/>
+                                <state key="normal" image="Stars.png" backgroundImage="Default.png"/>
+                                <connections>
+                                    <action selector="makeMap:" destination="GmQ-Bj-jZq" eventType="touchUpInside" id="ckf-dQ-5vc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="HHR-yr-OHw" id="MoM-oQ-bHh"/>
+                        <outlet property="tmpOne" destination="SbQ-dE-wGA" id="G4h-Cc-ze5"/>
+                        <outlet property="view" destination="YwW-1e-eBm" id="3Mp-Zo-DTK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7kE-Pd-PmS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2892" y="296"/>
+        </scene>
+        <!--Map Detail Controller-->
+        <scene sceneID="jdG-MM-7ZN">
+            <objects>
+                <viewController storyboardIdentifier="MapDetailController" id="jU7-f8-FRp" customClass="MapDetailController" customModule="Hungry" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J7P-k7-KLQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="6y9-7I-oGs"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFit" id="EcQ-sT-G7i">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hungry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCo-PS-mqw">
+                                <rect key="frame" x="106" y="13" width="108" height="34"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="26"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="map" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmK-dW-VdS">
+                                <rect key="frame" x="0.0" y="55" width="320" height="513"/>
+                                <connections>
+                                    <outlet property="delegate" destination="EcQ-sT-G7i" id="Qh5-Ee-6pG"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9X-aV-5qb">
+                                <rect key="frame" x="270" y="55" width="50" height="50"/>
+                                <state key="normal" image="Stars.png" backgroundImage="Default.png"/>
+                                <connections>
+                                    <action selector="closeMap:" destination="jU7-f8-FRp" eventType="touchUpInside" id="cWf-9W-EXb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IcK-LC-WjU">
+                                <rect key="frame" x="201" y="69" width="61" height="22"/>
+                                <state key="normal" title="Go To"/>
+                                <connections>
+                                    <action selector="mapButtonTapped:" destination="jU7-f8-FRp" eventType="touchUpInside" id="mt8-qx-aFN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="hmK-dW-VdS" id="pLv-KW-kVh"/>
+                        <outlet property="view" destination="EcQ-sT-G7i" id="rjW-Mw-NQe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cma-Iq-cKY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3247" y="296"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Cancel.png" width="42" height="38"/>
+        <image name="Default.png" width="640" height="1096"/>
         <image name="Load.png" width="640" height="1096"/>
         <image name="Mark.png" width="42" height="38"/>
+        <image name="Stars.png" width="28" height="25"/>
     </resources>
     <color key="tintColor" red="0.97826086960000003" green="0.2230766599" blue="0.21070753489999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

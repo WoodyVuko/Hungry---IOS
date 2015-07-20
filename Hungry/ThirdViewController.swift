@@ -35,6 +35,7 @@ class ThirdViewController: UIViewController
     
     var chosenCategorie: String = ""
     
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -43,6 +44,8 @@ class ThirdViewController: UIViewController
         
         // getData
         getDataJSON()
+
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
 
         /*
         for(var i : Int = 0; i < ThirdViewController.arrayJSON.count; i++)
@@ -117,20 +120,39 @@ class ThirdViewController: UIViewController
             
             location = touch.locationInView(self.view)
             
-            tmpOne.center.y = location.y - 100
-            tmpOne.center.x = location.x
+            // tmpOne.center.y = location.y - 100
+            // tmpOne.center.x = location.x
+            
+
+            if(order == 1)
+            {
+                let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewControllerDetail") as! ThirdViewControllerDetail
+                next.tmpOne = tmpOne
+                next.tmpTwo = tmpTwo
+                next.tmpThree = tmpThree
+                self.presentViewController(next, animated: true, completion: nil)
+
+            }
+            else if(order == 2)
+            {
+                tmpTwo.center.x = location.x
+            }
+            else if(order == 3)
+            {
+                tmpThree.center.x = location.x
+            }
 
         }
         super.touchesBegan(touches, withEvent:event)
     }
 */
-    
+
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let touch = touches.first {
-            
+
             location = touch.locationInView(self.view)
             
-            //tmpOne.center.y = location.y - 100
+            // Check which Object is Active
             if(order == 1)
             {
                 tmpOne.center.x = location.x
@@ -147,20 +169,32 @@ class ThirdViewController: UIViewController
             //print(tmpOne.center)
             if(location.x <= 63)
             {
-                //print("Decline" + String(tmpOne.alpha))
+                print("Decline" + String(tmpOne.alpha))
                 helpDistance(true)
    
             }
             else if(location.x >= 257)
             {
-                //print("Acceppt" + String(tmpOne.alpha))
+                print("Acceppt" + String(tmpOne.alpha))
                 helpDistance(false)
 
             }
             else
             {
-                //print(" ")
-                //tmpOne.alpha = 1
+                /* Center if stopped...
+                if(order == 1)
+                {
+                    tmpOne.center.x = touches.first
+                }
+                else if(order == 2)
+                {
+                    tmpTwo.center.x = location.x
+                }
+                else if(order == 3)
+                {
+                    tmpThree.center.x = location.x
+                }
+                */
             }
         }
         super.touchesBegan(touches, withEvent:event)
@@ -170,14 +204,15 @@ class ThirdViewController: UIViewController
         if let touch = touches.first {
             
             location = touch.locationInView(self.view)
-            
-            helpOrder()
+            //helpOrder()
             
             
         }
         super.touchesBegan(touches, withEvent:event)
 
     }
+    
+    // MARK: Help Classes
     
     func helpOrder()
     {
@@ -190,13 +225,18 @@ class ThirdViewController: UIViewController
             {
                 print("Decline Nr. " + String(order))
                 self.view.sendSubviewToBack(tmpOne)
+                order++
+                // Reset Alpha
+                tmpOne.alpha = 1.0
             }
             else if(location.x >= 257)
             {
                 print("Acceppt Nr. " + String(order))
                 self.view.sendSubviewToBack(tmpOne)
+                order++
+                // Reset Alpha
+                tmpOne.alpha = 1.0
             }
-            order++
             break
         case(2):
             tmpTwo.center.x = location.x
@@ -205,13 +245,18 @@ class ThirdViewController: UIViewController
             {
                 print("Decline Nr. " + String(order))
                 self.view.sendSubviewToBack(tmpTwo)
+                order++
+                // Reset Alpha
+                tmpTwo.alpha = 1.0
             }
             else if(location.x >= 257)
             {
                 print("Acceppt Nr. " + String(order))
                 self.view.sendSubviewToBack(tmpTwo)
+                order++
+                // Reset Alpha
+                tmpTwo.alpha = 1.0
             }
-            order++
             break
         case(3):
             tmpThree.center.x = location.x
@@ -220,13 +265,19 @@ class ThirdViewController: UIViewController
             {
                 print("Decline Nr. " + String(order))
                 self.view.sendSubviewToBack(tmpThree)
+                order = 1
+                // Reset Alpha
+                tmpThree.alpha = 1.0
             }
             else if(location.x >= 257)
             {
                 print("Acceppt Nr. " + String(order))
                 self.view.sendSubviewToBack(tmpThree)
+                order = 1
+                // Reset Alpha
+                tmpThree.alpha = 1.0
             }
-            order = 1
+            
             break
         default:
 
@@ -237,32 +288,95 @@ class ThirdViewController: UIViewController
     
     func helpDistance(let left: Bool)
     {
-        /*
-        if(left == true)
+        switch(order)
         {
-            if(tmpOne.alpha > 0.3)
+        case(1):
+            if(left == true)
             {
-                tmpOne.alpha -= 0.1
+                if(tmpOne.alpha > 0.3)
+                {
+                    tmpOne.alpha -= 0.1
+                }
+                else
+                {
+                    tmpOne.alpha = 0.3
+                }
             }
             else
             {
-                tmpOne.alpha = 0.3
+                if(tmpOne.alpha < 1)
+                {
+                    tmpOne.alpha += 0.1
+                }
+                else
+                {
+                    tmpOne.alpha = 1.0
+                }
             }
-        }
-        else
-        {
-            if(tmpOne.alpha < 1)
+            break
+        case(2):
+            if(left == true)
             {
-                tmpOne.alpha += 0.1
+                if(tmpTwo.alpha > 0.3)
+                {
+                    tmpTwo.alpha -= 0.1
+                }
+                else
+                {
+                    tmpTwo.alpha = 0.3
+                }
             }
             else
             {
-                tmpOne.alpha = 1.0
+                if(tmpTwo.alpha < 1)
+                {
+                    tmpTwo.alpha += 0.1
+                }
+                else
+                {
+                    tmpTwo.alpha = 1.0
+                }
             }
+            break
+        case(3):
+            if(left == true)
+            {
+                if(tmpThree.alpha > 0.3)
+                {
+                    tmpThree.alpha -= 0.1
+                }
+                else
+                {
+                    tmpThree.alpha = 0.3
+                }
+            }
+            else
+            {
+                if(tmpThree.alpha < 1)
+                {
+                    tmpThree.alpha += 0.1
+                }
+                else
+                {
+                    tmpThree.alpha = 1.0
+                }
+            }
+            break
+        default:
+            
+            break
+            
         }
-        */
     }
     
+    // MARK: Buttons
+    
+    @IBAction func Information(sender: AnyObject)
+    {
+        let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewControllerDetail") as! ThirdViewControllerDetail
+        next.tmp = ThirdViewController.arrayJSON[counter]
+        self.presentViewController(next, animated: true, completion: nil)
+    }
     
     func cancelOrder()
     {
@@ -319,11 +433,11 @@ class ThirdViewController: UIViewController
     
     @IBAction func Cancel(sender: AnyObject)
     {
-        cancelOrder()
+        //cancelOrder()
     }
     @IBAction func Confirm(sender: AnyObject)
     {
-        acceptOrder()
+        //acceptOrder()
     }
     
     // MARK: - GetJSON Categories
@@ -346,8 +460,8 @@ class ThirdViewController: UIViewController
                 let address = result["address"].stringValue
                 let zip = result["zip"].intValue
                 let city = result["city"].stringValue
-                let lat = result["lat"].floatValue
-                let lon = result["lon"].floatValue
+                let lat = result["lat"].doubleValue
+                let lon = result["lon"].doubleValue
                 let categories = result["categories"].stringValue
                 let rating = result["rating"].floatValue
                 let open = result["open"].boolValue
