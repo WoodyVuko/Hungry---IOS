@@ -28,12 +28,13 @@ class ThirdViewController: UIViewController
     
     var location = CGPoint(x: 0, y: 0)
     var order : Int = 1;
+    var touchChoose : Int = 1
     
     var chosenCategorie: String = ""
-
-    var tmpOne: Widget = Widget(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 300, height: 369)))
-    var tmpTwo: Widget = Widget(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 300, height: 369)))
-
+    
+    var tmpOne: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
+    var tmpTwo: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369))) // 300, 369
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -44,11 +45,15 @@ class ThirdViewController: UIViewController
         getDataJSON()
 
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
-        tmpOne.tag = 1
-        tmpTwo.tag = 2
-        self.view.addSubview(tmpOne)
-        self.view.addSubview(tmpTwo)
 
+        tmpOne.setTa(1)
+        tmpTwo.setTa(2)
+        self.view.addSubview(tmpTwo)
+        self.view.addSubview(tmpOne)
+        
+        
+        
+    
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -57,6 +62,9 @@ class ThirdViewController: UIViewController
         // Fill Data
         fillData(tmpOne, count: counter)
         fillData(tmpTwo, count: counter+1)
+        
+
+        
         
     }
     
@@ -91,99 +99,86 @@ class ThirdViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
-   /*
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let touch = touches.first {
             
-            location = touch.locationInView(self.view)
+            /* Abgleich zwischen Objekten für Bewegung..*/
             
-            // tmpOne.center.y = location.y - 100
-            // tmpOne.center.x = location.x
+            /*
+            print("Touch!")
+            print(touch.view!.tag)
+
+            print("Touches")
+            print(touches.first!.view!.tag)
+
+            */
             
+           if(( touch.view!.tag == touches.first!.view!.tag) && touch.view!.tag == 1)
+            {
+                //print("1. Geklickt!")
+            }
+            else
+            if(( touch.view!.tag == touches.first!.view!.tag) && touch.view!.tag == 2)
+            {
+                //print("2. Geklickt!")
+            }
+            else
+            if(( touch.view!.tag == touches.first!.view!.tag) && touch.view!.tag == 3)
+            {
+                print("Pic")
+            }
+            else
+            {
+                print("Außerhalb!")
 
-            if(order == 1)
-            {
-                let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewControllerDetail") as! ThirdViewControllerDetail
-                next.tmpOne = tmpOne
-                next.tmpTwo = tmpTwo
-                next.tmpThree = tmpThree
-                self.presentViewController(next, animated: true, completion: nil)
+            }
 
-            }
-            else if(order == 2)
-            {
-                tmpTwo.center.x = location.x
-            }
-            else if(order == 3)
-            {
-                tmpThree.center.x = location.x
-            }
 
         }
         super.touchesBegan(touches, withEvent:event)
     }
-
-
+    
+  
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let touch = touches.first {
-
+        if let touch = touches.first
+        {
             location = touch.locationInView(self.view)
-            
-            // Check which Object is Active
-            if(order == 1)
-            {
-                tmpOne.center.x = location.x
-            }
-            else if(order == 2)
-            {
-                tmpTwo.center.x = location.x
-            }
-            else if(order == 3)
-            {
-                tmpThree.center.x = location.x
-            }
-            
-            //print(tmpOne.center)
-            if(location.x <= 63)
-            {
-                print("Decline" + String(tmpOne.alpha))
-                helpDistance(true)
-   
-            }
-            else if(location.x >= 257)
-            {
-                print("Acceppt" + String(tmpOne.alpha))
-                helpDistance(false)
 
-            }
-            else
+            switch(touchChoose)
             {
-                /* Center if stopped...
-                if(order == 1)
-                {
-                    tmpOne.center.x = touches.first
-                }
-                else if(order == 2)
-                {
-                    tmpTwo.center.x = location.x
-                }
-                else if(order == 3)
-                {
-                    tmpThree.center.x = location.x
-                }
-                */
+            case(1):
+                alphaFunction()
+                tmpOne.center.x = location.x
+                break
+            case(2):
+                alphaFunction()
+                tmpTwo.center.x = location.x
+                break
+            default:
+                break
             }
+            super.touchesBegan(touches, withEvent:event)
         }
-        super.touchesBegan(touches, withEvent:event)
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let touch = touches.first {
             
             location = touch.locationInView(self.view)
-            //helpOrder()
             
-            
+            switch(touchChoose)
+            {
+            case(1):
+                helpOrder()
+                tmpOne.center.x = location.x
+                break
+            case(2):
+                helpOrder()
+                tmpTwo.center.x = location.x
+                break
+            default:
+                break
+            }
         }
         super.touchesBegan(touches, withEvent:event)
 
@@ -196,65 +191,39 @@ class ThirdViewController: UIViewController
         switch(order)
         {
         case(1):
-            tmpOne.center.x = location.x
-            //print(tmpOne.center)
             if(location.x <= 63)
             {
-                print("Decline Nr. " + String(order))
-                self.view.sendSubviewToBack(tmpOne)
-                order++
-                // Reset Alpha
-                tmpOne.alpha = 1.0
+                resetWidget("resetTmpOne")
             }
-            else if(location.x >= 257)
+            else if(location.x >= 237)
             {
-                print("Acceppt Nr. " + String(order))
-                self.view.sendSubviewToBack(tmpOne)
-                order++
-                // Reset Alpha
-                tmpOne.alpha = 1.0
+                resetWidget("resetTmpOne")
             }
-            break
-        case(2):
-            tmpTwo.center.x = location.x
-            //print(tmpOne.center)
-            if(location.x <= 63)
+            else
             {
-                print("Decline Nr. " + String(order))
-                self.view.sendSubviewToBack(tmpTwo)
-                order++
-                // Reset Alpha
-                tmpTwo.alpha = 1.0
-            }
-            else if(location.x >= 257)
-            {
-                print("Acceppt Nr. " + String(order))
-                self.view.sendSubviewToBack(tmpTwo)
-                order++
-                // Reset Alpha
-                tmpTwo.alpha = 1.0
-            }
-            break
-        case(3):
-            tmpThree.center.x = location.x
-            //print(tmpOne.center)
-            if(location.x <= 63)
-            {
-                print("Decline Nr. " + String(order))
-                self.view.sendSubviewToBack(tmpThree)
-                order = 1
-                // Reset Alpha
-                tmpThree.alpha = 1.0
-            }
-            else if(location.x >= 257)
-            {
-                print("Acceppt Nr. " + String(order))
-                self.view.sendSubviewToBack(tmpThree)
-                order = 1
-                // Reset Alpha
-                tmpThree.alpha = 1.0
+                let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewControllerDetail") as! ThirdViewControllerDetail
+                next.tmp = ThirdViewController.arrayJSON[counter]
+                next.touchChoose = self.touchChoose
+                self.presentViewController(next, animated: true, completion: nil)
             }
             
+            break
+        case(2):
+            if(location.x <= 63)
+            {
+                resetWidget("resetTmpTwo")
+            }
+            else if(location.x >= 237)
+            {
+                resetWidget("resetTmpTwo")
+            }
+            else
+            {
+                let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewControllerDetail") as! ThirdViewControllerDetail
+                next.tmp = ThirdViewController.arrayJSON[counter]
+                next.touchChoose = self.touchChoose
+                self.presentViewController(next, animated: true, completion: nil)
+            }
             break
         default:
 
@@ -263,8 +232,47 @@ class ThirdViewController: UIViewController
         }
     }
     
+    func resetWidget(tmp : String)
+    {
+        if(tmp == "resetTmpOne")
+        {
+            self.view.sendSubviewToBack(tmpOne)
+            tmpOne.center = CGPoint(x: 160, y: 250)
+            order = 2
+            tmpOne.alpha = 1
+            touchChoose = 2
+        }
+        else if(tmp == "resetTmpTwo")
+        {
+            self.view.sendSubviewToBack(tmpTwo)
+            tmpTwo.center = CGPoint(x: 160, y: 250)
+            tmpTwo.alpha = 1
+            order = 1
+            touchChoose = 1
+        }
+    }
+    
+    func alphaFunction()
+    {
+        if(location.x <= 63)
+        {
+            helpDistance(true)
+            
+        }
+        else if(location.x >= 237)
+        {
+            helpDistance(false)
+            
+        }
+        else
+        {
+            helpDistance(false)
+        }
+        
+    }
     func helpDistance(let left: Bool)
     {
+        print("Order: " + String(order))
         switch(order)
         {
         case(1):
@@ -315,84 +323,100 @@ class ThirdViewController: UIViewController
                 }
             }
             break
-        case(3):
-            if(left == true)
-            {
-                if(tmpThree.alpha > 0.3)
-                {
-                    tmpThree.alpha -= 0.1
-                }
-                else
-                {
-                    tmpThree.alpha = 0.3
-                }
-            }
-            else
-            {
-                if(tmpThree.alpha < 1)
-                {
-                    tmpThree.alpha += 0.1
-                }
-                else
-                {
-                    tmpThree.alpha = 1.0
-                }
-            }
-            break
-        default:
-            
+            default:
             break
             
         }
     }
-    */
+    
     // MARK: Buttons
     
     @IBAction func Information(sender: AnyObject)
     {
         let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewControllerDetail") as! ThirdViewControllerDetail
         next.tmp = ThirdViewController.arrayJSON[counter]
+        next.touchChoose = self.touchChoose
         self.presentViewController(next, animated: true, completion: nil)
     }
     
     func cancelOrder()
     {
-        switch(order)
+        if(touchChoose == 1)
         {
-        case(1):
-                print("Decline Nr. " + String(order))
-                self.view.sendSubviewToBack(tmpOne)
-            order++
-            break
-        case(2):
-                print("Decline Nr. " + String(order))
-                self.view.sendSubviewToBack(tmpTwo)
-            order = 1
-            break
-        default:
-            
-            break
+            switch(order)
+            {
+            case(1):
+                resetWidget("resetTmpOne")
+                touchChoose = 2
+                break
+            case(2):
+                resetWidget("resetTmpTwo")
+                touchChoose = 1
+                break
+            default:
+                break
+            }
+        }
+        else if(touchChoose == 2)
+        {
+            switch(order)
+            {
+            case(1):
+                resetWidget("resetTmpOne")
+                touchChoose = 2
+                break
+            case(2):
+                resetWidget("resetTmpTwo")
+                touchChoose = 1
+                break
+            default:
+                break
+            }
+        }
+        else
+        {
             
         }
+            
+        
     }
     
     func acceptOrder()
     {
-        switch(order)
+        if(touchChoose == 1)
         {
-        case(1):
-                print("Acceppt Nr. " + String(order))
-                self.view.sendSubviewToBack(tmpOne)
-            order++
-            break
-        case(2):
-                print("Acceppt Nr. " + String(order))
-                self.view.sendSubviewToBack(tmpTwo)
-            order = 1
-            break
-        default:
-            
-            break
+            switch(order)
+            {
+            case(1):
+                resetWidget("resetTmpOne")
+                touchChoose = 2
+                break
+            case(2):
+                resetWidget("resetTmpTwo")
+                touchChoose = 1
+                break
+            default:
+                break
+            }
+        }
+        else if(touchChoose == 2)
+        {
+            switch(order)
+            {
+            case(1):
+                resetWidget("resetTmpOne")
+                touchChoose = 2
+                break
+            case(2):
+                resetWidget("resetTmpTwo")
+                touchChoose = 1
+                break
+            default:
+                break
+            }
+        }
+        else
+        {
             
         }
     }
@@ -400,11 +424,11 @@ class ThirdViewController: UIViewController
     
     @IBAction func Cancel(sender: AnyObject)
     {
-        //cancelOrder()
+        cancelOrder()
     }
     @IBAction func Confirm(sender: AnyObject)
     {
-        //acceptOrder()
+        acceptOrder()
     }
     
     // MARK: - GetJSON Categories

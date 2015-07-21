@@ -77,7 +77,6 @@ import UIKit
     
     func setup() {
         view = loadViewFromNib()
-        
         view.frame = bounds
         view.autoresizingMask = UIViewAutoresizing.FlexibleHeight
         view.autoresizingMask = UIViewAutoresizing.FlexibleWidth
@@ -92,6 +91,11 @@ import UIKit
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         
         return view
+    }
+    
+    func setTa(t : Int)
+    {
+        view.tag = t
     }
     
     

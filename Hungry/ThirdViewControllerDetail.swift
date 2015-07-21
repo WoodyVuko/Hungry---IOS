@@ -34,7 +34,8 @@ class ThirdViewControllerDetail: UIViewController
     
     var location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     let regionRadius: CLLocationDistance = 1000
-    
+    var touchChoose : Int = 0
+
 
 
     override func viewDidLoad()
@@ -54,10 +55,11 @@ class ThirdViewControllerDetail: UIViewController
         centerMapOnLocation(initialLocation)
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
+        
+        print(touchChoose)
     }
     
     override func viewDidAppear(animated: Bool) {
-        print(ThirdViewController.arrayJSON.count)
         //if(counter < maximum)
         //{
             // Picture
@@ -106,43 +108,9 @@ class ThirdViewControllerDetail: UIViewController
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let touch = touches.first {
-            
-
-           // print(touch.view?.viewWithTag(2))
-            //touches.
-           
-            if (touches.first!.view! == self.view!.viewWithTag(3)!.viewWithTag(3))  {
-                let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController
-
-                self.presentViewController(next, animated: true, completion: nil)
-            }
-           
-            if (touches.first!.view! == self.view!.viewWithTag(2)!)  {
-                print("Map!!")
-            }
-            /*
-            if (touch.view!.viewWithTag(3) == tmpOne)  {
-                print("Widget, done")
-                
-            }
-            */
-            //print(touches.first!.view!)
-            //print(self.view!.viewWithTag(2)!)
-            
-            let tapCount = touch.tapCount
-            
-            switch tapCount {
-                case 1:
-                    
-                break
-            case 2:
-               // print("Doppelt!")
-
-                return
-            default: break
-            }
-            
+        if let touch = event?.touchesForView(self.tmpOne)
+        {
+         print("Hier geklickt")
         }
         super.touchesBegan(touches, withEvent:event)
     }
@@ -151,5 +119,6 @@ class ThirdViewControllerDetail: UIViewController
         let next = self.storyboard?.instantiateViewControllerWithIdentifier("MapDetailController") as! MapDetailController
         next.tmp = self.tmp
         self.presentViewController(next, animated: false, completion: nil)
+        
     }
 }

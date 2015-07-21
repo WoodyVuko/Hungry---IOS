@@ -8,6 +8,7 @@
             <string>HelveticaNeue-Thin</string>
             <string>HelveticaNeue-Thin</string>
             <string>HelveticaNeue-Thin</string>
+            <string>HelveticaNeue-Thin</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -118,26 +119,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="DeI-Xn-t8e" customClass="Widget" customModule="Hungry" customModuleProvider="target">
-                                <rect key="frame" x="10" y="67" width="300" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="Load.png"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="searching.."/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heart" value=""/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="rating" value=""/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" id="DVi-jp-bbb" customClass="Widget" customModule="Hungry" customModuleProvider="target">
-                                <rect key="frame" x="10" y="67" width="300" height="339"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="Load.png"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="searching.."/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heart" value=""/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="rating" value=""/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hungry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AYc-P4-8mp">
                                 <rect key="frame" x="121" y="16" width="78" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -145,16 +126,6 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IiL-oL-FtA">
-                                <rect key="frame" x="14" y="431" width="120" height="109"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Cancel.png">
-                                    <color key="titleShadowColor" red="0.97826086960000003" green="0.2230766599" blue="0.21070753489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="Cancel:" destination="z3Q-kP-KdV" eventType="touchUpInside" id="PQj-bh-1Vk"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="wh5-4O-vlb">
                                 <rect key="frame" x="149" y="475" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -176,14 +147,20 @@
                                     <action selector="Confirm:" destination="z3Q-kP-KdV" eventType="touchUpInside" id="WKH-Kt-ItJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IiL-oL-FtA">
+                                <rect key="frame" x="20" y="431" width="120" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Cancel.png">
+                                    <color key="titleShadowColor" red="0.97826086960000003" green="0.2230766599" blue="0.21070753489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="Cancel:" destination="z3Q-kP-KdV" eventType="touchUpInside" id="PQj-bh-1Vk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                     </view>
-                    <connections>
-                        <outlet property="tmpOne" destination="DVi-jp-bbb" id="zEX-h9-TV3"/>
-                        <outlet property="tmpTwo" destination="DeI-Xn-t8e" id="lKX-x4-MKS"/>
-                        <outlet property="view" destination="mre-yQ-Nuw" id="BQA-z3-zZS"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ho8-Dv-Ahh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,7 +206,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view tag="3" contentMode="scaleToFill" id="SbQ-dE-wGA" customClass="Widget" customModule="Hungry" customModuleProvider="target">
-                                <rect key="frame" x="10" y="67" width="300" height="0.0"/>
+                                <rect key="frame" x="10" y="67" width="300" height="334"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="Load.png"/>
@@ -257,6 +234,13 @@
                                     <action selector="makeMap:" destination="GmQ-Bj-jZq" eventType="touchUpInside" id="ckf-dQ-5vc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V8q-MA-6ce">
+                                <rect key="frame" x="10" y="409" width="300" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
