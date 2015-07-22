@@ -166,12 +166,12 @@ class ThirdViewController: UIViewController
                 switch(touchChoose)
                 {
                 case(1):
-                    alphaFunction()
                     tmpOne.center.x = location.x
+                    alphaFunction()
                     break
                 case(2):
-                    alphaFunction()
                     tmpTwo.center.x = location.x
+                    alphaFunction()
                     break
                 default:
                     break
@@ -194,12 +194,12 @@ class ThirdViewController: UIViewController
                 switch(touchChoose)
                 {
                 case(1):
-                    helpOrder()
                     tmpOne.center.x = location.x
+                    helpOrder()
                     break
                 case(2):
-                    helpOrder()
                     tmpTwo.center.x = location.x
+                    helpOrder()
                     break
                 default:
                     break
@@ -223,6 +223,7 @@ class ThirdViewController: UIViewController
             if(location.x <= 63)
             {
                 resetWidget("resetTmpOne")
+
             }
             else if(location.x >= 237)
             {
@@ -262,14 +263,14 @@ class ThirdViewController: UIViewController
             self.view.sendSubviewToBack(tmpOne)
             tmpOne.center = CGPoint(x: 160, y: 250)
             order = 2
-            tmpOne.alpha = 1
+            tmpOne.alpha = 1.0
             touchChoose = 2
         }
         else if(tmp == "resetTmpTwo")
         {
             self.view.sendSubviewToBack(tmpTwo)
             tmpTwo.center = CGPoint(x: 160, y: 250)
-            tmpTwo.alpha = 1
+            tmpTwo.alpha = 1.0
             order = 1
             touchChoose = 1
         }
@@ -295,7 +296,6 @@ class ThirdViewController: UIViewController
     }
     func helpDistance(let left: Bool)
     {
-        print("Order: " + String(order))
         switch(order)
         {
         case(1):
