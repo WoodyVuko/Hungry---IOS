@@ -65,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pw7-9a-xJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1735.4666666666667" y="362.57333333333332"/>
+            <point key="canvasLocation" x="1895" y="406"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="Fmo-sN-uyk">
@@ -109,7 +109,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpz-Tr-riH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2054.9333333333334" y="280.21333333333331"/>
+            <point key="canvasLocation" x="2360" y="380"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="dYv-As-IKm">
@@ -160,11 +160,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="y8v-g1-DX6" appends="YES" id="bpe-e8-qJB"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="longPress" destination="y8v-g1-DX6" id="gfo-n1-Ldu"/>
+                        <segue destination="GmQ-Bj-jZq" kind="modal" identifier="test" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="fKX-yT-s0u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ho8-Dv-Ahh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="y8v-g1-DX6">
+                    <pressTypeMask key="allowedPressTypes"/>
+                    <connections>
+                        <action selector="Information:" destination="z3Q-kP-KdV" id="BTA-qK-lkr"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2513" y="296"/>
+            <point key="canvasLocation" x="2829" y="364"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jBN-gl-aRg">
@@ -205,16 +218,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view tag="3" contentMode="scaleToFill" id="SbQ-dE-wGA" customClass="Widget" customModule="Hungry" customModuleProvider="target">
-                                <rect key="frame" x="10" y="67" width="300" height="334"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="Load.png"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="searching.."/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heart" value=""/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="rating" value=""/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hungry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eif-r7-vPu">
                                 <rect key="frame" x="106" y="13" width="108" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -222,7 +225,7 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" restorationIdentifier="map" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" id="HHR-yr-OHw">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" restorationIdentifier="map" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" id="HHR-yr-OHw">
                                 <rect key="frame" x="0.0" y="444" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
@@ -243,16 +246,28 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="WiV-2s-efv" appends="YES" id="hR5-Ef-tkH"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="descript" destination="V8q-MA-6ce" id="Hru-aH-7U4"/>
+                        <outlet property="detailView" destination="YwW-1e-eBm" id="g5s-RS-7fh"/>
+                        <outlet property="longPress" destination="WiV-2s-efv" id="Ebd-UN-03S"/>
                         <outlet property="mapView" destination="HHR-yr-OHw" id="MoM-oQ-bHh"/>
-                        <outlet property="tmpOne" destination="SbQ-dE-wGA" id="G4h-Cc-ze5"/>
-                        <outlet property="view" destination="YwW-1e-eBm" id="3Mp-Zo-DTK"/>
+                        <segue destination="z3Q-kP-KdV" kind="modal" modalTransitionStyle="flipHorizontal" id="YOo-da-GS8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kE-Pd-PmS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="WiV-2s-efv">
+                    <pressTypeMask key="allowedPressTypes"/>
+                    <connections>
+                        <action selector="goMain:" destination="GmQ-Bj-jZq" id="9V6-7R-P01"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2892" y="296"/>
+            <point key="canvasLocation" x="3254" y="364"/>
         </scene>
         <!--Map Detail Controller-->
         <scene sceneID="jdG-MM-7ZN">
@@ -302,13 +317,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cma-Iq-cKY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3247" y="296"/>
+            <point key="canvasLocation" x="3170" y="1022"/>
         </scene>
     </scenes>
     <resources>
         <image name="Cancel.png" width="42" height="38"/>
-        <image name="Default.png" width="640" height="1096"/>
-        <image name="Load.png" width="640" height="1096"/>
+        <image name="Default.png" width="1242" height="2208"/>
         <image name="Mark.png" width="42" height="38"/>
         <image name="Stars.png" width="28" height="25"/>
     </resources>

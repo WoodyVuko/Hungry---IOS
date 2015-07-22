@@ -40,23 +40,35 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         RestApiManager.sharedInstance.getCategories
             {
                 json -> Void in
-                // Finde Key cCategories"
-                let tmp:Dictionary  = json["categories"].dictionaryValue
-                // Durchsuche Dictionary nach Inhalt
-                for dict in tmp
+                if let jsonArray = json.array
                 {
-                    // Übertragen via ASynch (Static/verschiedene Instanzen..)
-                    dispatch_async(dispatch_get_main_queue(),
+                    //it is an array, each array contains a dictionary
+                    for item in jsonArray
+                    {
+                        if let jsonDict = item.dictionary //jsonDict : [String : JSON]?
                         {
-                            textArray?.addObject(dict.1.string!)
-                        })
-                
-                    dispatch_async(dispatch_get_main_queue(),
-                        {
-                            tableView?.reloadData()
-                        })
+                            //loop through all objects in this jsonDictionary
+                            let id = jsonDict["_id"]!.intValue
+                            let catid = jsonDict["cat_id"]!.stringValue
+                            let name = jsonDict["name"]!.stringValue
+                            //...etc. ...create post object..etc.
+                            // Übertragen via ASynch (Static/verschiedene Instanzen..)
+                            dispatch_async(dispatch_get_main_queue(),
+                                {
+                                    textArray?.addObject(name)
+                            })
+                            
+                            dispatch_async(dispatch_get_main_queue(),
+                                {
+                                    tableView?.reloadData()
+                            })
+                        }
+                        
+                        
+                    }
                 }
-            }
+        }
+
     }
     
     func getRandomColor() -> UIColor{
@@ -107,6 +119,8 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(textArray.objectAtIndex(indexPath.row))
         
+        self.dismissViewControllerAnimated(true, completion:nil)
+
         let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController
         next.chosenCategorie = textArray.objectAtIndex(indexPath.row) as! String
         self.presentViewController(next, animated: true, completion: nil)

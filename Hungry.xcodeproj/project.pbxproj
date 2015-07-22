@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8655DAC1B5F16F1003D465F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B8655DAB1B5F16F1003D465F /* Default.png */; };
 		B87125AD1B592E7E0002BE46 /* JSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87125AC1B592E7E0002BE46 /* JSONData.swift */; };
 		B87125AF1B593A050002BE46 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87125AE1B593A050002BE46 /* Threading.swift */; };
 		B87125B51B595AED0002BE46 /* Heart.png in Resources */ = {isa = PBXBuildFile; fileRef = B87125B41B595AED0002BE46 /* Heart.png */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8655DAB1B5F16F1003D465F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B87125AC1B592E7E0002BE46 /* JSONData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONData.swift; sourceTree = "<group>"; };
 		B87125AE1B593A050002BE46 /* Threading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
 		B87125B41B595AED0002BE46 /* Heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Heart.png; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		B8AC464F1B53143300A9A1FD = {
 			isa = PBXGroup;
 			children = (
+				B8655DAB1B5F16F1003D465F /* Default.png */,
 				B8730A6E1B5C2E2000EAAAA0 /* MapKit.framework */,
 				B8C454031B54263B00A80437 /* Default-568h@2x.png */,
 				B8AC468C1B5314BD00A9A1FD /* FBSDKCoreKit.framework */,
@@ -328,6 +331,7 @@
 			files = (
 				B87125B51B595AED0002BE46 /* Heart.png in Resources */,
 				B87125BA1B59609A0002BE46 /* Cancel.png in Resources */,
+				B8655DAC1B5F16F1003D465F /* Default.png in Resources */,
 				B8730A631B5AB43500EAAAA0 /* Load.png in Resources */,
 				B87125B71B595D740002BE46 /* Stars.png in Resources */,
 				B8730A611B5AA2DB00EAAAA0 /* Widget.xib in Resources */,

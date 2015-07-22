@@ -29,15 +29,21 @@ class ThirdViewController: UIViewController
     var location = CGPoint(x: 0, y: 0)
     var order : Int = 1;
     var touchChoose : Int = 1
+    var whichScreen : String = "Main"
     
     var chosenCategorie: String = ""
     
     var tmpOne: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
     var tmpTwo: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369))) // 300, 369
     
+    @IBOutlet var longPress: UILongPressGestureRecognizer!
+
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        longPress.minimumPressDuration = 1.0
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true;
         
@@ -112,26 +118,36 @@ class ThirdViewController: UIViewController
             print(touches.first!.view!.tag)
 
             */
-            
-           if(( touch.view!.tag == touches.first!.view!.tag) && touch.view!.tag == 1)
+            switch(whichScreen)
             {
-                //print("1. Geklickt!")
+            case("Main"):
+                if(( touch.view!.tag == touches.first!.view!.tag) && touch.view!.tag == 1)
+                {
+                    //print("1. Geklickt!")
+                }
+                else
+                    if(( touch.view!.tag == touches.first!.view!.tag) && touch.view!.tag == 2)
+                    {
+                        //print("2. Geklickt!")
+                    }
+                    else
+                        if(( touch.view!.tag == touches.first!.view!.tag) && touch.view!.tag == 3)
+                        {
+                            print("Pic")
+                        }
+                        else
+                        {
+                            print("Außerhalb!")
+                            
+                }
+                break
+            case("tmp"):
+                print("temp!!!!")
+                break
+            default:
+                break
             }
-            else
-            if(( touch.view!.tag == touches.first!.view!.tag) && touch.view!.tag == 2)
-            {
-                //print("2. Geklickt!")
-            }
-            else
-            if(( touch.view!.tag == touches.first!.view!.tag) && touch.view!.tag == 3)
-            {
-                print("Pic")
-            }
-            else
-            {
-                print("Außerhalb!")
 
-            }
 
 
         }
@@ -144,15 +160,22 @@ class ThirdViewController: UIViewController
         {
             location = touch.locationInView(self.view)
 
-            switch(touchChoose)
+            switch(whichScreen)
             {
-            case(1):
-                alphaFunction()
-                tmpOne.center.x = location.x
-                break
-            case(2):
-                alphaFunction()
-                tmpTwo.center.x = location.x
+            case("Main"):
+                switch(touchChoose)
+                {
+                case(1):
+                    alphaFunction()
+                    tmpOne.center.x = location.x
+                    break
+                case(2):
+                    alphaFunction()
+                    tmpTwo.center.x = location.x
+                    break
+                default:
+                    break
+                }
                 break
             default:
                 break
@@ -165,16 +188,22 @@ class ThirdViewController: UIViewController
         if let touch = touches.first {
             
             location = touch.locationInView(self.view)
-            
-            switch(touchChoose)
+            switch(whichScreen)
             {
-            case(1):
-                helpOrder()
-                tmpOne.center.x = location.x
-                break
-            case(2):
-                helpOrder()
-                tmpTwo.center.x = location.x
+            case("Main"):
+                switch(touchChoose)
+                {
+                case(1):
+                    helpOrder()
+                    tmpOne.center.x = location.x
+                    break
+                case(2):
+                    helpOrder()
+                    tmpTwo.center.x = location.x
+                    break
+                default:
+                    break
+                }
                 break
             default:
                 break
@@ -201,10 +230,7 @@ class ThirdViewController: UIViewController
             }
             else
             {
-                let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewControllerDetail") as! ThirdViewControllerDetail
-                next.tmp = ThirdViewController.arrayJSON[counter]
-                next.touchChoose = self.touchChoose
-                self.presentViewController(next, animated: true, completion: nil)
+
             }
             
             break
@@ -219,10 +245,7 @@ class ThirdViewController: UIViewController
             }
             else
             {
-                let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewControllerDetail") as! ThirdViewControllerDetail
-                next.tmp = ThirdViewController.arrayJSON[counter]
-                next.touchChoose = self.touchChoose
-                self.presentViewController(next, animated: true, completion: nil)
+
             }
             break
         default:
@@ -333,12 +356,23 @@ class ThirdViewController: UIViewController
     
     @IBAction func Information(sender: AnyObject)
     {
-        let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewControllerDetail") as! ThirdViewControllerDetail
-        next.tmp = ThirdViewController.arrayJSON[counter]
-        next.touchChoose = self.touchChoose
-        self.presentViewController(next, animated: true, completion: nil)
+
+
+        self.performSegueWithIdentifier("test", sender: self)
+    
     }
     
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "test") {
+            var svc = segue.destinationViewController as! ThirdViewControllerDetail;
+           // self.whichScreen = "Detail"
+            svc.whichScreen = "Detail"
+            svc.tmp = ThirdViewController.arrayJSON[counter]
+            
+        }
+    }
+
     func cancelOrder()
     {
         if(touchChoose == 1)

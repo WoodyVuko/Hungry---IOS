@@ -20,29 +20,36 @@ class ThirdViewControllerDetail: UIViewController
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var pic: UIImageView!
     
-    @IBOutlet weak var tmpOne: UIView!
+    var tmpOne: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var hearts: UILabel!
-    
+    @IBOutlet weak var descript: UILabel!
+
     var tmp : JSONData = JSONData();
+    var counter: Int = 0
     var data: NSData?
+    @IBOutlet var detailView: UIView!
   
     var manager = CLLocationManager()
     var initialLocation = CLLocation(latitude: 0, longitude: 0)
     
     var location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     let regionRadius: CLLocationDistance = 1000
-    var touchChoose : Int = 0
+    var whichScreen : String = "Detail"
 
+    @IBOutlet var longPress: UILongPressGestureRecognizer!
 
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true;
+        longPress.minimumPressDuration = 1.0
+        
+        tmpOne.setTa(3)
+        self.view.addSubview(tmpOne)
         
         // Init
         location.latitude = tmp.getLat()
@@ -56,7 +63,6 @@ class ThirdViewControllerDetail: UIViewController
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
         
-        print(touchChoose)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -78,6 +84,8 @@ class ThirdViewControllerDetail: UIViewController
         tmpOne.setValue(String(tmp.getHearts()), forKeyPath: "heart")
         // Rating
         tmpOne.setValue(String(tmp.getRating()), forKeyPath: "rating")
+        // Description
+        descript.text = tmp.getDescription()
     }
     
     
@@ -108,17 +116,70 @@ class ThirdViewControllerDetail: UIViewController
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let touch = event?.touchesForView(self.tmpOne)
-        {
-         print("Hier geklickt")
+        if let touch = touches.first {
+            
+            /* Abgleich zwischen Objekten für Bewegung..*/
+            
+            /*
+            print("Touch!")
+            print(touch.view!.tag)
+            
+            print("Touches")
+            print(touches.first!.view!.tag)
+            
+
+            switch(whichScreen)
+            {
+            case("Main"):
+                
+                break
+            default:
+                break
+            }*/
+            
+            switch(whichScreen)
+            {
+            case("Detail"):
+                if(( touch.view!.tag == touches.first!.view!.tag) && touch.view!.tag == 3)
+                {
+
+                }
+                else
+                {
+                    print(touch.view!)
+                    print("XXAußerhalb!")
+                            
+                }
+                break
+            default:
+                break
+            }
+
+            
+            
         }
         super.touchesBegan(touches, withEvent:event)
     }
-    
-    @IBAction func makeMap(sender: AnyObject) {
+
+    @IBAction func makeMap(sender: AnyObject)
+    {
         let next = self.storyboard?.instantiateViewControllerWithIdentifier("MapDetailController") as! MapDetailController
         next.tmp = self.tmp
         self.presentViewController(next, animated: false, completion: nil)
         
+    }
+    
+    @IBAction func goMain(sender: AnyObject)
+    {
+        dismissViewControllerAnimated(false, completion:nil)
+        self.whichScreen = "tmp"
+        print(whichScreen)
+/*
+        self.whichScreen = "Main"
+        let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController
+        next.whichScreen = "Main"
+        next.counter = self.counter
+        self.presentViewController(next, animated: false, completion: nil)
+*/
     }
 }

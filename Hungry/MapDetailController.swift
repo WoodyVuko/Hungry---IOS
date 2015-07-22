@@ -90,6 +90,7 @@ class MapDetailController: UIViewController
     
     
     @IBAction func closeMap(sender: AnyObject) {
+        dismissViewControllerAnimated(false, completion:nil)
         let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewControllerDetail") as! ThirdViewControllerDetail
         next.tmp = self.tmp
         self.presentViewController(next, animated: false, completion: nil)
