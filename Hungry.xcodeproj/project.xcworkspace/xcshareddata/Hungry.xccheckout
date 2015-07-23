@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>9F9E4C3B-8D85-42B1-86CF-5ED3C79C31A7</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Hungry</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2B08B443F6A7E88CDCC5D15401C00A90E2B463C8</key>
 		<string>https://github.com/DrunkenVuko/Hungry---IOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Hungry.xcodeproj</string>
+	<string>Hungry.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2B08B443F6A7E88CDCC5D15401C00A90E2B463C8</key>

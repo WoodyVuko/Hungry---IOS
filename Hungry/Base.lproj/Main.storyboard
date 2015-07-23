@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="pqQ-lx-HtC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="qCK-YC-VAd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
     </dependencies>
@@ -22,7 +22,7 @@
                     <navigationItem key="navigationItem" id="hnC-oV-2NH"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="txD-82-QOg" kind="modal" identifier="showNew" modalPresentationStyle="overFullScreen" id="TcU-6b-EZk"/>
+                        <segue destination="txD-82-QOg" kind="replace" identifier="showNew" splitViewControllerTargetIndex="0" id="TcU-6b-EZk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TS1-kb-MqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -67,12 +67,12 @@
             </objects>
             <point key="canvasLocation" x="1895" y="406"/>
         </scene>
-        <!--Second View Controller-->
+        <!--KEIN PENIS-->
         <scene sceneID="Fmo-sN-uyk">
             <objects>
                 <tableViewController id="pqQ-lx-HtC" customClass="SecondViewController" customModule="Hungry" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="70" sectionFooterHeight="22" id="cBW-Rd-HOl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -80,14 +80,14 @@
                         <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.90644728539999997" blue="0.67677758359999995" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="2qX-q2-MUm" style="IBUITableViewCellStyleDefault" id="Pai-vx-u7i">
-                                <rect key="frame" x="0.0" y="70" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="134" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pai-vx-u7i" id="nyO-qK-02X">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2qX-q2-MUm">
-                                            <rect key="frame" x="15" y="0.0" width="384" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -103,13 +103,16 @@
                             <outlet property="delegate" destination="pqQ-lx-HtC" id="MX8-nj-tHE"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="KEIN PENIS" id="h37-fX-GCM"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="cBW-Rd-HOl" id="dj7-oc-c3b"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpz-Tr-riH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2360" y="380"/>
+            <point key="canvasLocation" x="2430" y="386"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="dYv-As-IKm">
@@ -166,7 +169,6 @@
                     </view>
                     <connections>
                         <outlet property="longPress" destination="y8v-g1-DX6" id="gfo-n1-Ldu"/>
-                        <segue destination="GmQ-Bj-jZq" kind="modal" identifier="test" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="fKX-yT-s0u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ho8-Dv-Ahh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -190,7 +192,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="aBq-Y9-86C" kind="relationship" relationship="rootViewController" id="JdI-Du-B23"/>
+                        <segue destination="pqQ-lx-HtC" kind="relationship" relationship="rootViewController" id="KPV-Mr-dNP"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIz-Cd-xwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -326,5 +328,8 @@
         <image name="Mark.png" width="42" height="38"/>
         <image name="Stars.png" width="28" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="KPV-Mr-dNP"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.97826086960000003" green="0.2230766599" blue="0.21070753489999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

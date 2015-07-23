@@ -119,11 +119,12 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(textArray.objectAtIndex(indexPath.row))
         
-        self.dismissViewControllerAnimated(true, completion:nil)
 
-        let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController
+       /* let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController
         next.chosenCategorie = textArray.objectAtIndex(indexPath.row) as! String
         self.presentViewController(next, animated: true, completion: nil)
+*/
+        self.navigationController!.pushViewController(self.storyboard!.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController, animated: true)
     }
     
 

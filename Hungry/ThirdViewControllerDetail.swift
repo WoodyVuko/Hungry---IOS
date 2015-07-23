@@ -171,11 +171,15 @@ class ThirdViewControllerDetail: UIViewController
     
     @IBAction func goMain(sender: AnyObject)
     {
+        
         dismissViewControllerAnimated(false, completion:nil)
         self.whichScreen = "tmp"
         print(whichScreen)
+
+        dismissViewControllerAnimated(false, completion:nil)
 /*
         self.whichScreen = "Main"
+        
         let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController
         next.whichScreen = "Main"
         next.counter = self.counter
