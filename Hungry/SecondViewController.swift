@@ -100,7 +100,8 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Today i feel like..."
+        //return "Today i feel like..."
+        return nil
 
     }
 

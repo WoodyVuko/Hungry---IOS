@@ -356,44 +356,27 @@ class ThirdViewController: UIViewController
     
     @IBAction func Information(sender: AnyObject)
     {
-        
         if(sender is UILongPressGestureRecognizer)
         {
             let name : UILongPressGestureRecognizer = sender as! UILongPressGestureRecognizer
 
              if(name.state == UIGestureRecognizerState.Began)
              {
-                
-                
-                //self.navigationController.
-                
-                //self.performSegueWithIdentifier("test", sender: self)
                 let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewControllerDetail") as! ThirdViewControllerDetail
                 
                 next.whichScreen = "Detail"
                 next.tmp = ThirdViewController.arrayJSON[counter]
                 self.navigationController!.pushViewController(next, animated: true)
             }
-            
         }
         else
         {
-            
-            //self.navigationController.
-            
-            //self.performSegueWithIdentifier("test", sender: self)
             let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewControllerDetail") as! ThirdViewControllerDetail
             
             next.whichScreen = "Detail"
             next.tmp = ThirdViewController.arrayJSON[counter]
             self.navigationController!.pushViewController(next, animated: true)
         }
-        
-       
-
-        
-
-
     
     }
     
