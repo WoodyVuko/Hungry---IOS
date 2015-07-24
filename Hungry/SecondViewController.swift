@@ -18,7 +18,8 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     // TableView incl Array
     @IBOutlet var tableView: UITableView!
-    var textArray: NSMutableArray! = NSMutableArray()
+    var nameCategories: NSMutableArray! = NSMutableArray()
+    var idCategories: NSMutableArray! = NSMutableArray()
 
     override func viewDidLoad()
     {
@@ -55,7 +56,8 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
                             // Übertragen via ASynch (Static/verschiedene Instanzen..)
                             dispatch_async(dispatch_get_main_queue(),
                                 {
-                                    textArray?.addObject(name)
+                                    self.nameCategories?.addObject(name)
+                                    self.idCategories?.addObject(catid)
                             })
                             
                             dispatch_async(dispatch_get_main_queue(),
@@ -95,7 +97,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return textArray.count
+        return nameCategories.count
     }
     
     
@@ -118,7 +120,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     */
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(textArray.objectAtIndex(indexPath.row))
+        print(nameCategories.objectAtIndex(indexPath.row))
         
 
        /* let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController
@@ -135,7 +137,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         
         let cell: UITableViewCell? = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell?
         
-        cell!.textLabel?.text = self.textArray.objectAtIndex(indexPath.row) as? String
+        cell!.textLabel?.text = self.nameCategories.objectAtIndex(indexPath.row) as? String
         cell!.textLabel?.textAlignment = .Center
         cell!.detailTextLabel?.textAlignment = .Center
         

@@ -20,6 +20,9 @@ class ThirdViewController: UIViewController
     
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var hearts: UILabel!
+    @IBOutlet weak var sideBarView: UIView!
+
+    let myLocation: FindMyCoords = FindMyCoords()
     
     var data: NSData?
     static var arrayJSON : [JSONData] = [JSONData]()
@@ -42,7 +45,9 @@ class ThirdViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        myLocation.initLocationManager()
         
+        self.navigationController?.navigationBarHidden = true
         longPress.minimumPressDuration = 1.0
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true;
@@ -66,9 +71,8 @@ class ThirdViewController: UIViewController
         print(ThirdViewController.arrayJSON.count)
 
         // Fill Data
-        fillData(tmpOne, count: counter)
-        fillData(tmpTwo, count: counter+1)
-        
+       // fillData(tmpOne, count: counter)
+       // fillData(tmpTwo, count: counter+1)
 
         
         
@@ -354,6 +358,20 @@ class ThirdViewController: UIViewController
     
     // MARK: Buttons
     
+    @IBAction func showSidebar(sender: AnyObject)
+    {
+        sideBarView.center = CGPoint(x: 0, y: 284)
+        self.view.center.x += 100
+        self.view.bringSubviewToFront(sideBarView)
+
+    }
+    
+    @IBAction func closeSidebar(sender: AnyObject)
+    {
+        sideBarView.center = CGPoint(x: -100, y: -300)
+        self.view.center.x -= 100
+    }
+    @IBOutlet weak var closeSidebar: UIButton!
     @IBAction func Information(sender: AnyObject)
     {
         if(sender is UILongPressGestureRecognizer)
@@ -491,6 +509,7 @@ class ThirdViewController: UIViewController
         {
             json -> Void in
             
+            RestApiManager.sharedInstance.localURL += "Gello"
             // Finde Key "locations"
             // Durchsuche Dictionary nach Inhalt
             for result in json["locations"].arrayValue

@@ -17,7 +17,7 @@ class RestApiManager: NSObject{
     static let sharedInstance = RestApiManager()
     
     let baseURL = "http://ec2-52-28-74-34.eu-central-1.compute.amazonaws.com:8080/search/category?&jsonace=414"
-    let localURL = "http://hungry.biancabaier.de/json/locations.php?category=abc"
+    var localURL = "http://ec2-52-28-74-34.eu-central-1.compute.amazonaws.com:8080/search?"
     
     func getCategories(onCompletion: (JSON) ->Void)
     {
