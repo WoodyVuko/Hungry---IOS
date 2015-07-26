@@ -28,7 +28,9 @@ class ThirdViewController: UIViewController
     static var arrayJSON : [JSONData] = [JSONData]()
     static var myLocationLat : Double = 0
     static var myLocationLon : Double = 0
-    
+    static var distance : Int = 500
+    static var chosenCategorie: String = ""
+
     var counter: Int = 0
     var maximum: Int = 3
     
@@ -37,7 +39,6 @@ class ThirdViewController: UIViewController
     var touchChoose : Int = 1
     var whichScreen : String = "Main"
     
-    var chosenCategorie: String = ""
     
     var tmpOne: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
     var tmpTwo: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
@@ -445,17 +446,10 @@ class ThirdViewController: UIViewController
     
     @IBAction func showSidebar(sender: AnyObject)
     {
-        sideBarView.center = CGPoint(x: 0, y: 284)
-        self.view.center.x += 100
-        self.view.bringSubviewToFront(sideBarView)
+        let next = self.storyboard?.instantiateViewControllerWithIdentifier("FilterViewController") as! FilterViewController
+        self.navigationController!.pushViewController(next, animated: true)
+    }
 
-    }
-    
-    @IBAction func closeSidebar(sender: AnyObject)
-    {
-        sideBarView.center = CGPoint(x: -100, y: -300)
-        self.view.center.x -= 100
-    }
     @IBOutlet weak var closeSidebar: UIButton!
     @IBAction func Information(sender: AnyObject)
     {
@@ -494,6 +488,7 @@ class ThirdViewController: UIViewController
 //        }
 //    }
 
+    
     func cancelOrder()
     {
         if(touchChoose == 1)
@@ -536,13 +531,33 @@ class ThirdViewController: UIViewController
                 break
             }
         }
+        else if(touchChoose == 3)
+        {
+            switch(order)
+            {
+            case(1):
+                resetWidget("resetTmpOne")
+                touchChoose = 2
+                break
+            case(2):
+                resetWidget("resetTmpTwo")
+                touchChoose = 3
+                break
+            case(3):
+                resetWidget("resetTmpThree")
+                touchChoose = 1
+                break
+            default:
+                break
+            }
+        }
+            
         else
         {
             
         }
-            
-        
     }
+    
     
     func acceptOrder()
     {
@@ -556,6 +571,10 @@ class ThirdViewController: UIViewController
                 break
             case(2):
                 resetWidget("resetTmpTwo")
+                touchChoose = 3
+                break
+            case(3):
+                resetWidget("resetTmpThree")
                 touchChoose = 1
                 break
             default:
@@ -572,12 +591,37 @@ class ThirdViewController: UIViewController
                 break
             case(2):
                 resetWidget("resetTmpTwo")
+                touchChoose = 3
+                break
+            case(3):
+                resetWidget("resetTmpThree")
                 touchChoose = 1
                 break
             default:
                 break
             }
         }
+        else if(touchChoose == 3)
+        {
+            switch(order)
+            {
+            case(1):
+                resetWidget("resetTmpOne")
+                touchChoose = 2
+                break
+            case(2):
+                resetWidget("resetTmpTwo")
+                touchChoose = 3
+                break
+            case(3):
+                resetWidget("resetTmpThree")
+                touchChoose = 1
+                break
+            default:
+                break
+            }
+        }
+            
         else
         {
             
@@ -600,7 +644,7 @@ class ThirdViewController: UIViewController
     {
         // search?geo_coord=52.5702249,13.404094&rad_filter=1000&cat_filter=italian
 
-        RestApiManager.sharedInstance.localURL = "http://ec2-52-28-74-34.eu-central-1.compute.amazonaws.com:8080/search?" + "geo_coord=" + String(ThirdViewController.myLocationLat) + "," + String(ThirdViewController.myLocationLon) + "&rad_filter=1000&cat_filter=italian"
+        RestApiManager.sharedInstance.localURL = "http://ec2-52-28-74-34.eu-central-1.compute.amazonaws.com:8080/search?" + "geo_coord=" + String(ThirdViewController.myLocationLat) + "," + String(ThirdViewController.myLocationLon) + "&rad_filter=" + String(ThirdViewController.distance) + "&cat_filter=" + String(ThirdViewController.chosenCategorie)
         
         print(RestApiManager.sharedInstance.localURL)
         RestApiManager.sharedInstance.getLocals
@@ -638,7 +682,7 @@ class ThirdViewController: UIViewController
                     //str.append(categories[0].stringValue)
                     //print(title)
                     let meter: Int = Int(distanceInKm(ThirdViewController.myLocationLat, lon1: ThirdViewController.myLocationLon, lat2: lat, lon2: lon) * 1000)
-                    tmp2.loadIn(id, title: title, address: address, lat: lat, lon: lon, categorie: self.chosenCategorie, rating: rating, images: images, meter: meter)
+                    tmp2.loadIn(id, title: title, address: address, lat: lat, lon: lon, categorie: ThirdViewController.chosenCategorie, rating: rating, images: images, meter: meter)
                   
                     
                     dispatch_async(dispatch_get_main_queue(), {

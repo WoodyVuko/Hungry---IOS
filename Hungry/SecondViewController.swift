@@ -128,7 +128,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         
 
         let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController
-        next.chosenCategorie = nameCategories.objectAtIndex(indexPath.row) as! String
+        ThirdViewController.chosenCategorie = idCategories.objectAtIndex(indexPath.row) as! String
        /* self.presentViewController(next, animated: true, completion: nil)
 */
         self.navigationController!.pushViewController(next, animated: true)
