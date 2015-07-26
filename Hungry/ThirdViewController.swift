@@ -84,20 +84,19 @@ class ThirdViewController: UIViewController
         
        // fillData(tmpOne, count: counter)
        // fillData(tmpTwo, count: counter+1)
-
     }
     
     func fillData(tmp: Widget, count: Int) -> Widget
     {
         // Picture
-        
         let url = NSURL(string: ThirdViewController.arrayJSON[count].getImages())
-
-        if data != nil
-        {
-            data = NSData(contentsOfURL:url!)
+        data = NSData(contentsOfURL:url!)
+        
+        if data != nil {
             tmp.image = UIImage(data:data!)!
+            
         }
+        
         
         // Name
         tmp.title = ThirdViewController.arrayJSON[count].getTitle()
@@ -204,6 +203,9 @@ class ThirdViewController: UIViewController
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let touch = touches.first {
             
+            print(String(ThirdViewController.arrayJSON.count) + "----" + String(counter))
+
+            
             location = touch.locationInView(self.view)
             switch(whichScreen)
             {
@@ -295,8 +297,7 @@ class ThirdViewController: UIViewController
     {
         if(tmp == "resetTmpOne")
         {
-            self.fillData(self.tmpOne, count: self.counter)
-            self.counter++
+            checkArrayLength(self.tmpOne)
             self.view.sendSubviewToBack(tmpOne)
             tmpOne.center = CGPoint(x: 160, y: 250)
             order = 2
@@ -305,8 +306,7 @@ class ThirdViewController: UIViewController
         }
         else if(tmp == "resetTmpTwo")
         {
-            self.fillData(self.tmpTwo, count: self.counter)
-            self.counter++
+            checkArrayLength(self.tmpTwo)
             self.view.sendSubviewToBack(tmpTwo)
             tmpTwo.center = CGPoint(x: 160, y: 250)
             tmpTwo.alpha = 1.0
@@ -315,13 +315,29 @@ class ThirdViewController: UIViewController
         }
         else if(tmp == "resetTmpThree")
         {
-            self.fillData(self.tmpThree, count: self.counter)
-            self.counter++
+            checkArrayLength(self.tmpThree)
             self.view.sendSubviewToBack(tmpThree)
             tmpThree.center = CGPoint(x: 160, y: 250)
             tmpThree.alpha = 1.0
             order = 1
             touchChoose = 1
+        }
+    }
+    
+    func checkArrayLength(tmp: Widget)
+    {
+        
+        //print("Check - " + String(self.counter))
+        //print("Count - " + String(ThirdViewController.arrayJSON.count))
+        if( self.counter < ThirdViewController.arrayJSON.count - 1)
+        {
+            self.counter++
+            self.fillData(tmp, count: self.counter)
+        }
+        else
+        {
+            self.counter = 0
+            print("Reset // Future Reload")
         }
     }
     
@@ -590,7 +606,7 @@ class ThirdViewController: UIViewController
         RestApiManager.sharedInstance.getLocals
             {
                 json -> Void in
-                
+
                 // Finde Key "locations"
                 // Durchsuche Dictionary nach Inhalt
                 for result in json["items"].arrayValue
@@ -608,7 +624,12 @@ class ThirdViewController: UIViewController
                     let rating = result["rating"].floatValue
                     //                let open = result["open"].boolValue
                     //                let opening_hours = result["opening_hours"].stringValue
-                    let images = result["image_url"].stringValue
+                    var images = result["image_url"].stringValue
+                    if(images == "")
+                    {
+                       images = "http://deadredhitting.com/store/wordpress/wp-content/themes/kassyopea/wpsc-images/no_image.jpg"
+                    }
+
                     //                let hearts = result["hearts"].intValue
                     //                let distance = result["distance"].floatValue
                     //                let description = result["description"].stringValue
@@ -628,17 +649,17 @@ class ThirdViewController: UIViewController
                         if(self.counter == 0)
                         {
                             self.fillData(self.tmpOne, count: self.counter)
-                            self.counter++
+                            self.counter = 1
                         }
                         else if(self.counter == 1)
                         {
                             self.fillData(self.tmpTwo, count: self.counter)
-                            self.counter++
+                            self.counter = 2
                         }
                         else if(self.counter == 2)
                         {
                             self.fillData(self.tmpThree, count: self.counter)
-                            self.counter++
+                            self.counter = 3
                         }
                         /*
                         else if(self.counter == 3)
