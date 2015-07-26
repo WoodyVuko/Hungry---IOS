@@ -8,13 +8,9 @@
 
 class JSONData
 {
-    private var id : Int = 0
-    private var google_id : String = ""
-    private var yelp_id : Int = 0
+    private var id : String = ""
     private var title : String = ""
     private var address : String = ""
-    private var zip : Int = 0
-    private var city : String = ""
     private var lat : Double = 0.0
     private var lon : Double = 0.0
     private var categorie : String = ""
@@ -25,26 +21,19 @@ class JSONData
     private var hearts : Int = 0
     private var distance : Float = 0.0
     private var description : String = ""
+    private var meter : Int = 0
     
-    func loadIn(id : Int, google_id : String, yelp_id : Int, title : String, address : String, zip : Int, city : String, lat : Double, lon : Double, categorie : String, rating : Float, open : Bool, opening_hours : String, images : String, hearts : Int, distance : Float, description : String)
+    func loadIn(id : String, title : String, address : String, lat : Double, lon : Double, categorie : String, rating : Float, images : String, meter : Int)
     {
         self.id = id;
-        self.google_id = google_id
-        self.yelp_id = yelp_id
         self.title = title
         self.address = address
-        self.zip = zip
-        self.city = city
         self.lat = lat
         self.lon = lon
         self.categorie = categorie
         self.rating = rating
-        self.open = open
-        self.opening_hours = opening_hours
         self.images = images
-        self.hearts = hearts
-        self.distance = distance
-        self.description = description
+        self.meter = meter
     }
     
     func setCategorie(categorie : String)
@@ -52,19 +41,9 @@ class JSONData
         self.categorie = categorie
     }
     
-    func getID() -> Int
+    func getID() -> String
     {
         return self.id
-    }
-    
-    func getGoogleID() -> String
-    {
-        return self.google_id
-    }
-    
-    func getYelpID() -> Int
-    {
-        return self.yelp_id
     }
     
     func getTitle() -> String
@@ -75,16 +54,6 @@ class JSONData
     func getAddress() -> String
     {
         return self.address
-    }
-    
-    func getZip() -> Int
-    {
-        return self.zip
-    }
-    
-    func getCity() -> String
-    {
-        return self.city
     }
     
     func getLat() -> Double
@@ -135,5 +104,10 @@ class JSONData
     func getDescription() -> String
     {
         return self.description
+    }
+    
+    func getMeter() -> Int
+    {
+        return self.meter
     }
 }

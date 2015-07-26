@@ -17,11 +17,11 @@ func RadiansToDegrees (value:Double) -> Double {
 }
 
 public func distanceInKm(lat1: Double, lon1: Double, lat2: Double, lon2: Double) -> Double{
-    var radius: Int = 6371
-    var lat: Double = DegreesToRadians(lat2 - lat1)
-    var lon: Double = DegreesToRadians(lon2 - lon1)
-    var a: Double = sin(lat / 2) * sin(lat / 2) + cos(DegreesToRadians(lat1)) * cos(DegreesToRadians(lat2)) * sin(lon / 2) * sin(lon / 2)
-    var c: Double = 2 * atan2(sqrt(a), sqrt(1 - a))
-    var d: Double = Double(radius) * c
+    let radius: Int = 6371
+    let lat: Double = DegreesToRadians(lat2 - lat1)
+    let lon: Double = DegreesToRadians(lon2 - lon1)
+    let a: Double = sin(lat / 2) * sin(lat / 2) + cos(DegreesToRadians(lat1)) * cos(DegreesToRadians(lat2)) * sin(lon / 2) * sin(lon / 2)
+    let c: Double = 2 * atan2(sqrt(a), sqrt(1 - a))
+    let d: Double = Double(radius) * c
     return d
 }

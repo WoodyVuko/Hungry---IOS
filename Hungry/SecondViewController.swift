@@ -20,18 +20,22 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var tableView: UITableView!
     var nameCategories: NSMutableArray! = NSMutableArray()
     var idCategories: NSMutableArray! = NSMutableArray()
-
+    let myLocation: FindMyCoords = FindMyCoords()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true;
         
+        myLocation.initLocationManager()
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
         getCategoriesJSON()
         self.tableView.centerXAnchor
         self.tableView.reloadData()
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
     }
     
     // MARK: - GetJSON Categories
@@ -120,14 +124,14 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     */
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(nameCategories.objectAtIndex(indexPath.row))
+        //print(nameCategories.objectAtIndex(indexPath.row))
         
 
-       /* let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController
-        next.chosenCategorie = textArray.objectAtIndex(indexPath.row) as! String
-        self.presentViewController(next, animated: true, completion: nil)
+        let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController
+        next.chosenCategorie = nameCategories.objectAtIndex(indexPath.row) as! String
+       /* self.presentViewController(next, animated: true, completion: nil)
 */
-        self.navigationController!.pushViewController(self.storyboard!.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController, animated: true)
+        self.navigationController!.pushViewController(next, animated: true)
     }
     
 

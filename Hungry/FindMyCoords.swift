@@ -18,7 +18,6 @@ class FindMyCoords: UIViewController, CLLocationManagerDelegate {
     var seenError : Bool = false
     var locationFixAchieved : Bool = false
     var locationStatus : NSString = "Not Started"
-    
 
     // Location Manager helper stuff
     func initLocationManager() {
@@ -32,7 +31,7 @@ class FindMyCoords: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
     }
-    
+
     // Location Manager Delegate stuff
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
@@ -47,17 +46,17 @@ class FindMyCoords: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if (locationFixAchieved == false) {
             locationFixAchieved = true
-            var locationArray = locations as NSArray
-            var locationObj = locationArray.lastObject as! CLLocation
-            var coord = locationObj.coordinate
+            let locationArray = locations as NSArray
+            let locationObj = locationArray.lastObject as! CLLocation
+            let coord = locationObj.coordinate
             
-            print(coord.latitude)
-            print(coord.longitude)
+            ThirdViewController.myLocationLat = coord.latitude
+            ThirdViewController.myLocationLon = coord.longitude
+            
         }
     }
     
-    
-    func locationManager(manager: CLLocationManager!,  didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(manager: CLLocationManager,  didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         var shouldIAllow = false
         
         switch status {

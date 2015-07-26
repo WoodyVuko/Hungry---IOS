@@ -26,6 +26,9 @@ class ThirdViewController: UIViewController
     
     var data: NSData?
     static var arrayJSON : [JSONData] = [JSONData]()
+    static var myLocationLat : Double = 0
+    static var myLocationLon : Double = 0
+    
     var counter: Int = 0
     var maximum: Int = 3
     
@@ -37,45 +40,51 @@ class ThirdViewController: UIViewController
     var chosenCategorie: String = ""
     
     var tmpOne: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
-    var tmpTwo: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369))) // 300, 369
-    
+    var tmpTwo: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
+    var tmpThree: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
+    //var tmpFour: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369))) // 300, 369
+    //var tmpFive: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
+    //var tmpSix: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
     @IBOutlet var longPress: UILongPressGestureRecognizer!
 
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        myLocation.initLocationManager()
-        
+
         self.navigationController?.navigationBarHidden = true
         longPress.minimumPressDuration = 1.0
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true;
         
-        // getData
-        getDataJSON()
-
+        dispatch_async(dispatch_get_main_queue(),
+            {
+                self.getDataJSON()
+            })
+        
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
 
         tmpOne.setTa(1)
         tmpTwo.setTa(2)
+        tmpThree.setTa(3)
+        /*
+        tmpFour.setTa(4)
+        tmpFive.setTa(5)
+        tmpSix.setTa(6)
+        self.view.addSubview(tmpSix)
+        self.view.addSubview(tmpFive)
+        self.view.addSubview(tmpFour)
+        */
+        self.view.addSubview(tmpThree)
         self.view.addSubview(tmpTwo)
         self.view.addSubview(tmpOne)
-        
-        
-        
-    
     }
 
     override func viewDidAppear(animated: Bool) {
-        print(ThirdViewController.arrayJSON.count)
-
-        // Fill Data
+        
        // fillData(tmpOne, count: counter)
        // fillData(tmpTwo, count: counter+1)
 
-        
-        
     }
     
     func fillData(tmp: Widget, count: Int) -> Widget
@@ -83,12 +92,11 @@ class ThirdViewController: UIViewController
         // Picture
         
         let url = NSURL(string: ThirdViewController.arrayJSON[count].getImages())
-        data = NSData(contentsOfURL:url!)
-        
-        if data != nil {
-            //pic?.image = UIImage(data:data!)
+
+        if data != nil
+        {
+            data = NSData(contentsOfURL:url!)
             tmp.image = UIImage(data:data!)!
-            
         }
         
         // Name
@@ -122,6 +130,7 @@ class ThirdViewController: UIViewController
             print(touches.first!.view!.tag)
 
             */
+            /*
             switch(whichScreen)
             {
             case("Main"):
@@ -151,7 +160,7 @@ class ThirdViewController: UIViewController
             default:
                 break
             }
-
+*/
 
 
         }
@@ -175,6 +184,10 @@ class ThirdViewController: UIViewController
                     break
                 case(2):
                     tmpTwo.center.x = location.x
+                    alphaFunction()
+                    break
+                case(3):
+                    tmpThree.center.x = location.x
                     alphaFunction()
                     break
                 default:
@@ -203,6 +216,10 @@ class ThirdViewController: UIViewController
                     break
                 case(2):
                     tmpTwo.center.x = location.x
+                    helpOrder()
+                    break
+                case(3):
+                    tmpThree.center.x = location.x
                     helpOrder()
                     break
                 default:
@@ -253,6 +270,20 @@ class ThirdViewController: UIViewController
 
             }
             break
+        case(3):
+            if(location.x <= 63)
+            {
+                resetWidget("resetTmpThree")
+            }
+            else if(location.x >= 237)
+            {
+                resetWidget("resetTmpThree")
+            }
+            else
+            {
+                
+            }
+            break
         default:
 
             break
@@ -264,6 +295,8 @@ class ThirdViewController: UIViewController
     {
         if(tmp == "resetTmpOne")
         {
+            self.fillData(self.tmpOne, count: self.counter)
+            self.counter++
             self.view.sendSubviewToBack(tmpOne)
             tmpOne.center = CGPoint(x: 160, y: 250)
             order = 2
@@ -272,9 +305,21 @@ class ThirdViewController: UIViewController
         }
         else if(tmp == "resetTmpTwo")
         {
+            self.fillData(self.tmpTwo, count: self.counter)
+            self.counter++
             self.view.sendSubviewToBack(tmpTwo)
             tmpTwo.center = CGPoint(x: 160, y: 250)
             tmpTwo.alpha = 1.0
+            order = 3
+            touchChoose = 3
+        }
+        else if(tmp == "resetTmpThree")
+        {
+            self.fillData(self.tmpThree, count: self.counter)
+            self.counter++
+            self.view.sendSubviewToBack(tmpThree)
+            tmpThree.center = CGPoint(x: 160, y: 250)
+            tmpThree.alpha = 1.0
             order = 1
             touchChoose = 1
         }
@@ -350,6 +395,30 @@ class ThirdViewController: UIViewController
                 }
             }
             break
+        case(3):
+            if(left == true)
+            {
+                if(tmpThree.alpha > 0.3)
+                {
+                    tmpThree.alpha -= 0.1
+                }
+                else
+                {
+                    tmpThree.alpha = 0.3
+                }
+            }
+            else
+            {
+                if(tmpThree.alpha < 1)
+                {
+                    tmpThree.alpha += 0.1
+                }
+                else
+                {
+                    tmpThree.alpha = 1.0
+                }
+            }
+            break
             default:
             break
             
@@ -421,6 +490,10 @@ class ThirdViewController: UIViewController
                 break
             case(2):
                 resetWidget("resetTmpTwo")
+                touchChoose = 3
+                break
+            case(3):
+                resetWidget("resetTmpThree")
                 touchChoose = 1
                 break
             default:
@@ -437,6 +510,10 @@ class ThirdViewController: UIViewController
                 break
             case(2):
                 resetWidget("resetTmpTwo")
+                touchChoose = 3
+                break
+            case(3):
+                resetWidget("resetTmpThree")
                 touchChoose = 1
                 break
             default:
@@ -505,42 +582,86 @@ class ThirdViewController: UIViewController
     
     func getDataJSON()
     {
+        // search?geo_coord=52.5702249,13.404094&rad_filter=1000&cat_filter=italian
+
+        RestApiManager.sharedInstance.localURL = "http://ec2-52-28-74-34.eu-central-1.compute.amazonaws.com:8080/search?" + "geo_coord=" + String(ThirdViewController.myLocationLat) + "," + String(ThirdViewController.myLocationLon) + "&rad_filter=1000&cat_filter=italian"
+        
+        print(RestApiManager.sharedInstance.localURL)
         RestApiManager.sharedInstance.getLocals
-        {
-            json -> Void in
-            
-            RestApiManager.sharedInstance.localURL += "Gello"
-            // Finde Key "locations"
-            // Durchsuche Dictionary nach Inhalt
-            for result in json["locations"].arrayValue
             {
-                let tmp2:JSONData = JSONData()
-                let id = result["id"].intValue
-                let google_id = result["google_id"].stringValue
-                let yelp_id = result["yelp_id"].intValue
-                let title = result["title"].stringValue
-                let address = result["address"].stringValue
-                let zip = result["zip"].intValue
-                let city = result["city"].stringValue
-                let lat = result["lat"].doubleValue
-                let lon = result["lon"].doubleValue
-                let categories = result["categories"].stringValue
-                let rating = result["rating"].floatValue
-                let open = result["open"].boolValue
-                let opening_hours = result["opening_hours"].stringValue
-                let images = result["images"].arrayValue
-                let hearts = result["hearts"].intValue
-                let distance = result["distance"].floatValue
-                let description = result["description"].stringValue
+                json -> Void in
                 
-                //let categories = result["categories"].arrayValue
-                //str.append(categories[0].stringValue)
-                //print(title)
-                tmp2.loadIn(id, google_id: google_id, yelp_id: yelp_id, title: title, address: address, zip: zip, city: city, lat: lat, lon: lon, categorie: categories, rating: rating, open: open, opening_hours: opening_hours, images: images[0].stringValue, hearts: hearts, distance: distance, description: description)
-                
-                ThirdViewController.arrayJSON.append(tmp2)
-            }
+                // Finde Key "locations"
+                // Durchsuche Dictionary nach Inhalt
+                for result in json["items"].arrayValue
+                {
+                    let tmp2:JSONData = JSONData()
+                    let id = result["place_id"].stringValue
+                    //                let google_id = result["google_id"].stringValue
+                    //                let yelp_id = result["yelp_id"].intValue
+                    let title = result["name"].stringValue
+                    let address = result["address"].stringValue
+                    let location = result["location"].arrayValue
+                    let lat = location[0].doubleValue
+                    let lon = location[1].doubleValue
+                    //                let categories = result["categories"].stringValue
+                    let rating = result["rating"].floatValue
+                    //                let open = result["open"].boolValue
+                    //                let opening_hours = result["opening_hours"].stringValue
+                    let images = result["image_url"].stringValue
+                    //                let hearts = result["hearts"].intValue
+                    //                let distance = result["distance"].floatValue
+                    //                let description = result["description"].stringValue
+                    
+                    //let categories = result["categories"].arrayValue
+                    //str.append(categories[0].stringValue)
+                    //print(title)
+                    let meter: Int = Int(distanceInKm(ThirdViewController.myLocationLat, lon1: ThirdViewController.myLocationLon, lat2: lat, lon2: lon) * 1000)
+                    tmp2.loadIn(id, title: title, address: address, lat: lat, lon: lon, categorie: self.chosenCategorie, rating: rating, images: images, meter: meter)
+                  
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        
+                        ThirdViewController.arrayJSON.append(tmp2)
+                        //print(tmp2.getTitle())
+                        // Fill Data
+                        if(self.counter == 0)
+                        {
+                            self.fillData(self.tmpOne, count: self.counter)
+                            self.counter++
+                        }
+                        else if(self.counter == 1)
+                        {
+                            self.fillData(self.tmpTwo, count: self.counter)
+                            self.counter++
+                        }
+                        else if(self.counter == 2)
+                        {
+                            self.fillData(self.tmpThree, count: self.counter)
+                            self.counter++
+                        }
+                        /*
+                        else if(self.counter == 3)
+                        {
+                            self.fillData(self.tmpFour, count: self.counter)
+                            self.counter++
+                        }
+                        else if(self.counter == 4)
+                        {
+                            self.fillData(self.tmpFive, count: self.counter)
+                            self.counter++
+                        }else if(self.counter == 5)
+                        {
+                            self.fillData(self.tmpSix, count: self.counter)
+                            self.counter++
+                        }
+                        */
+                    })
+                    
+  
+                    
+                }
         }
     }
-
+    
 }
