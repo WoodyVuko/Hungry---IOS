@@ -24,6 +24,7 @@
 		B8730A6F1B5C2E2000EAAAA0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8730A6E1B5C2E2000EAAAA0 /* MapKit.framework */; };
 		B8730A711B5C2EE100EAAAA0 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8730A701B5C2EE100EAAAA0 /* MapController.swift */; };
 		B896ACF51B62BBCB004A218C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B896ACF41B62BBCB004A218C /* CoreLocation.framework */; };
+		B8981E351B658EDA000A5C42 /* Favorites.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8981E341B658EDA000A5C42 /* Favorites.strings */; };
 		B8AC465C1B53143300A9A1FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AC465B1B53143300A9A1FD /* AppDelegate.swift */; };
 		B8AC465E1B53143300A9A1FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AC465D1B53143300A9A1FD /* ViewController.swift */; };
 		B8AC46611B53143300A9A1FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AC465F1B53143300A9A1FD /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		B8F7DA0B1B56D1F900D9C6B7 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F7DA0A1B56D1F900D9C6B7 /* ThirdViewController.swift */; };
 		B8F90E061B656F08003A5E1C /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F90E051B656F08003A5E1C /* FilterViewController.swift */; };
 		B8F90E091B657B3D003A5E1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F90E081B657B3D003A5E1C /* Images.xcassets */; };
+		B8F90E0B1B65887B003A5E1C /* FavList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F90E0A1B65887B003A5E1C /* FavList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,7 @@
 		B8730A6E1B5C2E2000EAAAA0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B8730A701B5C2EE100EAAAA0 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		B896ACF41B62BBCB004A218C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B8981E341B658EDA000A5C42 /* Favorites.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Favorites.strings; sourceTree = "<group>"; };
 		B8AC46581B53143300A9A1FD /* Hungry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hungry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AC465B1B53143300A9A1FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8AC465D1B53143300A9A1FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 		B8F7DA0A1B56D1F900D9C6B7 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		B8F90E051B656F08003A5E1C /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		B8F90E081B657B3D003A5E1C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B8F90E0A1B65887B003A5E1C /* FavList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 				B87125AE1B593A050002BE46 /* Threading.swift */,
 				B8C5A1B81B5516E400EF437B /* GPS_Calculator.swift */,
 				B82A90B71B62C0BC00D527D2 /* FindMyCoords.swift */,
+				B8F90E0A1B65887B003A5E1C /* FavList.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 				B8AC465B1B53143300A9A1FD /* AppDelegate.swift */,
 				B8AC465D1B53143300A9A1FD /* ViewController.swift */,
 				B8C454011B54249600A80437 /* SecondViewController.swift */,
+				B8981E341B658EDA000A5C42 /* Favorites.strings */,
 				B8730A6A1B5C242000EAAAA0 /* MapDetailController.swift */,
 				B8F7DA0A1B56D1F900D9C6B7 /* ThirdViewController.swift */,
 				B8730A681B5BFCBC00EAAAA0 /* ThirdViewControllerDetail.swift */,
@@ -350,6 +356,7 @@
 				B87125B71B595D740002BE46 /* Stars.png in Resources */,
 				B8730A611B5AA2DB00EAAAA0 /* Widget.xib in Resources */,
 				B8AC46661B53143300A9A1FD /* Assets.xcassets in Resources */,
+				B8981E351B658EDA000A5C42 /* Favorites.strings in Resources */,
 				B8AC46611B53143300A9A1FD /* Main.storyboard in Resources */,
 				B87125BB1B59609A0002BE46 /* Mark.png in Resources */,
 				B8C454041B54263B00A80437 /* Default-568h@2x.png in Resources */,
@@ -390,6 +397,7 @@
 				B8F7DA0B1B56D1F900D9C6B7 /* ThirdViewController.swift in Sources */,
 				B8AC465C1B53143300A9A1FD /* AppDelegate.swift in Sources */,
 				B87125AD1B592E7E0002BE46 /* JSONData.swift in Sources */,
+				B8F90E0B1B65887B003A5E1C /* FavList.swift in Sources */,
 				B8730A6B1B5C242000EAAAA0 /* MapDetailController.swift in Sources */,
 				B8730A711B5C2EE100EAAAA0 /* MapController.swift in Sources */,
 				B82A90B81B62C0BC00D527D2 /* FindMyCoords.swift in Sources */,

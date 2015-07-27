@@ -35,6 +35,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         self.tableView.centerXAnchor
         self.tableView.reloadData()
         
+        
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
     }
     

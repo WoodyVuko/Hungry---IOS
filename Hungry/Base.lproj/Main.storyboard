@@ -236,7 +236,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V8q-MA-6ce">
-                                <rect key="frame" x="10" y="409" width="300" height="21"/>
+                                <rect key="frame" x="20" y="409" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -250,10 +250,10 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="descript" destination="V8q-MA-6ce" id="Hru-aH-7U4"/>
                         <outlet property="detailView" destination="YwW-1e-eBm" id="g5s-RS-7fh"/>
                         <outlet property="longPress" destination="WiV-2s-efv" id="Ebd-UN-03S"/>
                         <outlet property="mapView" destination="HHR-yr-OHw" id="MoM-oQ-bHh"/>
+                        <outlet property="meter" destination="V8q-MA-6ce" id="Ua7-N1-RDa"/>
                         <segue destination="z3Q-kP-KdV" kind="modal" modalTransitionStyle="flipHorizontal" id="YOo-da-GS8"/>
                     </connections>
                 </viewController>

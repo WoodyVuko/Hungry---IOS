@@ -17,6 +17,7 @@ class ThirdViewController: UIViewController
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var pic: UIImageView!
+    @IBOutlet weak var closeSidebar: UIButton!
     
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var hearts: UILabel!
@@ -97,7 +98,8 @@ class ThirdViewController: UIViewController
             tmp.image = UIImage(data:data!)!
             
         }
-        
+        // ID
+        tmp.id = count
         
         // Name
         tmp.title = ThirdViewController.arrayJSON[count].getTitle()
@@ -450,7 +452,7 @@ class ThirdViewController: UIViewController
         self.navigationController!.pushViewController(next, animated: true)
     }
 
-    @IBOutlet weak var closeSidebar: UIButton!
+    
     @IBAction func Information(sender: AnyObject)
     {
         if(sender is UILongPressGestureRecognizer)
@@ -462,7 +464,21 @@ class ThirdViewController: UIViewController
                 let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewControllerDetail") as! ThirdViewControllerDetail
                 
                 next.whichScreen = "Detail"
-                next.tmp = ThirdViewController.arrayJSON[counter]
+                switch(touchChoose)
+                {
+                case(1):
+                    next.tmp = ThirdViewController.arrayJSON[tmpOne.id]
+                    break
+                case(2):
+                    next.tmp = ThirdViewController.arrayJSON[tmpTwo.id]
+                    break
+                case(3):
+                    next.tmp = ThirdViewController.arrayJSON[tmpThree.id]
+                    break
+                default:
+                    break
+                }
+                
                 self.navigationController!.pushViewController(next, animated: true)
             }
         }

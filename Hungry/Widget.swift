@@ -13,6 +13,7 @@ import UIKit
     var view: UIView!
     
     var nibName: String = "Widget"
+    var id: Int = 0
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var heartLabel: UILabel!

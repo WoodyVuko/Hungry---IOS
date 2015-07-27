@@ -20,12 +20,13 @@ class ThirdViewControllerDetail: UIViewController
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var pic: UIImageView!
     
-    var tmpOne: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
+    var tmpOne: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 339)))
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var hearts: UILabel!
     @IBOutlet weak var descript: UILabel!
+    @IBOutlet weak var meter: UILabel!
 
     var tmp : JSONData = JSONData();
     var counter: Int = 0
@@ -47,7 +48,6 @@ class ThirdViewControllerDetail: UIViewController
         super.viewDidLoad()
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true;
         longPress.minimumPressDuration = 1.0
-        
         tmpOne.setTa(3)
         self.view.addSubview(tmpOne)
         
@@ -84,8 +84,8 @@ class ThirdViewControllerDetail: UIViewController
         tmpOne.setValue(String(tmp.getHearts()), forKeyPath: "heart")
         // Rating
         tmpOne.setValue(String(tmp.getRating()), forKeyPath: "rating")
-        // Description
-        descript.text = tmp.getDescription()
+        
+        meter.text = String(tmp.getMeter()) + " Meter"
     }
     
     
@@ -171,12 +171,14 @@ class ThirdViewControllerDetail: UIViewController
     
     @IBAction func goMain(sender: AnyObject)
     {
-        
-        dismissViewControllerAnimated(false, completion:nil)
-        self.whichScreen = "tmp"
-        print(whichScreen)
+            if(longPress.state == UIGestureRecognizerState.Began)
+            {
 
-        dismissViewControllerAnimated(false, completion:nil)
+                let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController
+        
+                next.whichScreen = "Main"
+                self.navigationController!.pushViewController(next, animated: true)
+            }
 /*
         self.whichScreen = "Main"
         
