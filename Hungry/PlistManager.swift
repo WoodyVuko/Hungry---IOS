@@ -86,6 +86,20 @@ public class PlistManager {
         return false
     }
     
+    /*
+    public func writeToPlist(fileName: String) -> Bool {
+        if let path = plistpath {
+            if NSFileManager.defaultManager().isWritableFileAtPath(path) {
+                let dict = loadPlist(fileName)
+                dict?.setDictionary(<#T##otherDictionary: [NSObject : AnyObject]##[NSObject : AnyObject]#>)
+                if dict!.writeToFile(path, atomically: false) {
+                    return true
+                }
+            }
+        }
+    return false
+}*/
+
     /**
     Retrieve the value for the given key.
     

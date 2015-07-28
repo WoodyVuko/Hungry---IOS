@@ -8,76 +8,24 @@
 
 
 import UIKit
-import FBSDKCoreKit
-import FBSDKLoginKit
 
-class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+class FourthViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var Button: UIButton!
     
     // TableView incl Array
     @IBOutlet var tableView: UITableView!
-    var nameCategories: NSMutableArray! = NSMutableArray()
-    var idCategories: NSMutableArray! = NSMutableArray()
-    let myLocation: FindMyCoords = FindMyCoords()
+    var dicti : NSDictionary = PlistManager.defaultManager.readPlist("Favoriten")!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        print(PlistManager.defaultManager.readPlist("Favoriten"))
+        print(dicti)
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true;
-        self.navigationController?.navigationBarHidden = true
-
-        myLocation.initLocationManager()
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 44.0
-        getCategoriesJSON()
-        self.tableView.centerXAnchor
-        self.tableView.reloadData()
-        
-        
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
     }
-    
-    // MARK: - GetJSON Categories
-    
-    func getCategoriesJSON()
-    {
-        RestApiManager.sharedInstance.getCategories
-            {
-                json -> Void in
-                if let jsonArray = json.array
-                {
-                    //it is an array, each array contains a dictionary
-                    for item in jsonArray
-                    {
-                        if let jsonDict = item.dictionary //jsonDict : [String : JSON]?
-                        {
-                            //loop through all objects in this jsonDictionary
-                            let id = jsonDict["_id"]!.intValue
-                            let catid = jsonDict["cat_id"]!.stringValue
-                            let name = jsonDict["name"]!.stringValue
-                            //...etc. ...create post object..etc.
-                            // Übertragen via ASynch (Static/verschiedene Instanzen..)
-                            dispatch_async(dispatch_get_main_queue(),
-                                {
-                                    self.nameCategories?.addObject(name)
-                                    self.idCategories?.addObject(catid)
-                            })
-                            
-                            dispatch_async(dispatch_get_main_queue(),
-                                {
-                                    tableView?.reloadData()
-                            })
-                        }
-                        
-                        
-                    }
-                }
-        }
-
-    }
+   
     
     func getRandomColor() -> UIColor{
         
@@ -99,11 +47,17 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     
+    @IBAction func showSidebar(sender: AnyObject)
+    {
+        let next = self.storyboard?.instantiateViewControllerWithIdentifier("FilterViewController") as! FilterViewController
+        self.navigationController!.pushViewController(next, animated: true)
+    }
+    
     // MARK: - UITableViewDataSource
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameCategories.count
+        return 6
     }
     
     
@@ -114,7 +68,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     
-    /*
+    
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
         view.tintColor = UIColor(red: 0.967, green: 0.985, blue: 0.998, alpha: 1) // this example is a light blue, but of course it also works with UIColor.lightGrayColor()
@@ -123,18 +77,11 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         header.textLabel!.textColor = UIColor.redColor()
         
     }
-    */
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //print(nameCategories.objectAtIndex(indexPath.row))
+        print(self.dicti["Title"]!.objectAtIndex(indexPath.row) as? String)
         
-
-        let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewController") as! ThirdViewController
-        ThirdViewController.chosenCategorie = idCategories.objectAtIndex(indexPath.row) as! String
-       /* self.presentViewController(next, animated: true, completion: nil)
-*/
-        self.navigationController!.pushViewController(next, animated: true)
-
     }
     
 
@@ -144,7 +91,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         
         let cell: UITableViewCell? = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell?
         
-        cell!.textLabel?.text = self.nameCategories.objectAtIndex(indexPath.row) as? String
+        cell!.textLabel?.text = self.dicti["Title"]!.objectAtIndex(indexPath.row) as? String
         cell!.textLabel?.textAlignment = .Center
         cell!.detailTextLabel?.textAlignment = .Center
         

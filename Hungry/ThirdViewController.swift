@@ -487,7 +487,21 @@ class ThirdViewController: UIViewController
             let next = self.storyboard?.instantiateViewControllerWithIdentifier("ThirdViewControllerDetail") as! ThirdViewControllerDetail
             
             next.whichScreen = "Detail"
-            next.tmp = ThirdViewController.arrayJSON[counter]
+            switch(touchChoose)
+            {
+            case(1):
+                next.tmp = ThirdViewController.arrayJSON[tmpOne.id]
+                break
+            case(2):
+                next.tmp = ThirdViewController.arrayJSON[tmpTwo.id]
+                break
+            case(3):
+                next.tmp = ThirdViewController.arrayJSON[tmpThree.id]
+                break
+            default:
+                break
+            }
+            
             self.navigationController!.pushViewController(next, animated: true)
         }
     
@@ -651,9 +665,38 @@ class ThirdViewController: UIViewController
     }
     @IBAction func Confirm(sender: AnyObject)
     {
+        loadFav()
+
         acceptOrder()
     }
     
+    func loadFav()
+    {
+        let tmp: JSONData = JSONData()
+        switch(self.touchChoose)
+        {
+            case(1):
+            tmp.loadIn(ThirdViewController.arrayJSON[tmpOne.id].getID(), title: ThirdViewController.arrayJSON[tmpOne.id].getTitle(), address: ThirdViewController.arrayJSON[tmpOne.id].getAddress(), lat: ThirdViewController.arrayJSON[tmpOne.id].getLat(), lon: ThirdViewController.arrayJSON[tmpOne.id].getLon(), categorie: ThirdViewController.arrayJSON[tmpOne.id].getCategorie(), rating: ThirdViewController.arrayJSON[tmpOne.id].getRating(), images: ThirdViewController.arrayJSON[tmpOne.id].getImages(), meter: ThirdViewController.arrayJSON[tmpThree.id].getMeter(), heart: ThirdViewController.arrayJSON[tmpThree.id].getHearts(), description: ThirdViewController.arrayJSON[tmpThree.id].getDescription())
+            break
+        case(2):
+            tmp.loadIn(ThirdViewController.arrayJSON[tmpTwo.id].getID(), title: ThirdViewController.arrayJSON[tmpTwo.id].getTitle(), address: ThirdViewController.arrayJSON[tmpTwo.id].getAddress(), lat: ThirdViewController.arrayJSON[tmpTwo.id].getLat(), lon: ThirdViewController.arrayJSON[tmpTwo.id].getLon(), categorie: ThirdViewController.arrayJSON[tmpTwo.id].getCategorie(), rating: ThirdViewController.arrayJSON[tmpTwo.id].getRating(), images: ThirdViewController.arrayJSON[tmpTwo.id].getImages(), meter: ThirdViewController.arrayJSON[tmpThree.id].getMeter(), heart: ThirdViewController.arrayJSON[tmpThree.id].getHearts(), description: ThirdViewController.arrayJSON[tmpThree.id].getDescription())
+            break
+        case(3):
+            tmp.loadIn(ThirdViewController.arrayJSON[tmpThree.id].getID(), title: ThirdViewController.arrayJSON[tmpThree.id].getTitle(), address: ThirdViewController.arrayJSON[tmpThree.id].getAddress(), lat: ThirdViewController.arrayJSON[tmpThree.id].getLat(), lon: ThirdViewController.arrayJSON[tmpThree.id].getLon(), categorie: ThirdViewController.arrayJSON[tmpThree.id].getCategorie(), rating: ThirdViewController.arrayJSON[tmpThree.id].getRating(), images: ThirdViewController.arrayJSON[tmpThree.id].getImages(), meter: ThirdViewController.arrayJSON[tmpThree.id].getMeter(), heart: ThirdViewController.arrayJSON[tmpThree.id].getHearts(), description: ThirdViewController.arrayJSON[tmpThree.id].getDescription())
+            break
+        default:
+            break
+        }
+        PlistManager.defaultManager.updatePlist("Favoriten", key: "place_id", value: tmp.getID() )
+        PlistManager.defaultManager.updatePlist("Favoriten", key: "name", value: tmp.getTitle())
+        PlistManager.defaultManager.updatePlist("Favoriten", key: "image", value: tmp.getImages())
+        PlistManager.defaultManager.updatePlist("Favoriten", key: "lat", value: tmp.getLat())
+        PlistManager.defaultManager.updatePlist("Favoriten", key: "lon", value: tmp.getLon())
+        PlistManager.defaultManager.updatePlist("Favoriten", key: "address", value: tmp.getAddress())
+        PlistManager.defaultManager.updatePlist("Favoriten", key: "rating", value: tmp.getRating())
+        
+        //PlistManager.defaultManager.writeToPlist(<#T##fileName: String##String#>, key: <#T##String#>, value: <#T##AnyObject#>)
+    }
     // MARK: - GetJSON Categories
     
     func getDataJSON()
@@ -680,15 +723,18 @@ class ThirdViewController: UIViewController
                     let location = result["location"].arrayValue
                     let lat = location[0].doubleValue
                     let lon = location[1].doubleValue
+                    let yelp_rating = result["yelp_rating"].floatValue
+
                     //                let categories = result["categories"].stringValue
-                    let rating = result["rating"].floatValue
+                    let heart_rating = result["rating"].intValue
                     //                let open = result["open"].boolValue
                     //                let opening_hours = result["opening_hours"].stringValue
-                    var images = result["image_url"].stringValue
-                    if(images == "")
-                    {
-                       images = "http://deadredhitting.com/store/wordpress/wp-content/themes/kassyopea/wpsc-images/no_image.jpg"
-                    }
+                    var image = result["images"].arrayValue
+                    let images = image[0]["image_url"].stringValue
+                    let description_image = image[0]["image_description"].stringValue
+
+                    print(images)
+                    print(description_image)
 
                     //                let hearts = result["hearts"].intValue
                     //                let distance = result["distance"].floatValue
@@ -698,7 +744,7 @@ class ThirdViewController: UIViewController
                     //str.append(categories[0].stringValue)
                     //print(title)
                     let meter: Int = Int(distanceInKm(ThirdViewController.myLocationLat, lon1: ThirdViewController.myLocationLon, lat2: lat, lon2: lon) * 1000)
-                    tmp2.loadIn(id, title: title, address: address, lat: lat, lon: lon, categorie: ThirdViewController.chosenCategorie, rating: rating, images: images, meter: meter)
+                   tmp2.loadIn(id, title: title, address: address, lat: lat, lon: lon, categorie: ThirdViewController.chosenCategorie, rating: yelp_rating, images: images, meter: meter, heart: heart_rating, description : description_image)
                   
                     
                     dispatch_async(dispatch_get_main_queue(), {

@@ -10,6 +10,7 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import FBSDKShareKit
 import MapKit
 import AddressBook
 
@@ -21,6 +22,8 @@ class ThirdViewControllerDetail: UIViewController
     @IBOutlet weak var pic: UIImageView!
     
     var tmpOne: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 339)))
+    
+    @IBOutlet weak var shareButton: FBSDKShareButton!
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var rating: UILabel!
@@ -46,6 +49,7 @@ class ThirdViewControllerDetail: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true;
         longPress.minimumPressDuration = 1.0
         tmpOne.setTa(3)
@@ -62,6 +66,21 @@ class ThirdViewControllerDetail: UIViewController
         centerMapOnLocation(initialLocation)
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false;
+        
+        
+        
+        // Content for Share...
+        let content : FBSDKShareLinkContent = FBSDKShareLinkContent()
+        content.contentURL = NSURL(string: "https://hungry-app.com")
+        content.contentTitle = String(tmp.getTitle())
+        content.contentDescription = String(tmp.getAddress())
+        content.imageURL = NSURL(string: String(tmp.getImages()))
+        shareButton.shareContent = content
+        shareButton.enabled = true
+        // End Content...
+        
+        
+        descript.text = tmp.getDescription()
         
     }
     

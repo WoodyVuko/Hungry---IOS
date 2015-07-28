@@ -23,8 +23,9 @@ class JSONData
     private var description : String = ""
     private var meter : Int = 0
     
-    func loadIn(id : String, title : String, address : String, lat : Double, lon : Double, categorie : String, rating : Float, images : String, meter : Int)
+    func loadIn(id : String, title : String, address : String, lat : Double, lon : Double, categorie : String, rating : Float, images : String, meter : Int, heart : Int, description : String)
     {
+        self.description = description
         self.id = id;
         self.title = title
         self.address = address
@@ -34,6 +35,7 @@ class JSONData
         self.rating = rating
         self.images = images
         self.meter = meter
+        self.hearts = heart
     }
     
     func setCategorie(categorie : String)

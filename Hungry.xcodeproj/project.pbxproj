@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B82A90B81B62C0BC00D527D2 /* FindMyCoords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82A90B71B62C0BC00D527D2 /* FindMyCoords.swift */; };
+		B85C46731B66942B00588494 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85C46721B66942B00588494 /* FBSDKShareKit.framework */; };
+		B85C46771B66AFE600588494 /* filterBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B85C46761B66AFE600588494 /* filterBG.jpg */; };
+		B85C46791B66B0D600588494 /* pink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B85C46781B66B0D600588494 /* pink.jpg */; };
 		B8655DAC1B5F16F1003D465F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B8655DAB1B5F16F1003D465F /* Default.png */; };
 		B87125AD1B592E7E0002BE46 /* JSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87125AC1B592E7E0002BE46 /* JSONData.swift */; };
 		B87125AF1B593A050002BE46 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87125AE1B593A050002BE46 /* Threading.swift */; };
@@ -24,7 +27,9 @@
 		B8730A6F1B5C2E2000EAAAA0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8730A6E1B5C2E2000EAAAA0 /* MapKit.framework */; };
 		B8730A711B5C2EE100EAAAA0 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8730A701B5C2EE100EAAAA0 /* MapController.swift */; };
 		B896ACF51B62BBCB004A218C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B896ACF41B62BBCB004A218C /* CoreLocation.framework */; };
-		B8981E351B658EDA000A5C42 /* Favorites.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8981E341B658EDA000A5C42 /* Favorites.strings */; };
+		B8981E3A1B666967000A5C42 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8981E381B666967000A5C42 /* FourthViewController.swift */; };
+		B8981E3B1B666967000A5C42 /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8981E391B666967000A5C42 /* PlistManager.swift */; };
+		B8981E3D1B667655000A5C42 /* Favoriten.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8981E3C1B667655000A5C42 /* Favoriten.plist */; };
 		B8AC465C1B53143300A9A1FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AC465B1B53143300A9A1FD /* AppDelegate.swift */; };
 		B8AC465E1B53143300A9A1FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AC465D1B53143300A9A1FD /* ViewController.swift */; };
 		B8AC46611B53143300A9A1FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AC465F1B53143300A9A1FD /* Main.storyboard */; };
@@ -63,7 +68,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B81BC78C1B67E1BE000C3693 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = "../Frameworks Swift/SWXMLHash.framework"; sourceTree = "<group>"; };
+		B81BC78D1B67E1BE000C3693 /* SwiftHTTP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHTTP.framework; path = "../Frameworks Swift/SwiftHTTP.framework"; sourceTree = "<group>"; };
 		B82A90B71B62C0BC00D527D2 /* FindMyCoords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindMyCoords.swift; sourceTree = "<group>"; };
+		B85C46721B66942B00588494 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		B85C46761B66AFE600588494 /* filterBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = filterBG.jpg; sourceTree = "<group>"; };
+		B85C46781B66B0D600588494 /* pink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pink.jpg; sourceTree = "<group>"; };
 		B8655DAB1B5F16F1003D465F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B87125AC1B592E7E0002BE46 /* JSONData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONData.swift; sourceTree = "<group>"; };
 		B87125AE1B593A050002BE46 /* Threading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
@@ -80,7 +90,9 @@
 		B8730A6E1B5C2E2000EAAAA0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B8730A701B5C2EE100EAAAA0 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		B896ACF41B62BBCB004A218C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		B8981E341B658EDA000A5C42 /* Favorites.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Favorites.strings; sourceTree = "<group>"; };
+		B8981E381B666967000A5C42 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		B8981E391B666967000A5C42 /* PlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
+		B8981E3C1B667655000A5C42 /* Favoriten.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Favoriten.plist; sourceTree = "<group>"; };
 		B8AC46581B53143300A9A1FD /* Hungry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hungry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8AC465B1B53143300A9A1FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8AC465D1B53143300A9A1FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B85C46731B66942B00588494 /* FBSDKShareKit.framework in Frameworks */,
 				B896ACF51B62BBCB004A218C /* CoreLocation.framework in Frameworks */,
 				B8AC468F1B5314BD00A9A1FD /* FBSDKLoginKit.framework in Frameworks */,
 				B8730A6F1B5C2E2000EAAAA0 /* MapKit.framework in Frameworks */,
@@ -139,6 +152,8 @@
 		B87125B31B595AED0002BE46 /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				B85C46761B66AFE600588494 /* filterBG.jpg */,
+				B85C46781B66B0D600588494 /* pink.jpg */,
 				B8730A621B5AB43500EAAAA0 /* Load.png */,
 				B87125B81B59609A0002BE46 /* Cancel.png */,
 				B87125B91B59609A0002BE46 /* Mark.png */,
@@ -170,6 +185,7 @@
 				B8C5A1B81B5516E400EF437B /* GPS_Calculator.swift */,
 				B82A90B71B62C0BC00D527D2 /* FindMyCoords.swift */,
 				B8F90E0A1B65887B003A5E1C /* FavList.swift */,
+				B8981E391B666967000A5C42 /* PlistManager.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -177,12 +193,15 @@
 		B8AC464F1B53143300A9A1FD = {
 			isa = PBXGroup;
 			children = (
-				B896ACF41B62BBCB004A218C /* CoreLocation.framework */,
-				B8655DAB1B5F16F1003D465F /* Default.png */,
+				B81BC78C1B67E1BE000C3693 /* SWXMLHash.framework */,
+				B81BC78D1B67E1BE000C3693 /* SwiftHTTP.framework */,
 				B8730A6E1B5C2E2000EAAAA0 /* MapKit.framework */,
-				B8C454031B54263B00A80437 /* Default-568h@2x.png */,
 				B8AC468C1B5314BD00A9A1FD /* FBSDKCoreKit.framework */,
 				B8AC468D1B5314BD00A9A1FD /* FBSDKLoginKit.framework */,
+				B85C46721B66942B00588494 /* FBSDKShareKit.framework */,
+				B896ACF41B62BBCB004A218C /* CoreLocation.framework */,
+				B8655DAB1B5F16F1003D465F /* Default.png */,
+				B8C454031B54263B00A80437 /* Default-568h@2x.png */,
 				B8AC465A1B53143300A9A1FD /* Hungry */,
 				B8AC46721B53143300A9A1FD /* HungryTests */,
 				B8AC467D1B53143300A9A1FD /* HungryUITests */,
@@ -209,7 +228,8 @@
 				B8AC465B1B53143300A9A1FD /* AppDelegate.swift */,
 				B8AC465D1B53143300A9A1FD /* ViewController.swift */,
 				B8C454011B54249600A80437 /* SecondViewController.swift */,
-				B8981E341B658EDA000A5C42 /* Favorites.strings */,
+				B8981E3C1B667655000A5C42 /* Favoriten.plist */,
+				B8981E381B666967000A5C42 /* FourthViewController.swift */,
 				B8730A6A1B5C242000EAAAA0 /* MapDetailController.swift */,
 				B8F7DA0A1B56D1F900D9C6B7 /* ThirdViewController.swift */,
 				B8730A681B5BFCBC00EAAAA0 /* ThirdViewControllerDetail.swift */,
@@ -356,10 +376,12 @@
 				B87125B71B595D740002BE46 /* Stars.png in Resources */,
 				B8730A611B5AA2DB00EAAAA0 /* Widget.xib in Resources */,
 				B8AC46661B53143300A9A1FD /* Assets.xcassets in Resources */,
-				B8981E351B658EDA000A5C42 /* Favorites.strings in Resources */,
 				B8AC46611B53143300A9A1FD /* Main.storyboard in Resources */,
 				B87125BB1B59609A0002BE46 /* Mark.png in Resources */,
 				B8C454041B54263B00A80437 /* Default-568h@2x.png in Resources */,
+				B85C46771B66AFE600588494 /* filterBG.jpg in Resources */,
+				B8981E3D1B667655000A5C42 /* Favoriten.plist in Resources */,
+				B85C46791B66B0D600588494 /* pink.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,9 +406,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8981E3B1B666967000A5C42 /* PlistManager.swift in Sources */,
 				B87125AF1B593A050002BE46 /* Threading.swift in Sources */,
 				B8730A6D1B5C2A6D00EAAAA0 /* MapAnnotations.swift in Sources */,
 				B8B87EDD1B54372C00DEFD60 /* RestApiManager.swift in Sources */,
+				B8981E3A1B666967000A5C42 /* FourthViewController.swift in Sources */,
 				B8F90E061B656F08003A5E1C /* FilterViewController.swift in Sources */,
 				B8C454021B54249600A80437 /* SecondViewController.swift in Sources */,
 				B8C5A1B91B5516E400EF437B /* GPS_Calculator.swift in Sources */,
