@@ -20,6 +20,7 @@ import UIKit
     @IBOutlet weak var ratingLabel: UILabel!
 
     @IBOutlet weak var imageView: UIImageView!
+
     
     @IBInspectable var image: UIImage {
         get {

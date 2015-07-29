@@ -219,4 +219,104 @@ class ThirdViewControllerDetail: UIViewController
 
     }
     
+    func uploadFunction()
+    {
+        let myUrl: String = "http://ec2-52-28-74-34.eu-central-1.compute.amazonaws.com:8080/rating"
+        
+        
+        let param = [
+            "password" : "a8JwAkBy",
+            "username" : "hangry",
+            "fb_id" : String(ViewController.fbID),
+            "place_id" : String(tmp.getID()),
+            "heart" : String(tmp.getHearts() + 1)
+    ]
+    
+        //  talk to registration end point
+        let r = Just.post(
+            myUrl,
+            data: param
+        )
+        print(r.response)
+        print(r.statusCode)
+        if (r.ok)
+        {
+            print("Heart posted")
+        }
+    }
+    
+    @IBAction func heartRating(sender: AnyObject)
+    {
+        /*
+        let myUrl: String = "http://ec2-52-28-74-34.eu-central-1.compute.amazonaws.com:8080/rating"
+        
+        
+        let param = [
+            "password" : "a8JwAkBy",
+            "username" : "hangry",
+            "fb_id" : String(ViewController.fbID),
+            "place_id" : String(tmp.getID()),
+            "heart" : "1"
+        ]
+        
+    
+        let r = Just.post(myUrl, params: param)
+        
+        print("***************************************")
+        print(r.response)
+        print(r.statusCode)
+        if (r.ok)
+        {
+            print("Heart posted")
+        }
+*/
+        let myUrl: String = "http://ec2-52-28-74-34.eu-central-1.compute.amazonaws.com:8080/rating"
+        
+        
+        var one : NSString = "a8JwAkBy"
+        var two : NSString = "hangry"
+        var three : NSString = "a8JwAkBy"
+        var four : NSString = "a8JwAkBy"
+        var five : NSString = "a8JwAkBy"
+        
+        var on = one.dataUsingEncoding(NSUTF8StringEncoding)
+        var tw = two.dataUsingEncoding(NSUTF8StringEncoding)
+        var th = three.dataUsingEncoding(NSUTF8StringEncoding)
+        var fo = four.dataUsingEncoding(NSUTF8StringEncoding)
+        var fi = five.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let param = [
+            "password" : "a8JwAkBy",
+            "username" : "hangry",
+            "fb_id" : String(ViewController.fbID),
+            "place_id" : String(tmp.getID()),
+            
+        ]
+        
+        
+        
+        /*  talk to registration end point
+        let r = Just.post(
+        myUrl,
+        data: param
+        )
+        */
+        
+        let r = Just.post(myUrl, files: [
+            "password":HTTPFile.reinerText(on!, "multipart/form-data"),
+            "username":HTTPFile.reinerText(tw!, "multipart/form-data"),
+            "fb_id":HTTPFile.reinerText(th!, "multipart/form-data"),
+            "place_id":HTTPFile.reinerText(fo!, "multipart/form-data"),
+            "heart":HTTPFile.reinerText(fi!, "multipart/form-data")
+            ])
+        
+        print("***************************************")
+        print(r.response)
+        print(r.statusCode)
+        if (r.ok)
+        {
+            print("Heart posted")
+        }
+    
+    }
 }

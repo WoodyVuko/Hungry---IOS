@@ -154,7 +154,12 @@ public class Just: NSObject, NSURLSessionDelegate {
                 partFilename = filename
                 partContent = data
                 partMimetype = mimetype
-            }
+            
+            case let .reinerText(data, mimetype):
+                partContent = data
+                partMimetype = mimetype
+        }
+            
             if let content = partContent, let filename = partFilename {
                 body.appendData(NSData(data: "Content-Disposition: form-data; name=\"\(k)\"; filename=\"\(filename)\"\r\n".dataUsingEncoding(defaults.encoding)!))
                 if let type = partMimetype {
@@ -599,6 +604,7 @@ public enum HTTPFile {
     case URL(NSURL,String?) // URL to a file, mimetype
     case Data(String,NSData,String?) // filename, data, mimetype
     case Text(String,String,String?) // filename, text, mimetype
+    case reinerText(NSData,String?) // filename, text, mimetype
 }
 
 // Supported request types
