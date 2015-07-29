@@ -51,16 +51,16 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbauth</string>
-        <string>fbapi20130214:///</string>
-        <string>fbapi20130214</string>
-        <string>fbapi</string>
-        <string>20130214</string>
-        <string>fb472830629557349</string>
-        <string>472830629557349</string>
-        <string>fbapi20130410</string>
-        <string>20130410</string>
-        <string>fb20130410</string>
-        <string>fbapi20130410:///</string>
+		<string>fbapi20130214:///</string>
+		<string>fbapi20130214</string>
+		<string>fbapi</string>
+		<string>20130214</string>
+		<string>fb472830629557349</string>
+		<string>472830629557349</string>
+		<string>fbapi20130410</string>
+		<string>20130410</string>
+		<string>fb20130410</string>
+		<string>fbapi20130410:///</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -86,8 +86,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>

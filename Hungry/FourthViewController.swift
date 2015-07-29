@@ -73,7 +73,7 @@ class FourthViewController: UIViewController, UITableViewDataSource, UITableView
         
         view.tintColor = UIColor(red: 0.967, green: 0.985, blue: 0.998, alpha: 1) // this example is a light blue, but of course it also works with UIColor.lightGrayColor()
     
-        var header : UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        let header : UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         header.textLabel!.textColor = UIColor.redColor()
         
     }

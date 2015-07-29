@@ -24,12 +24,14 @@ class ThirdViewControllerDetail: UIViewController
     var tmpOne: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 339)))
     
     @IBOutlet weak var shareButton: FBSDKShareButton!
-    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var hearts: UILabel!
     @IBOutlet weak var descript: UILabel!
     @IBOutlet weak var meter: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var croppingEnabled: Bool = false
 
     var tmp : JSONData = JSONData();
     var counter: Int = 0
@@ -207,4 +209,14 @@ class ThirdViewControllerDetail: UIViewController
         self.presentViewController(next, animated: false, completion: nil)
 */
     }
+    @IBAction func openCamera(sender: AnyObject)
+    {
+        let next = self.storyboard?.instantiateViewControllerWithIdentifier("CameraViewController") as! CameraViewController
+        //next.whichScreen = "Main"
+        //next.counter = self.counter
+        next.tmp = self.tmp
+        self.presentViewController(next, animated: false, completion: nil)
+
+    }
+    
 }

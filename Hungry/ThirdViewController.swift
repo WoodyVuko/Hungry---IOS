@@ -29,7 +29,7 @@ class ThirdViewController: UIViewController
     static var arrayJSON : [JSONData] = [JSONData]()
     static var myLocationLat : Double = 0
     static var myLocationLon : Double = 0
-    static var distance : Int = 500
+    static var distance : Int = 1500
     static var chosenCategorie: String = ""
 
     var counter: Int = 0
@@ -733,8 +733,8 @@ class ThirdViewController: UIViewController
                     let images = image[0]["image_url"].stringValue
                     let description_image = image[0]["image_description"].stringValue
 
-                    print(images)
-                    print(description_image)
+                    //print(images)
+                    // print(description_image)
 
                     //                let hearts = result["hearts"].intValue
                     //                let distance = result["distance"].floatValue

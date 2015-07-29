@@ -69,7 +69,7 @@ class FilterViewController: UIViewController, FBSDKLoginButtonDelegate
         // End Content...
         
         distance.text = String(Int(ThirdViewController.distance))
-        distanceSlide.value = Float(ThirdViewController.distance) + 500.00
+        distanceSlide.value = Float(ThirdViewController.distance) + 1500.00
         showUserInfo()
     }
     
@@ -127,7 +127,7 @@ class FilterViewController: UIViewController, FBSDKLoginButtonDelegate
             }
         })
         
-        var request = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
+        let request = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
         
         request.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
             if error == nil {

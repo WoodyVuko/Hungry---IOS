@@ -19,7 +19,8 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var shareButton: FBSDKShareButton!
-    
+    static var fbID : Int = 0
+ 
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -116,8 +117,13 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate
             }
             else
             {
-                print("fetched user: \(result)")
+               // print("fetched user: \(result)")
                 let userName : NSString = result.valueForKey("name") as! NSString
+                let id : NSString = result.valueForKey("id") as! NSString
+                
+                // Übergabe der FBID
+                ViewController.fbID = Int(id as String)!
+                
                 print("User Name is: \(userName)")
                 //let userEmail : NSString = result.valueForKey("email") as! NSString
                 //print("User Email is: \(userEmail)")
@@ -129,7 +135,7 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate
             }
         })
         
-        var request = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
+        let request = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
         
         request.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
             if error == nil {
