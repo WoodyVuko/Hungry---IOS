@@ -42,6 +42,8 @@ class FilterViewController: UIViewController, FBSDKLoginButtonDelegate
     {
         let next = self.storyboard?.instantiateViewControllerWithIdentifier("SecondViewController") as! SecondViewController
         self.navigationController!.pushViewController(next, animated: true)
+        
+        ThirdViewController.arrayJSON.removeAll()
     }
     
     @IBAction func changeDistance(sender: AnyObject)

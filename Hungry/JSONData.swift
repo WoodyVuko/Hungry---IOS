@@ -6,6 +6,8 @@
 //  Copyright © 2015 Goran Vukovic. All rights reserved.
 //
 
+import UIKit
+
 class JSONData
 {
     private var id : String = ""
@@ -22,8 +24,9 @@ class JSONData
     private var distance : Float = 0.0
     private var description : String = ""
     private var meter : Int = 0
+    private var container: NSMutableArray = NSMutableArray()
     
-    func loadIn(id : String, title : String, address : String, lat : Double, lon : Double, categorie : String, rating : Float, images : String, meter : Int, heart : Int, description : String)
+    func loadIn(id : String, title : String, address : String, lat : Double, lon : Double, categorie : String, rating : Float, images : String, meter : Int, heart : Int, description : String, container: NSMutableArray)
     {
         self.description = description
         self.id = id;
@@ -36,6 +39,18 @@ class JSONData
         self.images = images
         self.meter = meter
         self.hearts = heart
+        self.container = container
+
+    }
+    
+    func getContainer(i : Int) -> AnyObject
+    {
+        return self.container.objectAtIndex(i)
+    }
+    
+    func getContainerLength() -> Int
+    {
+        return self.container.count
     }
     
     func setCategorie(categorie : String)

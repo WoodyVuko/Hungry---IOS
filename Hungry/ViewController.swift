@@ -29,10 +29,10 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate
         
         // Content for Share...
         let content : FBSDKShareLinkContent = FBSDKShareLinkContent()
-        content.contentURL = NSURL(string: "https://github.com/tabhuang/FacebookLogin")
-        content.contentTitle = "Swift"
-        content.contentDescription = "Facebook Login & Share"
-        content.imageURL = NSURL(string: "https://raw.githubusercontent.com/tabhuang/FacebookLogin/master/3.png")
+        content.contentURL = NSURL(string: "https://google.de")
+        content.contentTitle = "Hungry"
+        content.contentDescription = "The easiest way to find your next food"
+        content.imageURL = NSURL(string: "http://img09.deviantart.net/7d78/i/2011/136/e/8/monster__hungry_by_ivan_bliznak-d3ggvsq.jpg")
         shareButton.shareContent = content
         shareButton.enabled = false
         // End Content...
@@ -134,7 +134,7 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate
             
             }
         })
-        
+       // /me/ids_for_business
         let request = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
         
         request.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
@@ -144,6 +144,7 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate
                 print("Error Getting Friends \(error)");
             }
         }
+
     }
 }
 

@@ -7,6 +7,9 @@
         <mutableArray key="AppleSDGothicNeo.ttc">
             <string>AppleSDGothicNeo-Regular</string>
         </mutableArray>
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </mutableArray>
         <mutableArray key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Thin</string>
             <string>HelveticaNeue-Thin</string>
@@ -178,8 +181,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filterBG.jpg" id="XzZ-ay-Caz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="XzZ-ay-Caz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_large.png" id="NjF-hy-mOI">
+                                <rect key="frame" x="10" y="55" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hungry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eif-r7-vPu">
@@ -193,6 +200,14 @@
                                 <rect key="frame" x="0.0" y="444" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="y15-fX-IOp">
+                                <rect key="frame" x="145" y="515" width="31" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Heart.png"/>
+                                <connections>
+                                    <action selector="heartRating:" destination="GmQ-Bj-jZq" eventType="touchUpInside" id="mHi-L9-UVn"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DM0-6v-UHi">
                                 <rect key="frame" x="274" y="444" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -233,14 +248,40 @@
                                     <action selector="openCamera:" destination="GmQ-Bj-jZq" eventType="touchUpInside" id="Vp1-uy-Wy2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="y15-fX-IOp">
-                                <rect key="frame" x="145" y="515" width="31" height="25"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="tsn-5C-99w">
+                                <rect key="frame" x="142" y="310" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Heart.png"/>
-                                <connections>
-                                    <action selector="heartRating:" destination="GmQ-Bj-jZq" eventType="touchUpInside" id="mHi-L9-UVn"/>
-                                </connections>
-                            </button>
+                                <color key="color" red="0.97826086960000003" green="0.2230766599" blue="0.21070753489999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yy3-uV-fs2">
+                                <rect key="frame" x="5" y="363" width="300" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uDM-xi-5pa">
+                                <rect key="frame" x="208" y="387" width="33" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cjx-ga-6SW">
+                                <rect key="frame" x="282" y="387" width="28" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart.png" id="lrC-nq-DXc">
+                                <rect key="frame" x="254" y="387" width="20" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stars.png" id="nvv-r0-wdB">
+                                <rect key="frame" x="194" y="387" width="20" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -249,11 +290,15 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="activity" destination="tsn-5C-99w" id="3Qd-kv-Nav"/>
                         <outlet property="descript" destination="L3B-tr-VN4" id="i9x-EH-Bdk"/>
                         <outlet property="detailView" destination="YwW-1e-eBm" id="g5s-RS-7fh"/>
+                        <outlet property="hearts" destination="cjx-ga-6SW" id="Rph-v9-dcT"/>
                         <outlet property="longPress" destination="WiV-2s-efv" id="Ebd-UN-03S"/>
                         <outlet property="mapView" destination="HHR-yr-OHw" id="MoM-oQ-bHh"/>
                         <outlet property="meter" destination="V8q-MA-6ce" id="Ua7-N1-RDa"/>
+                        <outlet property="name" destination="yy3-uV-fs2" id="5UB-5K-oxr"/>
+                        <outlet property="rating" destination="uDM-xi-5pa" id="vdJ-rH-a44"/>
                         <outlet property="shareButton" destination="D2Q-KO-nrb" id="6BS-uY-XE5"/>
                         <segue destination="z3Q-kP-KdV" kind="modal" modalTransitionStyle="flipHorizontal" id="YOo-da-GS8"/>
                     </connections>
@@ -675,6 +720,7 @@
         <image name="Stars.png" width="28" height="25"/>
         <image name="filterBG.jpg" width="1242" height="2208"/>
         <image name="menu" width="22" height="22"/>
+        <image name="placeholder_large.png" width="500" height="500"/>
     </resources>
     <color key="tintColor" red="0.97826086960000003" green="0.2230766599" blue="0.21070753489999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

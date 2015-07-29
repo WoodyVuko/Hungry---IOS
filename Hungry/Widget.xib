@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="312" height="327"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Load.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jix-Mh-UXS">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder_large.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jix-Mh-UXS">
                     <rect key="frame" x="-4" y="0.0" width="316" height="300"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvU-qu-mDY">
@@ -53,7 +53,7 @@
     </objects>
     <resources>
         <image name="Heart.png" width="28" height="25"/>
-        <image name="Load.png" width="640" height="1096"/>
         <image name="Stars.png" width="28" height="25"/>
+        <image name="placeholder_large.png" width="500" height="500"/>
     </resources>
 </document>

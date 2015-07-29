@@ -11,6 +11,8 @@
 		B8521A781B6843E000DC5A83 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8521A771B6843E000DC5A83 /* CameraViewController.swift */; };
 		B8521A891B690AF100DC5A83 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521A881B690AF100DC5A83 /* placeholder.png */; };
 		B8521A8B1B690B0800DC5A83 /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8521A8A1B690B0800DC5A83 /* Just.swift */; };
+		B8521A961B696C1800DC5A83 /* placeholder-camera-green.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521A941B696C1800DC5A83 /* placeholder-camera-green.png */; };
+		B8521A971B696C1800DC5A83 /* placeholder_large.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521A951B696C1800DC5A83 /* placeholder_large.png */; };
 		B85C46731B66942B00588494 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85C46721B66942B00588494 /* FBSDKShareKit.framework */; };
 		B85C46771B66AFE600588494 /* filterBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B85C46761B66AFE600588494 /* filterBG.jpg */; };
 		B85C46791B66B0D600588494 /* pink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B85C46781B66B0D600588494 /* pink.jpg */; };
@@ -90,6 +92,8 @@
 		B8521A771B6843E000DC5A83 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B8521A881B690AF100DC5A83 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = Hungry/placeholder.png; sourceTree = SOURCE_ROOT; };
 		B8521A8A1B690B0800DC5A83 /* Just.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Just.swift; path = Hungry/Just.swift; sourceTree = SOURCE_ROOT; };
+		B8521A941B696C1800DC5A83 /* placeholder-camera-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder-camera-green.png"; path = "../../../../Downloads/placeholder-camera-green.png"; sourceTree = "<group>"; };
+		B8521A951B696C1800DC5A83 /* placeholder_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder_large.png; path = ../../../../Downloads/placeholder_large.png; sourceTree = "<group>"; };
 		B85C46721B66942B00588494 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		B85C46761B66AFE600588494 /* filterBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = filterBG.jpg; sourceTree = "<group>"; };
 		B85C46781B66B0D600588494 /* pink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pink.jpg; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 		B87125B31B595AED0002BE46 /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				B8521A941B696C1800DC5A83 /* placeholder-camera-green.png */,
+				B8521A951B696C1800DC5A83 /* placeholder_large.png */,
 				B85C46761B66AFE600588494 /* filterBG.jpg */,
 				B8521A881B690AF100DC5A83 /* placeholder.png */,
 				B85C46781B66B0D600588494 /* pink.jpg */,
@@ -467,12 +473,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8A1C35A1B68420C0004916C /* ALCameraView.strings in Resources */,
+				B8521A971B696C1800DC5A83 /* placeholder_large.png in Resources */,
 				B87125B51B595AED0002BE46 /* Heart.png in Resources */,
 				B8521A891B690AF100DC5A83 /* placeholder.png in Resources */,
 				B87125BA1B59609A0002BE46 /* Cancel.png in Resources */,
 				B8655DAC1B5F16F1003D465F /* Default.png in Resources */,
 				B8730A631B5AB43500EAAAA0 /* Load.png in Resources */,
 				B8F90E091B657B3D003A5E1C /* Images.xcassets in Resources */,
+				B8521A961B696C1800DC5A83 /* placeholder-camera-green.png in Resources */,
 				B87125B71B595D740002BE46 /* Stars.png in Resources */,
 				B8730A611B5AA2DB00EAAAA0 /* Widget.xib in Resources */,
 				B8AC46661B53143300A9A1FD /* Assets.xcassets in Resources */,

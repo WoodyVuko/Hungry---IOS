@@ -44,7 +44,7 @@ class ThirdViewController: UIViewController
     var tmpOne: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
     var tmpTwo: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
     var tmpThree: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
-    //var tmpFour: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369))) // 300, 369
+    var tmpFour: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369))) // 300, 369
     //var tmpFive: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
     //var tmpSix: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
     @IBOutlet var longPress: UILongPressGestureRecognizer!
@@ -69,14 +69,7 @@ class ThirdViewController: UIViewController
         tmpOne.setTa(1)
         tmpTwo.setTa(2)
         tmpThree.setTa(3)
-        /*
-        tmpFour.setTa(4)
-        tmpFive.setTa(5)
-        tmpSix.setTa(6)
-        self.view.addSubview(tmpSix)
-        self.view.addSubview(tmpFive)
-        self.view.addSubview(tmpFour)
-        */
+
         self.view.addSubview(tmpThree)
         self.view.addSubview(tmpTwo)
         self.view.addSubview(tmpOne)
@@ -676,13 +669,13 @@ class ThirdViewController: UIViewController
         switch(self.touchChoose)
         {
             case(1):
-            tmp.loadIn(ThirdViewController.arrayJSON[tmpOne.id].getID(), title: ThirdViewController.arrayJSON[tmpOne.id].getTitle(), address: ThirdViewController.arrayJSON[tmpOne.id].getAddress(), lat: ThirdViewController.arrayJSON[tmpOne.id].getLat(), lon: ThirdViewController.arrayJSON[tmpOne.id].getLon(), categorie: ThirdViewController.arrayJSON[tmpOne.id].getCategorie(), rating: ThirdViewController.arrayJSON[tmpOne.id].getRating(), images: ThirdViewController.arrayJSON[tmpOne.id].getImages(), meter: ThirdViewController.arrayJSON[tmpThree.id].getMeter(), heart: ThirdViewController.arrayJSON[tmpThree.id].getHearts(), description: ThirdViewController.arrayJSON[tmpThree.id].getDescription())
+                tmp.loadIn(ThirdViewController.arrayJSON[tmpOne.id].getID(), title: ThirdViewController.arrayJSON[tmpOne.id].getTitle(), address: ThirdViewController.arrayJSON[tmpOne.id].getAddress(), lat: ThirdViewController.arrayJSON[tmpOne.id].getLat(), lon: ThirdViewController.arrayJSON[tmpOne.id].getLon(), categorie: ThirdViewController.arrayJSON[tmpOne.id].getCategorie(), rating: ThirdViewController.arrayJSON[tmpOne.id].getRating(), images: ThirdViewController.arrayJSON[tmpOne.id].getImages(), meter: ThirdViewController.arrayJSON[tmpOne.id].getMeter(), heart: ThirdViewController.arrayJSON[tmpOne.id].getHearts(), description: ThirdViewController.arrayJSON[tmpOne.id].getDescription(), container: ThirdViewController.arrayJSON[tmpOne.id].getContainer(0) as! NSMutableArray)
             break
         case(2):
-            tmp.loadIn(ThirdViewController.arrayJSON[tmpTwo.id].getID(), title: ThirdViewController.arrayJSON[tmpTwo.id].getTitle(), address: ThirdViewController.arrayJSON[tmpTwo.id].getAddress(), lat: ThirdViewController.arrayJSON[tmpTwo.id].getLat(), lon: ThirdViewController.arrayJSON[tmpTwo.id].getLon(), categorie: ThirdViewController.arrayJSON[tmpTwo.id].getCategorie(), rating: ThirdViewController.arrayJSON[tmpTwo.id].getRating(), images: ThirdViewController.arrayJSON[tmpTwo.id].getImages(), meter: ThirdViewController.arrayJSON[tmpThree.id].getMeter(), heart: ThirdViewController.arrayJSON[tmpThree.id].getHearts(), description: ThirdViewController.arrayJSON[tmpThree.id].getDescription())
+            tmp.loadIn(ThirdViewController.arrayJSON[tmpTwo.id].getID(), title: ThirdViewController.arrayJSON[tmpTwo.id].getTitle(), address: ThirdViewController.arrayJSON[tmpTwo.id].getAddress(), lat: ThirdViewController.arrayJSON[tmpTwo.id].getLat(), lon: ThirdViewController.arrayJSON[tmpTwo.id].getLon(), categorie: ThirdViewController.arrayJSON[tmpTwo.id].getCategorie(), rating: ThirdViewController.arrayJSON[tmpTwo.id].getRating(), images: ThirdViewController.arrayJSON[tmpTwo.id].getImages(), meter: ThirdViewController.arrayJSON[tmpTwo.id].getMeter(), heart: ThirdViewController.arrayJSON[tmpTwo.id].getHearts(), description: ThirdViewController.arrayJSON[tmpTwo.id].getDescription(), container: ThirdViewController.arrayJSON[tmpTwo.id].getContainer(0) as! NSMutableArray)
             break
         case(3):
-            tmp.loadIn(ThirdViewController.arrayJSON[tmpThree.id].getID(), title: ThirdViewController.arrayJSON[tmpThree.id].getTitle(), address: ThirdViewController.arrayJSON[tmpThree.id].getAddress(), lat: ThirdViewController.arrayJSON[tmpThree.id].getLat(), lon: ThirdViewController.arrayJSON[tmpThree.id].getLon(), categorie: ThirdViewController.arrayJSON[tmpThree.id].getCategorie(), rating: ThirdViewController.arrayJSON[tmpThree.id].getRating(), images: ThirdViewController.arrayJSON[tmpThree.id].getImages(), meter: ThirdViewController.arrayJSON[tmpThree.id].getMeter(), heart: ThirdViewController.arrayJSON[tmpThree.id].getHearts(), description: ThirdViewController.arrayJSON[tmpThree.id].getDescription())
+            tmp.loadIn(ThirdViewController.arrayJSON[tmpThree.id].getID(), title: ThirdViewController.arrayJSON[tmpThree.id].getTitle(), address: ThirdViewController.arrayJSON[tmpThree.id].getAddress(), lat: ThirdViewController.arrayJSON[tmpThree.id].getLat(), lon: ThirdViewController.arrayJSON[tmpThree.id].getLon(), categorie: ThirdViewController.arrayJSON[tmpThree.id].getCategorie(), rating: ThirdViewController.arrayJSON[tmpThree.id].getRating(), images: ThirdViewController.arrayJSON[tmpThree.id].getImages(), meter: ThirdViewController.arrayJSON[tmpThree.id].getMeter(), heart: ThirdViewController.arrayJSON[tmpThree.id].getHearts(), description: ThirdViewController.arrayJSON[tmpThree.id].getDescription(), container: ThirdViewController.arrayJSON[tmpThree.id].getContainer(0) as! NSMutableArray)
             break
         default:
             break
@@ -730,22 +723,37 @@ class ThirdViewController: UIViewController
                     //                let open = result["open"].boolValue
                     //                let opening_hours = result["opening_hours"].stringValue
                     var image = result["images"].arrayValue
+                    
                     let images = image[0]["image_url"].stringValue
                     let description_image = image[0]["image_description"].stringValue
-
-                    //print(images)
-                    // print(description_image)
-
-                    //                let hearts = result["hearts"].intValue
-                    //                let distance = result["distance"].floatValue
-                    //                let description = result["description"].stringValue
                     
-                    //let categories = result["categories"].arrayValue
-                    //str.append(categories[0].stringValue)
-                    //print(title)
+                    let cont : NSMutableArray = NSMutableArray()
+                    //print("Hole")
+                    for resultImage in image
+                    {
+                        let description_image = resultImage["image_description"].stringValue
+                        _ = resultImage["image_url"].stringValue
+                        _ = resultImage["fb_id"].stringValue
+                    
+                        let param = [
+                            "image" : images,
+                            "description" : description_image,
+                            "fb_id" : ViewController.fbID
+                        ]
+                        
+                        cont.addObject(param)
+                        
+                    }
+                    print(ThirdViewController.arrayJSON)
+                    print(title)
+
+                    
                     let meter: Int = Int(distanceInKm(ThirdViewController.myLocationLat, lon1: ThirdViewController.myLocationLon, lat2: lat, lon2: lon) * 1000)
-                   tmp2.loadIn(id, title: title, address: address, lat: lat, lon: lon, categorie: ThirdViewController.chosenCategorie, rating: yelp_rating, images: images, meter: meter, heart: heart_rating, description : description_image)
-                  
+                    tmp2.loadIn(id, title: title, address: address, lat: lat, lon: lon, categorie: ThirdViewController.chosenCategorie, rating: yelp_rating, images: images, meter: meter, heart: heart_rating, description : description_image, container: cont)
+                    
+
+                    print(ThirdViewController.arrayJSON)
+                    print(title)
                     
                     dispatch_async(dispatch_get_main_queue(), {
                         
@@ -767,22 +775,6 @@ class ThirdViewController: UIViewController
                             self.fillData(self.tmpThree, count: self.counter)
                             self.counter = 3
                         }
-                        /*
-                        else if(self.counter == 3)
-                        {
-                            self.fillData(self.tmpFour, count: self.counter)
-                            self.counter++
-                        }
-                        else if(self.counter == 4)
-                        {
-                            self.fillData(self.tmpFive, count: self.counter)
-                            self.counter++
-                        }else if(self.counter == 5)
-                        {
-                            self.fillData(self.tmpSix, count: self.counter)
-                            self.counter++
-                        }
-                        */
                     })
                     
   
