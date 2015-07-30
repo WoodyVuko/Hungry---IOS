@@ -50,10 +50,10 @@ class ThirdViewControllerDetail: UIViewController
     let regionRadius: CLLocationDistance = 1000
     var whichScreen : String = "Detail"
 
-    var tmpOne: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 300)))
-    var tmpTwo: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 300)))
-    var tmpThree: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 300)))
-    var tmpFour: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 300))) //
+    var tmpOne: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 84), size: CGSize(width: 300, height: 300)))
+    var tmpTwo: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 84), size: CGSize(width: 300, height: 300)))
+    var tmpThree: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 84), size: CGSize(width: 300, height: 300)))
+    var tmpFour: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 84), size: CGSize(width: 300, height: 300))) //
 
     @IBOutlet var longPress: UILongPressGestureRecognizer!
 
@@ -93,7 +93,7 @@ class ThirdViewControllerDetail: UIViewController
         descript.text = "Beschreibung: " + tmp.getDescription()
         hearts.text = String(tmp.getHearts())
         rating.text = String(tmp.getRating())
-        meter.text = "Meter :" + String(tmp.getMeter()) + ","
+        meter.text = "Meter: " + String(tmp.getMeter())
         name.text = tmp.getTitle()
         
         if(tmp.getContainerLength() < 3)
@@ -138,7 +138,7 @@ class ThirdViewControllerDetail: UIViewController
     
     func fill(image: UIImageView, tmp: Int)
     {
-        print(self.tmp.getContainerLength())
+        //print(self.tmp.getContainerLength())
         let url = NSURL(string: String(self.tmp.getContainer(tmp)["image"]!))
         data = NSData(contentsOfURL:url!)
         
@@ -450,15 +450,19 @@ class ThirdViewControllerDetail: UIViewController
         {
             // Return Server
             let tmp = r.json
+            
             let rating : Int = tmp!.valueForKeyPath("rating") as! Int
+            let counter : Int = tmp!.valueForKeyPath("counter") as! Int
 
+            print(tmp)
             if( rating == 0)
             {
                 print("Heart posted")
-                self.hearts.text = String(tmp!.valueForKeyPath("counter"))
+                self.hearts.text! = String(counter)
             }
             else
             {
+                self.hearts.text! = String(counter)
                 print("Heart bereits gepostet!")   
             }
         }

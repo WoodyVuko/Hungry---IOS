@@ -13,6 +13,17 @@
 		B8521A8B1B690B0800DC5A83 /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8521A8A1B690B0800DC5A83 /* Just.swift */; };
 		B8521A961B696C1800DC5A83 /* placeholder-camera-green.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521A941B696C1800DC5A83 /* placeholder-camera-green.png */; };
 		B8521A971B696C1800DC5A83 /* placeholder_large.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521A951B696C1800DC5A83 /* placeholder_large.png */; };
+		B8521AA61B69B13200DC5A83 /* FriendClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8521AA51B69B13200DC5A83 /* FriendClass.swift */; };
+		B8521AA81B69F64600DC5A83 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8521AA71B69F64600DC5A83 /* FriendViewController.swift */; };
+		B8521AAA1B69FDBF00DC5A83 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8521AA91B69FDBF00DC5A83 /* FriendCell.swift */; };
+		B8521AAC1B6A045000DC5A83 /* FBInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8521AAB1B6A045000DC5A83 /* FBInfo.swift */; };
+		B8521AB01B6A1F2300DC5A83 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8521AAF1B6A1F2300DC5A83 /* HistoryViewController.swift */; };
+		B8521AB21B6A320500DC5A83 /* 55e2542c82f8e48c502381d8cbc78b15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8521AB11B6A320500DC5A83 /* 55e2542c82f8e48c502381d8cbc78b15.jpg */; };
+		B8521AB41B6A345800DC5A83 /* icon_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521AB31B6A345800DC5A83 /* icon_heart.png */; };
+		B8521AB61B6A345B00DC5A83 /* icon_yelp.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521AB51B6A345B00DC5A83 /* icon_yelp.png */; };
+		B8521AB81B6A346300DC5A83 /* icon_info.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521AB71B6A346300DC5A83 /* icon_info.png */; };
+		B8521ABA1B6A346800DC5A83 /* icon_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521AB91B6A346800DC5A83 /* icon_thumb.png */; };
+		B8521ABC1B6A346C00DC5A83 /* icon_thumb_down.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521ABB1B6A346C00DC5A83 /* icon_thumb_down.png */; };
 		B85C46731B66942B00588494 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85C46721B66942B00588494 /* FBSDKShareKit.framework */; };
 		B85C46771B66AFE600588494 /* filterBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B85C46761B66AFE600588494 /* filterBG.jpg */; };
 		B85C46791B66B0D600588494 /* pink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B85C46781B66B0D600588494 /* pink.jpg */; };
@@ -94,6 +105,17 @@
 		B8521A8A1B690B0800DC5A83 /* Just.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Just.swift; path = Hungry/Just.swift; sourceTree = SOURCE_ROOT; };
 		B8521A941B696C1800DC5A83 /* placeholder-camera-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "placeholder-camera-green.png"; path = "../../../../Downloads/placeholder-camera-green.png"; sourceTree = "<group>"; };
 		B8521A951B696C1800DC5A83 /* placeholder_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder_large.png; path = ../../../../Downloads/placeholder_large.png; sourceTree = "<group>"; };
+		B8521AA51B69B13200DC5A83 /* FriendClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendClass.swift; sourceTree = "<group>"; };
+		B8521AA71B69F64600DC5A83 /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		B8521AA91B69FDBF00DC5A83 /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		B8521AAB1B6A045000DC5A83 /* FBInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBInfo.swift; sourceTree = "<group>"; };
+		B8521AAF1B6A1F2300DC5A83 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		B8521AB11B6A320500DC5A83 /* 55e2542c82f8e48c502381d8cbc78b15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 55e2542c82f8e48c502381d8cbc78b15.jpg; sourceTree = "<group>"; };
+		B8521AB31B6A345800DC5A83 /* icon_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_heart.png; sourceTree = "<group>"; };
+		B8521AB51B6A345B00DC5A83 /* icon_yelp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_yelp.png; sourceTree = "<group>"; };
+		B8521AB71B6A346300DC5A83 /* icon_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_info.png; sourceTree = "<group>"; };
+		B8521AB91B6A346800DC5A83 /* icon_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_thumb.png; sourceTree = "<group>"; };
+		B8521ABB1B6A346C00DC5A83 /* icon_thumb_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_thumb_down.png; sourceTree = "<group>"; };
 		B85C46721B66942B00588494 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		B85C46761B66AFE600588494 /* filterBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = filterBG.jpg; sourceTree = "<group>"; };
 		B85C46781B66B0D600588494 /* pink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pink.jpg; sourceTree = "<group>"; };
@@ -190,8 +212,14 @@
 		B87125B31B595AED0002BE46 /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				B8521AB31B6A345800DC5A83 /* icon_heart.png */,
+				B8521ABB1B6A346C00DC5A83 /* icon_thumb_down.png */,
+				B8521AB71B6A346300DC5A83 /* icon_info.png */,
+				B8521AB91B6A346800DC5A83 /* icon_thumb.png */,
+				B8521AB11B6A320500DC5A83 /* 55e2542c82f8e48c502381d8cbc78b15.jpg */,
 				B8521A941B696C1800DC5A83 /* placeholder-camera-green.png */,
 				B8521A951B696C1800DC5A83 /* placeholder_large.png */,
+				B8521AB51B6A345B00DC5A83 /* icon_yelp.png */,
 				B85C46761B66AFE600588494 /* filterBG.jpg */,
 				B8521A881B690AF100DC5A83 /* placeholder.png */,
 				B85C46781B66B0D600588494 /* pink.jpg */,
@@ -221,8 +249,11 @@
 				B87125AC1B592E7E0002BE46 /* JSONData.swift */,
 				B8F90E081B657B3D003A5E1C /* Images.xcassets */,
 				B8B87EDC1B54372C00DEFD60 /* RestApiManager.swift */,
+				B8521AA51B69B13200DC5A83 /* FriendClass.swift */,
+				B8521AAB1B6A045000DC5A83 /* FBInfo.swift */,
 				B8730A701B5C2EE100EAAAA0 /* MapController.swift */,
 				B8730A6C1B5C2A6D00EAAAA0 /* MapAnnotations.swift */,
+				B8521AA91B69FDBF00DC5A83 /* FriendCell.swift */,
 				B87125AE1B593A050002BE46 /* Threading.swift */,
 				B8C5A1B81B5516E400EF437B /* GPS_Calculator.swift */,
 				B82A90B71B62C0BC00D527D2 /* FindMyCoords.swift */,
@@ -330,9 +361,11 @@
 				B8AC465D1B53143300A9A1FD /* ViewController.swift */,
 				B8C454011B54249600A80437 /* SecondViewController.swift */,
 				B8981E3C1B667655000A5C42 /* Favoriten.plist */,
+				B8521AAF1B6A1F2300DC5A83 /* HistoryViewController.swift */,
 				B8981E381B666967000A5C42 /* FourthViewController.swift */,
 				B8730A6A1B5C242000EAAAA0 /* MapDetailController.swift */,
 				B8521A771B6843E000DC5A83 /* CameraViewController.swift */,
+				B8521AA71B69F64600DC5A83 /* FriendViewController.swift */,
 				B8F7DA0A1B56D1F900D9C6B7 /* ThirdViewController.swift */,
 				B8730A681B5BFCBC00EAAAA0 /* ThirdViewControllerDetail.swift */,
 				B8AC465F1B53143300A9A1FD /* Main.storyboard */,
@@ -472,6 +505,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8521ABC1B6A346C00DC5A83 /* icon_thumb_down.png in Resources */,
+				B8521AB61B6A345B00DC5A83 /* icon_yelp.png in Resources */,
+				B8521AB21B6A320500DC5A83 /* 55e2542c82f8e48c502381d8cbc78b15.jpg in Resources */,
 				B8A1C35A1B68420C0004916C /* ALCameraView.strings in Resources */,
 				B8521A971B696C1800DC5A83 /* placeholder_large.png in Resources */,
 				B87125B51B595AED0002BE46 /* Heart.png in Resources */,
@@ -479,12 +515,15 @@
 				B87125BA1B59609A0002BE46 /* Cancel.png in Resources */,
 				B8655DAC1B5F16F1003D465F /* Default.png in Resources */,
 				B8730A631B5AB43500EAAAA0 /* Load.png in Resources */,
+				B8521AB41B6A345800DC5A83 /* icon_heart.png in Resources */,
+				B8521AB81B6A346300DC5A83 /* icon_info.png in Resources */,
 				B8F90E091B657B3D003A5E1C /* Images.xcassets in Resources */,
 				B8521A961B696C1800DC5A83 /* placeholder-camera-green.png in Resources */,
 				B87125B71B595D740002BE46 /* Stars.png in Resources */,
 				B8730A611B5AA2DB00EAAAA0 /* Widget.xib in Resources */,
 				B8AC46661B53143300A9A1FD /* Assets.xcassets in Resources */,
 				B8AC46611B53143300A9A1FD /* Main.storyboard in Resources */,
+				B8521ABA1B6A346800DC5A83 /* icon_thumb.png in Resources */,
 				B87125BB1B59609A0002BE46 /* Mark.png in Resources */,
 				B8A1C35B1B68420C0004916C /* ALCameraViewAssets.xcassets in Resources */,
 				B8C454041B54263B00A80437 /* Default-568h@2x.png in Resources */,
@@ -516,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8981E3B1B666967000A5C42 /* PlistManager.swift in Sources */,
+				B8521AAA1B69FDBF00DC5A83 /* FriendCell.swift in Sources */,
 				B87125AF1B593A050002BE46 /* Threading.swift in Sources */,
 				B8730A6D1B5C2A6D00EAAAA0 /* MapAnnotations.swift in Sources */,
 				B8B87EDD1B54372C00DEFD60 /* RestApiManager.swift in Sources */,
@@ -534,9 +574,12 @@
 				B8521A781B6843E000DC5A83 /* CameraViewController.swift in Sources */,
 				B8A1C3631B68420C0004916C /* ALImagePickerViewDelegate.swift in Sources */,
 				B8A1C3611B68420C0004916C /* ALConfirmViewController.swift in Sources */,
+				B8521AA61B69B13200DC5A83 /* FriendClass.swift in Sources */,
 				B8A1C35D1B68420C0004916C /* ALCameraShot.swift in Sources */,
 				B87125AD1B592E7E0002BE46 /* JSONData.swift in Sources */,
+				B8521AB01B6A1F2300DC5A83 /* HistoryViewController.swift in Sources */,
 				B8F90E0B1B65887B003A5E1C /* FavList.swift in Sources */,
+				B8521AA81B69F64600DC5A83 /* FriendViewController.swift in Sources */,
 				B8A1C3651B68420C0004916C /* ALCropOverlay.swift in Sources */,
 				B8730A6B1B5C242000EAAAA0 /* MapDetailController.swift in Sources */,
 				B8A1C3621B68420C0004916C /* ALImagePickerViewController.swift in Sources */,
@@ -548,6 +591,7 @@
 				B8A1C3641B68420C0004916C /* ALCameraView.swift in Sources */,
 				B8730A601B5AA2DB00EAAAA0 /* Widget.swift in Sources */,
 				B8A1C35E1B68420C0004916C /* ALImageFetchingInteractor.swift in Sources */,
+				B8521AAC1B6A045000DC5A83 /* FBInfo.swift in Sources */,
 				B8A1C3671B68420C0004916C /* ALPermissionsView.swift in Sources */,
 				B8A1C3661B68420C0004916C /* ALImageCell.swift in Sources */,
 			);

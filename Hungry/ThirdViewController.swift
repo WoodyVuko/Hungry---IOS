@@ -41,10 +41,10 @@ class ThirdViewController: UIViewController
     var whichScreen : String = "Main"
     
     
-    var tmpOne: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
-    var tmpTwo: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
-    var tmpThree: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
-    var tmpFour: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369))) // 300, 369
+    var tmpOne: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 84), size: CGSize(width: 300, height: 349)))
+    var tmpTwo: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 84), size: CGSize(width: 300, height: 349)))
+    var tmpThree: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 84), size: CGSize(width: 300, height: 349)))
+    //var tmpFour: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 84), size: CGSize(width: 300, height: 349))) // 300, 369
     //var tmpFive: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
     //var tmpSix: Widget = Widget(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 369)))
     @IBOutlet var longPress: UILongPressGestureRecognizer!
@@ -113,7 +113,7 @@ class ThirdViewController: UIViewController
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let touch = touches.first {
+        if let _ = touches.first {
             
             /* Abgleich zwischen Objekten für Bewegung..*/
             
@@ -295,7 +295,7 @@ class ThirdViewController: UIViewController
         {
             checkArrayLength(self.tmpOne)
             self.view.sendSubviewToBack(tmpOne)
-            tmpOne.center = CGPoint(x: 160, y: 250)
+            tmpOne.center = CGPoint(x: 160, y: 260)
             order = 2
             tmpOne.alpha = 1.0
             touchChoose = 2
@@ -304,7 +304,7 @@ class ThirdViewController: UIViewController
         {
             checkArrayLength(self.tmpTwo)
             self.view.sendSubviewToBack(tmpTwo)
-            tmpTwo.center = CGPoint(x: 160, y: 250)
+            tmpTwo.center = CGPoint(x: 160, y: 260)
             tmpTwo.alpha = 1.0
             order = 3
             touchChoose = 3
@@ -313,7 +313,7 @@ class ThirdViewController: UIViewController
         {
             checkArrayLength(self.tmpThree)
             self.view.sendSubviewToBack(tmpThree)
-            tmpThree.center = CGPoint(x: 160, y: 250)
+            tmpThree.center = CGPoint(x: 160, y: 260)
             tmpThree.alpha = 1.0
             order = 1
             touchChoose = 1
@@ -744,17 +744,10 @@ class ThirdViewController: UIViewController
                         cont.addObject(param)
                         
                     }
-                    print(ThirdViewController.arrayJSON)
-                    print(title)
-
                     
                     let meter: Int = Int(distanceInKm(ThirdViewController.myLocationLat, lon1: ThirdViewController.myLocationLon, lat2: lat, lon2: lon) * 1000)
                     tmp2.loadIn(id, title: title, address: address, lat: lat, lon: lon, categorie: ThirdViewController.chosenCategorie, rating: yelp_rating, images: images, meter: meter, heart: heart_rating, description : description_image, container: cont)
-                    
 
-                    print(ThirdViewController.arrayJSON)
-                    print(title)
-                    
                     dispatch_async(dispatch_get_main_queue(), {
                         
                         ThirdViewController.arrayJSON.append(tmp2)

@@ -12,10 +12,10 @@ import FBSDKLoginKit
 import FBSDKShareKit
 
 
-class FilterViewController: UIViewController, FBSDKLoginButtonDelegate
+class FilterViewController: UIViewController
 {
     // Facebook
-    @IBOutlet weak var userImage: FBSDKProfilePictureView!
+    @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var loginButton: FBSDKLoginButton!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var shareButton: FBSDKShareButton!
@@ -24,7 +24,12 @@ class FilterViewController: UIViewController, FBSDKLoginButtonDelegate
     @IBOutlet weak var priceSlide: UISlider!
     @IBOutlet weak var distance: UILabel!
     @IBOutlet weak var price: UILabel!
-    
+    var data: NSData?
+
+    @IBAction func goRoot(sender: AnyObject)
+    {
+        goRoot()
+    }
     
     @IBAction func openFav(sender: AnyObject)
     {
@@ -52,8 +57,17 @@ class FilterViewController: UIViewController, FBSDKLoginButtonDelegate
         distance.text = String(Int(distanceSlide.value))
     }
     
-    @IBAction func changePrice(sender: AnyObject)
+    @IBAction func goFeed(sender: AnyObject)
     {
+        let next = self.storyboard?.instantiateViewControllerWithIdentifier("FriendViewController") as! FriendViewController
+        self.navigationController!.pushViewController(next, animated: true)
+        
+    }
+    @IBAction func goHistory(sender: AnyObject)
+    {
+        let next = self.storyboard?.instantiateViewControllerWithIdentifier("HistoryViewController") as! HistoryViewController
+        self.navigationController!.pushViewController(next, animated: true)
+        
     }
     
     override func viewDidLoad()
@@ -72,74 +86,39 @@ class FilterViewController: UIViewController, FBSDKLoginButtonDelegate
         
         distance.text = String(Int(ThirdViewController.distance))
         distanceSlide.value = Float(ThirdViewController.distance) + 1500.00
-        showUserInfo()
-    }
-    
-    // MARK: - Facebook Login
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        getPicture()
         
-        if error == nil
-        {
-            loginButton.readPermissions = ["user_friends"]
-            loginButton.delegate = self
-            print("Login complete.")
-            
-        }
-        else if result.isCancelled {
-            // Handle cancellations
-        }
-        else
-        {
-            print(error.localizedDescription)
-        }
     }
     
-    
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!)
+    func getPicture()
     {
-        print("User logged out...")
-        userName.text = "UserName"
-        shareButton.enabled = false
+        // Icon
+        let u = String("http://graph.facebook.com/" + String(ViewController.fbID) + "/picture?width=146&height=146&redirect=false")
+        let x = Just.get(u)
+        let xx = x.json
+        let ra = xx!.valueForKeyPath("data")  as! [String : AnyObject]
+        let raa = ra["url"]
+        let url = NSURL(string: String(raa!))
+        data = NSData(contentsOfURL:url!)
         
+        let img = UIImage(data:data!)
+        
+        if data != nil {
+            userImage.image  = img?.circle
+        }
+    }
+
+    
+    func goRoot()
+    {
+        
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut() // this is an instance function
+        
+        print("loggedOut")
         let next = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
         self.navigationController!.pushViewController(next, animated: true)
     }
 
-    func showUserInfo()
-    {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            
-            if ((error) != nil)
-            {
-                // Process error
-                print("Error: \(error)")
-            }
-            else
-            {
-                print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                print("User Name is: \(userName)")
-                //let userEmail : NSString = result.valueForKey("email") as! NSString
-                //print("User Email is: \(userEmail)")
-                self.userName.text = userName as String
-                //self.userEmail.text = userEmail as String
-                self.shareButton.enabled = true
-                
-            }
-        })
-        
-        let request = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
-        
-        request.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
-            if error == nil {
-                print("Friends are : \(result)")
-            } else {
-                print("Error Getting Friends \(error)");
-            }
-        }
-    }
-
-    
 
 }

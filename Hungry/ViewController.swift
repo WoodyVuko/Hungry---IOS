@@ -20,13 +20,15 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var shareButton: FBSDKShareButton!
     static var fbID : Int = 0
- 
+    static var fbinfo : [FriendInfo]  = [FriendInfo]()
+    static var fbName : String = ""
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         loginButton.delegate = self
         
+        self.navigationController?.navigationBarHidden = true
         // Content for Share...
         let content : FBSDKShareLinkContent = FBSDKShareLinkContent()
         content.contentURL = NSURL(string: "https://google.de")
@@ -73,11 +75,12 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate
         if error == nil
         {
             print("Login complete.")
-            //showUserInfo()
+            showUserInfo()
             let next = self.storyboard?.instantiateViewControllerWithIdentifier("SecondViewController") as! SecondViewController
             /* self.presentViewController(next, animated: true, completion: nil)
             */
             self.navigationController!.pushViewController(next, animated: true)
+            
 
         }
         else if result.isCancelled {
@@ -124,6 +127,7 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate
                 // Übergabe der FBID
                 ViewController.fbID = Int(id as String)!
                 
+                ViewController.fbName = userName as String
                 print("User Name is: \(userName)")
                 //let userEmail : NSString = result.valueForKey("email") as! NSString
                 //print("User Email is: \(userEmail)")
@@ -139,7 +143,17 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate
         
         request.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
             if error == nil {
-                print("Friends are : \(result)")
+                let infos = result!["data"] as! [[String : AnyObject]]
+                for inf in infos
+                {
+                    let tmp : FriendInfo = FriendInfo()
+                    let id = inf["id"]!
+                    let name = inf["name"]!
+
+                    tmp.loadIn(String(id), name: String(name))
+                    
+                    ViewController.fbinfo.append(tmp)
+                }
             } else {
                 print("Error Getting Friends \(error)");
             }
