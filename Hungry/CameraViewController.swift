@@ -119,9 +119,10 @@ class CameraViewController: UIViewController
         
         let cameraViewController = ALCameraViewController(croppingEnabled: croppingEnabled) { (image) -> Void in
             self.imageView.image = image
+            self.img = UIImagePNGRepresentation(self.imageView.image!)!
+
             self.dismissViewControllerAnimated(true, completion: nil)
             
-            self.img = UIImagePNGRepresentation(self.imageView.image!)!
         }
         
         presentViewController(cameraViewController, animated: true, completion: nil)

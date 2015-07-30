@@ -13,6 +13,8 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue</string>
         </mutableArray>
         <mutableArray key="HelveticaNeueLights.ttc">
             <string>HelveticaNeue-Thin</string>
@@ -213,14 +215,6 @@
                                     <action selector="heartRating:" destination="GmQ-Bj-jZq" eventType="touchUpInside" id="mHi-L9-UVn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DM0-6v-UHi">
-                                <rect key="frame" x="274" y="444" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Stars.png" backgroundImage="Default.png"/>
-                                <connections>
-                                    <action selector="makeMap:" destination="GmQ-Bj-jZq" eventType="touchUpInside" id="ckf-dQ-5vc"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V8q-MA-6ce">
                                 <rect key="frame" x="10" y="387" width="169" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -287,6 +281,14 @@
                                     <action selector="openCamera:" destination="GmQ-Bj-jZq" eventType="touchUpInside" id="Vp1-uy-Wy2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DM0-6v-UHi">
+                                <rect key="frame" x="293" y="438" width="27" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="maximize-1-512.png"/>
+                                <connections>
+                                    <action selector="makeMap:" destination="GmQ-Bj-jZq" eventType="touchUpInside" id="ckf-dQ-5vc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -341,21 +343,30 @@
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="m9X-aV-5qb">
-                                <rect key="frame" x="270" y="55" width="50" height="50"/>
+                                <rect key="frame" x="270" y="55" width="49" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Stars.png" backgroundImage="Default.png"/>
+                                <state key="normal" backgroundImage="maximize-1-512.png"/>
                                 <connections>
                                     <action selector="closeMap:" destination="jU7-f8-FRp" eventType="touchUpInside" id="cWf-9W-EXb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IcK-LC-WjU">
-                                <rect key="frame" x="201" y="69" width="61" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" id="IcK-LC-WjU">
+                                <rect key="frame" x="201" y="55" width="61" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Go To"/>
+                                <state key="normal" backgroundImage="10-512.png">
+                                    <color key="titleColor" red="0.95394093124703405" green="1" blue="0.94210613446508251" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="mapButtonTapped:" destination="jU7-f8-FRp" eventType="touchUpInside" id="mt8-qx-aFN"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go to.." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W1b-if-JS1">
+                                <rect key="frame" x="206" y="94" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -388,7 +399,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1500" minValue="1000" maxValue="3000" id="NQM-CK-9JW">
-                                <rect key="frame" x="17" y="220" width="208" height="31"/>
+                                <rect key="frame" x="17" y="237" width="208" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.0" green="0.90644728539999997" blue="0.67677758359999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -396,9 +407,9 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mky-yC-XmZ">
-                                <rect key="frame" x="238" y="224" width="61" height="21"/>
+                                <rect key="frame" x="238" y="241" width="61" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -411,21 +422,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ggy-bb-i5V">
-                                <rect key="frame" x="19" y="267" width="280" height="40"/>
+                                <rect key="frame" x="8" y="330" width="304" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.64956452980000001" green="1" blue="0.63400260369999994" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Startseite"/>
+                                <state key="normal" title="Startseite" backgroundImage="square-icon.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="homeButton:" destination="jha-Al-SLd" eventType="touchUpInside" id="h0J-09-jTc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vgT-OW-9oS">
-                                <rect key="frame" x="19" y="315" width="280" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.64956452980000001" green="1" blue="0.63400260369999994" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Favoritenliste"/>
-                                <connections>
-                                    <action selector="openFav:" destination="jha-Al-SLd" eventType="touchUpInside" id="dNt-2Z-tmt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gY5-uB-Np3">
@@ -443,39 +446,53 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aT4-gk-rHp" customClass="FBSDKShareButton">
-                                <rect key="frame" x="218" y="506" width="94" height="42"/>
+                                <rect key="frame" x="103" y="496" width="94" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XMr-kj-pno">
-                                <rect key="frame" x="19" y="363" width="280" height="40"/>
+                                <rect key="frame" x="8" y="390" width="87" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.64956452980000001" green="1" blue="0.63400260369999994" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Friendfeed"/>
+                                <state key="normal" title="Friends" backgroundImage="square-icon.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="goFeed:" destination="jha-Al-SLd" eventType="touchUpInside" id="Hqc-n6-4MR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wyo-px-GaX">
-                                <rect key="frame" x="19" y="411" width="280" height="40"/>
+                                <rect key="frame" x="107" y="390" width="87" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.64956452980000001" green="1" blue="0.63400260369999994" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="My feed"/>
+                                <state key="normal" title="History" backgroundImage="square-icon.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goHistory:" destination="jha-Al-SLd" eventType="touchUpInside" id="ngq-k3-aA0"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KuZ-Pf-6dP">
                                 <rect key="frame" x="88" y="55" width="146" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="72q-ZG-9TV">
-                                <rect key="frame" x="20" y="518" width="98" height="30"/>
+                                <rect key="frame" x="212" y="390" width="87" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
+                                <state key="normal" title="Logout" backgroundImage="square-icon.png">
+                                    <color key="titleColor" red="0.98927775244055982" green="1" blue="0.98022195728018657" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="goRoot:" destination="jha-Al-SLd" eventType="touchUpInside" id="jmu-oH-e00"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aFf-Tl-nkN">
+                                <rect key="frame" x="20" y="217" width="77" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -604,11 +621,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Close" image="menu"/>
                                 <connections>
-                                    <action selector="showSidebar:" destination="eLi-sF-jME" eventType="touchUpInside" id="a3p-Vd-Pbl"/>
+                                    <action selector="showSidebar:" destination="SuY-dl-VD0" eventType="touchUpInside" id="64f-Ms-DFu"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="311" sectionHeaderHeight="70" sectionFooterHeight="22" id="DXN-8s-qJZ">
-                                <rect key="frame" x="0.0" y="38" width="320" height="493"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="481"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.96506076389999995" green="0.96506076389999995" blue="0.96506076389999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -844,17 +861,19 @@
         </scene>
     </scenes>
     <resources>
+        <image name="10-512.png" width="512" height="512"/>
         <image name="55e2542c82f8e48c502381d8cbc78b15.jpg" width="736" height="1308"/>
         <image name="ALPlaceholder" width="104" height="104"/>
-        <image name="Default.png" width="1242" height="2208"/>
         <image name="Heart.png" width="28" height="25"/>
         <image name="Stars.png" width="28" height="25"/>
         <image name="filterBG.jpg" width="1242" height="2208"/>
         <image name="icon_info.png" width="100" height="100"/>
         <image name="icon_thumb.png" width="320" height="320"/>
         <image name="icon_thumb_down.png" width="320" height="320"/>
+        <image name="maximize-1-512.png" width="512" height="512"/>
         <image name="menu" width="22" height="22"/>
         <image name="placeholder_large.png" width="500" height="500"/>
+        <image name="square-icon.png" width="256" height="256"/>
     </resources>
     <color key="tintColor" red="0.97826086960000003" green="0.2230766599" blue="0.21070753489999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

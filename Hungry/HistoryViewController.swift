@@ -8,8 +8,6 @@
 
 import Foundation
 import UIKit
-import FBSDKCoreKit
-import FBSDKLoginKit
 
 class HistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
@@ -18,7 +16,6 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     var data: NSData?
 
     var myFeed : [FriendClass] = [FriendClass]()
-    @IBOutlet weak var pic: FBSDKProfilePictureView!
     
     override func viewDidLoad()
     {

@@ -81,7 +81,7 @@ class FilterViewController: UIViewController
         content.contentDescription = "The easiest way to find your next food"
         content.imageURL = NSURL(string: "http://img09.deviantart.net/7d78/i/2011/136/e/8/monster__hungry_by_ivan_bliznak-d3ggvsq.jpg")
         shareButton.shareContent = content
-        shareButton.enabled = false
+        shareButton.enabled = true
         // End Content...
         
         distance.text = String(Int(ThirdViewController.distance))

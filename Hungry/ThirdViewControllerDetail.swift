@@ -50,10 +50,10 @@ class ThirdViewControllerDetail: UIViewController
     let regionRadius: CLLocationDistance = 1000
     var whichScreen : String = "Detail"
 
-    var tmpOne: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 84), size: CGSize(width: 300, height: 300)))
-    var tmpTwo: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 84), size: CGSize(width: 300, height: 300)))
-    var tmpThree: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 84), size: CGSize(width: 300, height: 300)))
-    var tmpFour: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 84), size: CGSize(width: 300, height: 300))) //
+    var tmpOne: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 300)))
+    var tmpTwo: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 300)))
+    var tmpThree: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 300)))
+    var tmpFour: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 10, y: 64), size: CGSize(width: 300, height: 300))) //
 
     @IBOutlet var longPress: UILongPressGestureRecognizer!
 

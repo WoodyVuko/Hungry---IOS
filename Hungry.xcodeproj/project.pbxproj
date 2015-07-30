@@ -24,6 +24,10 @@
 		B8521AB81B6A346300DC5A83 /* icon_info.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521AB71B6A346300DC5A83 /* icon_info.png */; };
 		B8521ABA1B6A346800DC5A83 /* icon_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521AB91B6A346800DC5A83 /* icon_thumb.png */; };
 		B8521ABC1B6A346C00DC5A83 /* icon_thumb_down.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521ABB1B6A346C00DC5A83 /* icon_thumb_down.png */; };
+		B8521ABE1B6A369300DC5A83 /* maximize-1-512.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521ABD1B6A369300DC5A83 /* maximize-1-512.png */; };
+		B8521AC01B6A36F100DC5A83 /* 10-512.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521ABF1B6A36F100DC5A83 /* 10-512.png */; };
+		B8521AC21B6A3A7D00DC5A83 /* 10-512.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521AC11B6A3A7D00DC5A83 /* 10-512.png */; };
+		B8521AC41B6A3A8E00DC5A83 /* maximize-1-512.png in Resources */ = {isa = PBXBuildFile; fileRef = B8521AC31B6A3A8E00DC5A83 /* maximize-1-512.png */; };
 		B85C46731B66942B00588494 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B85C46721B66942B00588494 /* FBSDKShareKit.framework */; };
 		B85C46771B66AFE600588494 /* filterBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B85C46761B66AFE600588494 /* filterBG.jpg */; };
 		B85C46791B66B0D600588494 /* pink.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B85C46781B66B0D600588494 /* pink.jpg */; };
@@ -70,6 +74,7 @@
 		B8AC467F1B53143300A9A1FD /* HungryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AC467E1B53143300A9A1FD /* HungryUITests.swift */; };
 		B8AC468E1B5314BD00A9A1FD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AC468C1B5314BD00A9A1FD /* FBSDKCoreKit.framework */; };
 		B8AC468F1B5314BD00A9A1FD /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AC468D1B5314BD00A9A1FD /* FBSDKLoginKit.framework */; };
+		B8B31DE61B6A441100797B67 /* square-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B8B31DE51B6A441100797B67 /* square-icon.png */; };
 		B8B87EDD1B54372C00DEFD60 /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B87EDC1B54372C00DEFD60 /* RestApiManager.swift */; };
 		B8B87EDF1B54415700DEFD60 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B87EDE1B54415700DEFD60 /* SwiftyJSON.swift */; };
 		B8C454021B54249600A80437 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C454011B54249600A80437 /* SecondViewController.swift */; };
@@ -116,6 +121,10 @@
 		B8521AB71B6A346300DC5A83 /* icon_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_info.png; sourceTree = "<group>"; };
 		B8521AB91B6A346800DC5A83 /* icon_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_thumb.png; sourceTree = "<group>"; };
 		B8521ABB1B6A346C00DC5A83 /* icon_thumb_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_thumb_down.png; sourceTree = "<group>"; };
+		B8521ABD1B6A369300DC5A83 /* maximize-1-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maximize-1-512.png"; sourceTree = "<group>"; };
+		B8521ABF1B6A36F100DC5A83 /* 10-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-512.png"; sourceTree = "<group>"; };
+		B8521AC11B6A3A7D00DC5A83 /* 10-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10-512.png"; sourceTree = "<group>"; };
+		B8521AC31B6A3A8E00DC5A83 /* maximize-1-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maximize-1-512.png"; sourceTree = "<group>"; };
 		B85C46721B66942B00588494 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		B85C46761B66AFE600588494 /* filterBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = filterBG.jpg; sourceTree = "<group>"; };
 		B85C46781B66B0D600588494 /* pink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pink.jpg; sourceTree = "<group>"; };
@@ -168,6 +177,7 @@
 		B8AC46801B53143300A9A1FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8AC468C1B5314BD00A9A1FD /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		B8AC468D1B5314BD00A9A1FD /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		B8B31DE51B6A441100797B67 /* square-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square-icon.png"; sourceTree = "<group>"; };
 		B8B87EDC1B54372C00DEFD60 /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
 		B8B87EDE1B54415700DEFD60 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		B8C454011B54249600A80437 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -212,19 +222,24 @@
 		B87125B31B595AED0002BE46 /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				B8521ABD1B6A369300DC5A83 /* maximize-1-512.png */,
 				B8521AB31B6A345800DC5A83 /* icon_heart.png */,
 				B8521ABB1B6A346C00DC5A83 /* icon_thumb_down.png */,
 				B8521AB71B6A346300DC5A83 /* icon_info.png */,
 				B8521AB91B6A346800DC5A83 /* icon_thumb.png */,
 				B8521AB11B6A320500DC5A83 /* 55e2542c82f8e48c502381d8cbc78b15.jpg */,
 				B8521A941B696C1800DC5A83 /* placeholder-camera-green.png */,
+				B8521AC31B6A3A8E00DC5A83 /* maximize-1-512.png */,
 				B8521A951B696C1800DC5A83 /* placeholder_large.png */,
 				B8521AB51B6A345B00DC5A83 /* icon_yelp.png */,
 				B85C46761B66AFE600588494 /* filterBG.jpg */,
 				B8521A881B690AF100DC5A83 /* placeholder.png */,
 				B85C46781B66B0D600588494 /* pink.jpg */,
+				B8521AC11B6A3A7D00DC5A83 /* 10-512.png */,
+				B8521ABF1B6A36F100DC5A83 /* 10-512.png */,
 				B8730A621B5AB43500EAAAA0 /* Load.png */,
 				B87125B81B59609A0002BE46 /* Cancel.png */,
+				B8B31DE51B6A441100797B67 /* square-icon.png */,
 				B87125B91B59609A0002BE46 /* Mark.png */,
 				B87125B61B595D740002BE46 /* Stars.png */,
 				B87125B41B595AED0002BE46 /* Heart.png */,
@@ -512,6 +527,7 @@
 				B8521A971B696C1800DC5A83 /* placeholder_large.png in Resources */,
 				B87125B51B595AED0002BE46 /* Heart.png in Resources */,
 				B8521A891B690AF100DC5A83 /* placeholder.png in Resources */,
+				B8521AC21B6A3A7D00DC5A83 /* 10-512.png in Resources */,
 				B87125BA1B59609A0002BE46 /* Cancel.png in Resources */,
 				B8655DAC1B5F16F1003D465F /* Default.png in Resources */,
 				B8730A631B5AB43500EAAAA0 /* Load.png in Resources */,
@@ -520,13 +536,17 @@
 				B8F90E091B657B3D003A5E1C /* Images.xcassets in Resources */,
 				B8521A961B696C1800DC5A83 /* placeholder-camera-green.png in Resources */,
 				B87125B71B595D740002BE46 /* Stars.png in Resources */,
+				B8521AC41B6A3A8E00DC5A83 /* maximize-1-512.png in Resources */,
 				B8730A611B5AA2DB00EAAAA0 /* Widget.xib in Resources */,
+				B8521ABE1B6A369300DC5A83 /* maximize-1-512.png in Resources */,
+				B8B31DE61B6A441100797B67 /* square-icon.png in Resources */,
 				B8AC46661B53143300A9A1FD /* Assets.xcassets in Resources */,
 				B8AC46611B53143300A9A1FD /* Main.storyboard in Resources */,
 				B8521ABA1B6A346800DC5A83 /* icon_thumb.png in Resources */,
 				B87125BB1B59609A0002BE46 /* Mark.png in Resources */,
 				B8A1C35B1B68420C0004916C /* ALCameraViewAssets.xcassets in Resources */,
 				B8C454041B54263B00A80437 /* Default-568h@2x.png in Resources */,
+				B8521AC01B6A36F100DC5A83 /* 10-512.png in Resources */,
 				B85C46771B66AFE600588494 /* filterBG.jpg in Resources */,
 				B8981E3D1B667655000A5C42 /* Favoriten.plist in Resources */,
 				B85C46791B66B0D600588494 /* pink.jpg in Resources */,

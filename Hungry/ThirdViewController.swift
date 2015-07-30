@@ -665,6 +665,7 @@ class ThirdViewController: UIViewController
     
     func loadFav()
     {
+        /*
         let tmp: JSONData = JSONData()
         switch(self.touchChoose)
         {
@@ -689,6 +690,7 @@ class ThirdViewController: UIViewController
         PlistManager.defaultManager.updatePlist("Favoriten", key: "rating", value: tmp.getRating())
         
         //PlistManager.defaultManager.writeToPlist(<#T##fileName: String##String#>, key: <#T##String#>, value: <#T##AnyObject#>)
+*/
     }
     // MARK: - GetJSON Categories
     
